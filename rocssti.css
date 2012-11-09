@@ -176,15 +176,15 @@ abbr {
 
 /* Liens */
 a {
-  color:#2573BE;
+  color: #2573BE;
 }
 /* penser au focus */
 a:hover, a:active, a:focus {
-  color:#000;
+  color: #000;
 }
 /* éviter la bordure sur une image comprise dans un lien */
 a:link img, a:visited img {
-  border-style:none;
+  border-style: none;
 }
 
 /* liens avec icônes, on peut utiliser les DATA-URI */
@@ -213,27 +213,27 @@ a[href$=".pdf"] {
 /* ça dépend, ça dépasse */
 img, table, td, blockquote, code, pre, textarea, input {
   max-width: 100%; 
-  height:auto;
+  height: auto;
 }
 /* pas de reset sur embed, object et video, ça fait foirer certains players */
 
 /* quelques floattants */
 .left {
-  float:left;
+  float: left;
 }
 .right {
-  float:right;
+  float: right;
 }
 
 /* clearer les floats */
 .clear {
-  clear:both;
+  clear: both;
 }
 .clearhidden {
-  clear:both;
-  visibility:hidden;
-  margin:0;
-  padding:0;
+  clear: both;
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* bloc centré */
