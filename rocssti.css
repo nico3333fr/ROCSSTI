@@ -1,0 +1,484 @@
+@charset "UTF-8";
+/* UTF-8 déclaré avant toute chose */
+
+/* ----------------------------- */
+/* ROCSSTI : une base CSS par Nicolas Hoffmann http://rocssti.nicolas-hoffmann.net/ */
+/* inspiré par http://www.knacss.com/ */
+/* ----------------------------- */
+/* résumé  
+1- reset
+2- ainsi font font font + liens
+3- layout et modules
+4- structure (page / menuaccess / header / main content / footer)
+5- forms
+6- dans le contenu
+7- mobile
+8- homo tablettes
+9- print
+*/
+
+
+/* ----------------------------- */
+/* 1- reset */
+/* ----------------------------- */
+/* spécial HTML 5 */
+article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, menu, nav, section, video { display:block; }
+abbr, eventsource, mark, meter, time, progress, output, bb { display:inline; }
+
+/* reset minimum */
+html, body, blockquote, ul, ol, form { margin: 0; padding: 0; }
+p { margin: 0 0 1em; }
+ul, ol { padding-left: 2em; }
+
+/* la base correspond à 10px */
+html { font-size: 62.5%; }
+body {
+  background: #fff;
+  color: #333;
+  font-family: Arial, helvetica, sans-serif;
+  font-size: 1.4em; /* taille de base équiv à 14px */
+  line-height: 150%; /* à corriger si besoin est */
+}
+
+/* ----------------------------- */
+/* 2- ainsi font font font = ici les web fonts */
+/* ----------------------------- */
+@font-face {
+    
+    
+
+}
+
+/* calculées via http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil */
+
+h1, .h1 {
+  font-size:  1.8571em; /* equiv 26px */
+  line-height: 1.6154em;
+  margin: 1.6154em 0 .8077em 0;
+}
+h2, .h2 {
+  font-size: 1.7143em; /* equiv 24px */
+  line-height: 1.75em;
+  margin: 1.75em 0 .875em 0;
+}
+h3, .h3 {
+  font-size: 1.5714em; /* equiv 22px */
+  line-height: 1.909em;
+  margin: 1.909em 0 .9545em 0;
+}
+h4, .h4 {
+  font-size: 1.4286em; /* equiv 20px */
+  line-height: 1.05em;
+  margin: 2.1em 0 1.05em 0;
+}
+h5, .h5 {
+  font-size: 1.2857em; /* equiv 18px */
+  line-height: 1.1667em;
+  margin: 2.3334em 0 1.1667em 0;
+}
+h6, .h6 {
+  font-size: 1.1429em; /* equiv 16px */
+  line-height: 1.3125em;
+  margin: 2.625em 0 1.3125em 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.nomargin { margin: 0; }
+.nomargintop { margin-top: 0; }
+.nopadding { padding: 0; }
+.noborder, iframe { border: 0; }
+
+/* autres classes utiles */
+.smaller {
+  font-size: .7143em; /* equiv 10px */
+  line-height: 2.1em;
+  margin: 2.1em 0 2.1em 0;
+}
+.small {
+  font-size: .8571em; /* equiv 12px */
+  line-height: 1.75em;
+  margin: 1.75em 0 1.75em 0;
+}
+.big {
+  font-size: 1.1429em; /* equiv 16px */
+  line-height: 1.3125em;
+  margin: 1.3125em 0 1.3125em 0;
+}
+.bigger {
+  font-size: 1.2857em; /* equiv 18px */
+  line-height: 1.1667em;
+  margin: 1.1667em 0 1.1667em 0;
+}
+.biggest {
+  font-size: 1.4286em; /* equiv 20px */
+  line-height: 1.05em;
+  margin: 1.05em 0 1.05em 0;
+}
+
+/* éviter problèmes de margin */
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0;
+}
+/* virer marge basse sur dernier enfant */
+p:last-child, ul:last-child, ol:last-child, dl:last-child, blockquote:last-child, pre:last-child, table:last-child {
+  margin-bottom: 0;
+}
+
+/* éviter marges supplémentaires sur éléments imbriqués */
+li p, li ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Vous ne passerez PAS (Gandalf) */
+textarea, table, td, th, code, pre, samp, div, p {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+code, pre, samp {
+  white-space: pre-wrap;
+}
+code {
+  line-height: 1em;
+}
+table {
+  margin-bottom: 1.5em;
+}
+/* j'y tiens, les abbr c'est bon pour la planète */
+abbr {
+  cursor:help;
+  border-bottom:1px dotted #000;
+}
+
+/* alignements de textes */
+.alignright {
+  text-align: right;
+}
+.aligncenter {
+  text-align: center;
+}
+.alignleft {
+  text-align: left;
+}
+.aligntop {
+  vertical-align: top;
+}
+.alignbottom {
+  vertical-align: bottom;
+}
+
+
+/* Liens */
+a {
+  color:#2573BE;
+}
+/* penser au focus */
+a:hover, a:active, a:focus {
+  color:#000;
+}
+/* éviter la bordure sur une image comprise dans un lien */
+a:link img, a:visited img {
+  border-style:none;
+}
+
+/* liens avec icônes, on peut utiliser les DATA-URI */
+
+/* pour signaler liens externes */
+a[href^="http://"], a[href^="https://"] {
+  
+}
+/* si URL complète sur un lien interne, virer signalement liens externes */
+a[href^="http://www.mondomaine.com"] {
+
+}
+/* contact, liens mailto */
+.mail, a[href^="mailto:"] {
+  
+}
+/* dont l'URL se termine par .pdf ou ce que vous voulez comme extension */
+a[href$=".pdf"] {
+
+}
+
+/* ----------------------------- */
+/* 3- layout et modules */
+/* ----------------------------- */
+
+/* ça dépend, ça dépasse */
+img, table, td, blockquote, code, pre, textarea, input {
+  max-width: 100%; 
+  height:auto;
+}
+/* pas de reset sur embed, object et video, ça fait foirer certains players */
+
+/* quelques floattants */
+.left {
+  float:left;
+}
+.right {
+  float:right;
+}
+
+/* clearer les floats */
+.clear {
+  clear:both;
+}
+.clearhidden {
+  clear:both;
+  visibility:hidden;
+  margin:0;
+  padding:0;
+}
+
+/* bloc centré */
+.margesauto {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+/* largeurs de blocks */
+.w10 { width: 10%; }
+.w20 { width: 20%; }
+.w25 { width: 25%; }
+.w30 { width: 30%; }
+.w33 { width: 33.333%; }
+.w40 { width: 40%; }
+.w45 { width: 45%; }
+.w49 { width: 49%; }
+.w50 { width: 50%; }
+.w60 { width: 60%; }
+.w66 { width: 66.666%; }
+.w70 { width: 70%; }
+.w75 { width: 75%; }
+.w80 { width: 80%; }
+.w90 { width: 90%; }
+.w100 { width: 100%; }
+
+/* margins */
+.mt1 { margin-top: 1em; }
+.mt2 { margin-top: 2em; }
+.mr1 { margin-right: 1em; }
+.mr2 { margin-right: 2em; }
+.mb1 { margin-bottom: 1em; }
+.mb2 { margin-bottom: 2em; }
+.ml1 { margin-left: 1em; }
+.ml2 { margin-left: 2em; }
+
+/* paddings */
+.pt1 { padding-top: 1em; }
+.pt2 { padding-top: 2em; }
+.pr1 { padding-right: 1em; }
+.pr2 { padding-right: 2em; }
+.pb1 { padding-bottom: 1em; }
+.pb2 { padding-bottom: 2em; }
+.pl1 { padding-left: 1em; }
+.pl2 { padding-left: 2em; }
+
+/* spécial hr de 1px de haut */
+hr { 
+  margin: 0 0 1em 0;
+  padding: 0;
+  color: #000;
+  background-color: #000;
+  height: 1px;
+  border: 0;
+}
+
+/* pour cacher du texte de manière accessible... toussââââ */
+.invisible {
+  position: absolute;
+  left: -5000px;
+  text-indent: -5000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.hidden { display: none; } /* caché partout */
+.noprint {} /* caché sur print */
+.notablet {} /* caché sur tablettes */
+.nomobile {} /* caché sur mobile */
+
+
+
+
+/* ----------------------------- */
+/* 4- structure globale (page / menuaccess / header / contenu principal / footer) */
+/* ----------------------------- */
+
+/* --- page --- */
+#page{
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* --- menuaccess = liens d'évitement --- */
+#menuaccess {
+
+}
+/* idéalement mettez-les visibles pas uniquement au focus */
+#menuaccess a {
+
+}
+/* sinon pensez à les rendre visibles au focus */
+#menuaccess a:hover, #menuaccess a:active, #menuaccess a:focus {
+
+}
+
+
+
+/* --- header --- */
+#header {
+
+}
+#logo {
+
+}
+#navigation {
+
+}
+
+
+/* --- contenu principal --- */
+#main {
+
+}
+
+
+/* --- footer --- */
+#footer {
+
+}
+/* Réseaux Sociaux À La Con : trucs inutiles de partage... souvent dans footer */
+.rsalc {
+
+}
+
+
+
+/* ----------------------------- */
+/* 5- forms
+/* ----------------------------- */
+
+/* donne envie de cliquer sur un bouton */
+label, button, input[type="submit"],input[type="button"],input[type="reset"] {
+  cursor:pointer;
+}
+
+/* évite un resize potentiellement foireux */
+textarea {
+  resize:vertical;
+}
+
+label, button, input, select {
+  vertical-align: middle;
+}
+
+/* à adapter selon le design voulu */
+input, select, textarea {
+  border: 1px solid #000;
+  width: 250px;
+  padding: .5em;
+  border-radius: 5px;
+}
+input[type="radio"], input[type="checkbox"] {
+  width: auto;
+}
+
+/* messages d'erreur ou de confirmation */
+.alert, .alert input {
+  color: #Bf0000;
+  font-weight: bold;
+}
+/* .redborder sert à débugger uniquement */
+.alert input, .redborder {
+  border: 1px solid #Bf0000;
+}
+.alert img {
+  border: 0;
+}
+.ok{
+
+}
+
+/* peut être complété par les attributs HTML5 required */
+/* exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi */
+select:required:invalid, input:required:invalid, input:focus:invalid, textarea:required:invalid, textarea:focus:invalid {
+  background: #fef6f6;
+  -moz-box-shadow: none;
+}
+
+input:focus:required:valid, textarea:focus:required:valid, select:focus:required:valid { 
+  background: #efe; 
+  -moz-box-shadow: none; 
+}
+
+
+/* ----------------------------- */
+/* 6- dans le contenu (contenus spécifiques aux pages)
+/* ----------------------------- */
+
+/* home */
+
+
+
+/* ----------------------------- */
+/* 7- mobile
+/* ----------------------------- */
+@media (max-width: 640px) {
+  /* cachage des éléments inutiles, chabitte ! */
+  .nomobile { display: none; }
+  
+}
+/* ----------------------------- */
+/* 8- homo tablettes
+/* ----------------------------- */
+@media (max-width: 768px) {
+  
+  /* cachage des éléments inutiles, chabitte ! */
+  .notablet { display: none; }
+  
+}
+
+
+/* ----------------------------- */
+/* 9- print
+/* ----------------------------- */
+@media print {
+  /* ajouter là-dedans les éléments qui ont besoin d'être 
+     resetés de manière très bourrine pour le print */
+  body, html{ 
+    width: auto;
+    height: auto;  
+    min-height: auto;
+    margin: 0; 
+    background-color: #fff; 
+    color: #000; 
+    background-image: none; 
+    padding: 0;
+    float: none;
+    position: static;
+  } 
+  
+  body{
+    padding: .5em;
+  }
+  
+  
+  /* cachage des éléments inutiles, chabitte ! */
+  #navigation, #menuaccess, .noprint, .rsalc{
+    display: none;
+  }
+  
+  /* ici fix propriétés particulières */
+  
+  
+} /* end print */
