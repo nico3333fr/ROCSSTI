@@ -152,8 +152,8 @@ table {
 }
 /* j'y tiens, les abbr c'est bon pour la planète */
 abbr {
-  cursor:help;
-  border-bottom:1px dotted #000;
+  cursor: help;
+  border-bottom: 1px dotted #000;
 }
 
 /* alignements de textes */
@@ -238,8 +238,8 @@ img, table, td, blockquote, code, pre, textarea, input {
 
 /* bloc centré */
 .margesauto {
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -369,13 +369,13 @@ hr {
 /* ----------------------------- */
 
 /* donne envie de cliquer sur un bouton */
-label, button, input[type="submit"],input[type="button"],input[type="reset"] {
-  cursor:pointer;
+label, button, input[type="submit"], input[type="button"], input[type="reset"] {
+  cursor: pointer;
 }
 
 /* évite un resize potentiellement foireux */
 textarea {
-  resize:vertical;
+  resize: vertical;
 }
 
 label, button, input, select {
@@ -405,7 +405,7 @@ input[type="radio"], input[type="checkbox"] {
 .alert img {
   border: 0;
 }
-.ok{
+.ok {
 
 }
 
