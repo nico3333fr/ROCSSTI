@@ -23,7 +23,7 @@
 /* ----------------------------- */
 /* spécial HTML 5 */
 article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, menu, nav, section, video { display:block; }
-abbr, eventsource, mark, meter, time, progress, output, bb { display:inline; }
+abbr, eventsource, mark, meter, time, progress, output, bb { display: inline; }
 
 /* reset minimum */
 html, body, blockquote, ul, ol, form { margin: 0; padding: 0; }
@@ -316,7 +316,7 @@ hr {
 /* ----------------------------- */
 
 /* --- page --- */
-#page{
+#page {
   position: relative;
   width: 960px;
   margin: 0 auto;
@@ -396,12 +396,12 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 /* messages d'erreur ou de confirmation */
-.alert, .alert input {
+.alert, .alert input, .alert textarea, .alert select {
   color: #Bf0000;
   font-weight: bold;
 }
 /* .redborder sert à débugger uniquement */
-.alert input, .redborder {
+.alert input, .alert textarea, .alert select, .redborder {
   border: 1px solid #Bf0000;
 }
 .alert img {
