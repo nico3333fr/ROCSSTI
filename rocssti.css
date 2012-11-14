@@ -95,27 +95,27 @@ h6, .h6 {
 .smaller {
   font-size: .7143em; /* equiv 10px */
   line-height: 2.1em;
-  margin: 2.1em 0 2.1em 0;
+  margin: 2.1em 0;
 }
 .small {
   font-size: .8571em; /* equiv 12px */
   line-height: 1.75em;
-  margin: 1.75em 0 1.75em 0;
+  margin: 1.75em 0;
 }
 .big {
   font-size: 1.1429em; /* equiv 16px */
   line-height: 1.3125em;
-  margin: 1.3125em 0 1.3125em 0;
+  margin: 1.3125em 0;
 }
 .bigger {
   font-size: 1.2857em; /* equiv 18px */
   line-height: 1.1667em;
-  margin: 1.1667em 0 1.1667em 0;
+  margin: 1.1667em 0;
 }
 .biggest {
   font-size: 1.4286em; /* equiv 20px */
   line-height: 1.05em;
-  margin: 1.05em 0 1.05em 0;
+  margin: 1.05em 0;
 }
 
 /* éviter problèmes de margin */
@@ -176,7 +176,7 @@ abbr {
 
 /* Liens */
 a {
-  color: #2573BE;
+  color: #2573be;
 }
 /* penser au focus */
 a:hover, a:active, a:focus {
@@ -397,12 +397,12 @@ input[type="radio"], input[type="checkbox"] {
 
 /* messages d'erreur ou de confirmation */
 .alert, .alert input, .alert textarea, .alert select {
-  color: #Bf0000;
+  color: #bf0000;
   font-weight: bold;
 }
 /* .redborder sert à débugger uniquement */
 .alert input, .alert textarea, .alert select, .redborder {
-  border: 1px solid #Bf0000;
+  border: 1px solid #bf0000;
 }
 .alert img {
   border: 0;
