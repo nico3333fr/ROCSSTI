@@ -283,7 +283,7 @@ img, table, td, blockquote, code, pre, textarea, input {
 
 /* spécial hr de 1px de haut */
 hr { 
-  margin: 0 0 1em 0;
+  margin: 0 0 1em;
   padding: 0;
   color: #000;
   background-color: #000;
