@@ -50,32 +50,38 @@ body {
 
 /* calculées via http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil */
 
-h1, .h1 {
+h1,
+.h1 {
   font-size:  1.8571em; /* equiv 26px */
   line-height: 1.6154em;
   margin: 1.6154em 0 .8077em 0;
 }
-h2, .h2 {
+h2,
+.h2 {
   font-size: 1.7143em; /* equiv 24px */
   line-height: 1.75em;
   margin: 1.75em 0 .875em 0;
 }
-h3, .h3 {
+h3,
+.h3 {
   font-size: 1.5714em; /* equiv 22px */
   line-height: 1.909em;
   margin: 1.909em 0 .9545em 0;
 }
-h4, .h4 {
+h4,
+.h4 {
   font-size: 1.4286em; /* equiv 20px */
   line-height: 1.05em;
   margin: 2.1em 0 1.05em 0;
 }
-h5, .h5 {
+h5,
+.h5 {
   font-size: 1.2857em; /* equiv 18px */
   line-height: 1.1667em;
   margin: 2.3334em 0 1.1667em 0;
 }
-h6, .h6 {
+h6,
+.h6 {
   font-size: 1.1429em; /* equiv 16px */
   line-height: 1.3125em;
   margin: 2.625em 0 1.3125em 0;
@@ -88,7 +94,8 @@ h6, .h6 {
 .nomargin { margin: 0; }
 .nomargintop { margin-top: 0; }
 .nopadding { padding: 0; }
-.noborder, iframe { border: 0; }
+.noborder,
+iframe { border: 0; }
 
 /* autres classes utiles */
 .smaller {
@@ -118,21 +125,41 @@ h6, .h6 {
 }
 
 /* éviter problèmes de margin */
-h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
   margin-top: 0;
 }
 /* virer marge basse sur dernier enfant */
-p:last-child, ul:last-child, ol:last-child, dl:last-child, blockquote:last-child, pre:last-child, table:last-child {
+p:last-child,
+ul:last-child,
+ol:last-child,
+dl:last-child,
+blockquote:last-child,
+pre:last-child,
+table:last-child {
   margin-bottom: 0;
 }
 
 /* éviter marges supplémentaires sur éléments imbriqués */
-li p, li ul {
+li p,
+li ul {
   margin-top: 0;
   margin-bottom: 0;
 }
 /* Vous ne passerez PAS (Gandalf) */
-textarea, table, td, th, code, pre, samp, div, p {
+textarea,
+table,
+td,
+th,
+code,
+pre,
+samp,
+div,
+p {
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -140,7 +167,9 @@ textarea, table, td, th, code, pre, samp, div, p {
   -o-hyphens: auto;
   hyphens: auto;
 }
-code, pre, samp {
+code,
+pre,
+samp {
   white-space: pre-wrap;
 }
 code {
@@ -156,39 +185,33 @@ abbr {
 }
 
 /* alignements de textes */
-.alignright {
-  text-align: right;
-}
-.aligncenter {
-  text-align: center;
-}
-.alignleft {
-  text-align: left;
-}
-.aligntop {
-  vertical-align: top;
-}
-.alignbottom {
-  vertical-align: bottom;
-}
+.alignright  { text-align: right; }
+.aligncenter { text-align: center; }
+.alignleft   { text-align: left; }
+.aligntop    { vertical-align: top; }
+.alignbottom { vertical-align: bottom; }
 
 /* Liens */
 a {
   color: #2573be;
 }
 /* penser au focus */
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
   color: #000;
 }
 /* éviter la bordure sur une image comprise dans un lien */
-a:link img, a:visited img {
+a:link img,
+a:visited img {
   border-style: none;
 }
 
 /* liens avec icônes, on peut utiliser les DATA-URI */
 
 /* pour signaler liens externes */
-a[href^="http://"], a[href^="https://"] {
+a[href^="http://"],
+a[href^="https://"] {
 
 }
 /* si URL complète sur un lien interne, virer signalement liens externes */
@@ -196,7 +219,8 @@ a[href^="http://www.mondomaine.com"] {
 
 }
 /* contact, liens mailto */
-.mail, a[href^="mailto:"] {
+.mail,
+a[href^="mailto:"] {
 
 }
 /* dont l'URL se termine par .pdf ou ce que vous voulez comme extension */
@@ -210,7 +234,14 @@ a[href$=".pdf"] {
  */
 
 /* ça dépend, ça dépasse */
-img, table, td, blockquote, code, pre, textarea, input {
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input {
   max-width: 100%;
   height: auto;
 }
@@ -328,7 +359,9 @@ hr {
 
 }
 /* sinon pensez à les rendre visibles au focus */
-#menuaccess a:hover, #menuaccess a:active, #menuaccess a:focus {
+#menuaccess a:hover,
+#menuaccess a:active,
+#menuaccess a:focus {
 
 }
 
@@ -368,7 +401,11 @@ hr {
  */
 
 /* donne envie de cliquer sur un bouton */
-label, button, input[type="submit"], input[type="button"], input[type="reset"] {
+label,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
   cursor: pointer;
 }
 
@@ -377,28 +414,40 @@ textarea {
   resize: vertical;
 }
 
-label, button, input, select {
+label,
+button,
+input,
+select {
   vertical-align: middle;
 }
 
 /* à adapter selon le design voulu */
-input, select, textarea {
+input,
+select,
+textarea {
   border: 1px solid #000;
   width: 250px;
   padding: .5em;
   border-radius: 5px;
 }
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
   width: auto;
 }
 
 /* messages d'erreur ou de confirmation */
-.alert, .alert input, .alert textarea, .alert select {
+.alert,
+.alert input,
+.alert textarea,
+.alert select {
   color: #bf0000;
   font-weight: bold;
 }
 /* .redborder sert à débugger uniquement */
-.alert input, .alert textarea, .alert select, .redborder {
+.alert input,
+.alert textarea,
+.alert select,
+.redborder {
   border: 1px solid #bf0000;
 }
 .alert img {
@@ -410,12 +459,18 @@ input[type="radio"], input[type="checkbox"] {
 
 /* peut être complété par les attributs HTML5 required
  * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi*/
-select:required:invalid, input:required:invalid, input:focus:invalid, textarea:required:invalid, textarea:focus:invalid {
+select:required:invalid,
+input:required:invalid,
+input:focus:invalid,
+textarea:required:invalid,
+textarea:focus:invalid {
   background: #fef6f6;
   -moz-box-shadow: none;
 }
 
-input:focus:required:valid, textarea:focus:required:valid, select:focus:required:valid {
+input:focus:required:valid,
+textarea:focus:required:valid,
+select:focus:required:valid {
   background: #efe;
   -moz-box-shadow: none;
 }
@@ -476,7 +531,10 @@ input:focus:required:valid, textarea:focus:required:valid, select:focus:required
   }
 
   /* cachage des éléments inutiles, chabitte ! */
-  #navigation, #menuaccess, .noprint, .rsalc {
+  #navigation,
+  #menuaccess,
+  .noprint,
+  .rsalc {
     display: none;
   }
 
