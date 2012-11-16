@@ -1,26 +1,26 @@
 @charset "UTF-8";
 /* UTF-8 déclaré avant toute chose */
 
-/* ----------------------------- */
-/* ROCSSTI : une base CSS par Nicolas Hoffmann http://rocssti.nicolas-hoffmann.net/ */
-/* inspiré par http://www.knacss.com/ */
-/* ----------------------------- */
-/* résumé  
-1- reset
-2- ainsi font font font + liens
-3- layout et modules
-4- structure (page / menuaccess / header / main content / footer)
-5- forms
-6- dans le contenu
-7- mobile
-8- homo tablettes
-9- print
-*/
+/**
+ * ROCSSTI : une base CSS par Nicolas Hoffmann http://rocssti.nicolas-hoffmann.net/
+ * inspiré par http://www.knacss.com/
+ *
+ * résumé
+ * 1- reset
+ * 2- ainsi font font font + liens
+ * 3- layout et modules
+ * 4- structure (page / menuaccess / header / main content / footer)
+ * 5- forms
+ * 6- dans le contenu
+ * 7- mobile
+ * 8- homo tablettes
+ * 9- print
+ */
 
 
-/* ----------------------------- */
-/* 1- reset */
-/* ----------------------------- */
+/**
+ * 1- reset
+ */
 /* spécial HTML 5 */
 article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, menu, nav, section, video { display:block; }
 abbr, eventsource, mark, meter, time, progress, output, bb { display: inline; }
@@ -40,9 +40,9 @@ body {
   line-height: 150%; /* à corriger si besoin est */
 }
 
-/* ----------------------------- */
-/* 2- ainsi font font font = ici les web fonts */
-/* ----------------------------- */
+/**
+ * 2- ainsi font font font = ici les web fonts
+ */
 @font-face {
     
     
@@ -206,9 +206,9 @@ a[href$=".pdf"] {
 
 }
 
-/* ----------------------------- */
-/* 3- layout et modules */
-/* ----------------------------- */
+/**
+ * 3- layout et modules
+ */
 
 /* ça dépend, ça dépasse */
 img, table, td, blockquote, code, pre, textarea, input {
@@ -311,9 +311,9 @@ hr {
 
 
 
-/* ----------------------------- */
-/* 4- structure globale (page / menuaccess / header / contenu principal / footer) */
-/* ----------------------------- */
+/**
+ * 4- structure globale (page / menuaccess / header / contenu principal / footer)
+ */
 
 /* --- page --- */
 #page {
@@ -366,9 +366,9 @@ hr {
 
 
 
-/* ----------------------------- */
-/* 5- forms
-/* ----------------------------- */
+/**
+ * 5- forms
+ */
 
 /* donne envie de cliquer sur un bouton */
 label, button, input[type="submit"], input[type="button"], input[type="reset"] {
@@ -411,38 +411,38 @@ input[type="radio"], input[type="checkbox"] {
 
 }
 
-/* peut être complété par les attributs HTML5 required */
-/* exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi */
+/* peut être complété par les attributs HTML5 required
+ * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi */
 select:required:invalid, input:required:invalid, input:focus:invalid, textarea:required:invalid, textarea:focus:invalid {
   background: #fef6f6;
   -moz-box-shadow: none;
 }
 
 input:focus:required:valid, textarea:focus:required:valid, select:focus:required:valid { 
-  background: #efe; 
-  -moz-box-shadow: none; 
+  background: #efe;
+  -moz-box-shadow: none;
 }
 
 
-/* ----------------------------- */
-/* 6- dans le contenu (contenus spécifiques aux pages)
-/* ----------------------------- */
+/**
+ * 6- dans le contenu (contenus spécifiques aux pages)
+ */
 
 /* home */
 
 
 
-/* ----------------------------- */
-/* 7- mobile
-/* ----------------------------- */
+/**
+ * 7- mobile
+ */
 @media (max-width: 640px) {
   /* cachage des éléments inutiles, chabitte ! */
   .nomobile { display: none; }
   
 }
-/* ----------------------------- */
-/* 8- homo tablettes
-/* ----------------------------- */
+/**
+ * 8- homo tablettes
+ */
 @media (max-width: 768px) {
   
   /* cachage des éléments inutiles, chabitte ! */
@@ -451,9 +451,9 @@ input:focus:required:valid, textarea:focus:required:valid, select:focus:required
 }
 
 
-/* ----------------------------- */
-/* 9- print
-/* ----------------------------- */
+/**
+ * 9- print
+ */
 @media print {
   /* ajouter là-dedans les éléments qui ont besoin d'être 
      resetés de manière très bourrine pour le print */
