@@ -22,7 +22,7 @@
  * 1- reset
  */
 /* spécial HTML 5 */
-article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, menu, nav, section, video { display:block; }
+article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, menu, nav, section, video { display: block; }
 abbr, eventsource, mark, meter, time, progress, output, bb { display: inline; }
 
 /* reset minimum */
@@ -40,12 +40,11 @@ body {
   line-height: 150%; /* à corriger si besoin est */
 }
 
+
 /**
  * 2- ainsi font font font = ici les web fonts
  */
 @font-face {
-    
-    
 
 }
 
@@ -173,7 +172,6 @@ abbr {
   vertical-align: bottom;
 }
 
-
 /* Liens */
 a {
   color: #2573be;
@@ -191,7 +189,7 @@ a:link img, a:visited img {
 
 /* pour signaler liens externes */
 a[href^="http://"], a[href^="https://"] {
-  
+
 }
 /* si URL complète sur un lien interne, virer signalement liens externes */
 a[href^="http://www.mondomaine.com"] {
@@ -199,12 +197,13 @@ a[href^="http://www.mondomaine.com"] {
 }
 /* contact, liens mailto */
 .mail, a[href^="mailto:"] {
-  
+
 }
 /* dont l'URL se termine par .pdf ou ce que vous voulez comme extension */
 a[href$=".pdf"] {
 
 }
+
 
 /**
  * 3- layout et modules
@@ -212,7 +211,7 @@ a[href$=".pdf"] {
 
 /* ça dépend, ça dépasse */
 img, table, td, blockquote, code, pre, textarea, input {
-  max-width: 100%; 
+  max-width: 100%;
   height: auto;
 }
 /* pas de reset sur embed, object et video, ça fait foirer certains players */
@@ -282,7 +281,7 @@ img, table, td, blockquote, code, pre, textarea, input {
 .pl2 { padding-left: 2em; }
 
 /* spécial hr de 1px de haut */
-hr { 
+hr {
   margin: 0 0 1em;
   padding: 0;
   color: #000;
@@ -307,8 +306,6 @@ hr {
 .noprint {} /* caché sur print */
 .notablet {} /* caché sur tablettes */
 .nomobile {} /* caché sur mobile */
-
-
 
 
 /**
@@ -359,11 +356,11 @@ hr {
 #footer {
 
 }
+
 /* Réseaux Sociaux À La Con : trucs inutiles de partage... souvent dans footer */
 .rsalc {
 
 }
-
 
 
 /**
@@ -412,13 +409,13 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 /* peut être complété par les attributs HTML5 required
- * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi */
+ * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi*/
 select:required:invalid, input:required:invalid, input:focus:invalid, textarea:required:invalid, textarea:focus:invalid {
   background: #fef6f6;
   -moz-box-shadow: none;
 }
 
-input:focus:required:valid, textarea:focus:required:valid, select:focus:required:valid { 
+input:focus:required:valid, textarea:focus:required:valid, select:focus:required:valid {
   background: #efe;
   -moz-box-shadow: none;
 }
@@ -436,18 +433,21 @@ input:focus:required:valid, textarea:focus:required:valid, select:focus:required
  * 7- mobile
  */
 @media (max-width: 640px) {
+
   /* cachage des éléments inutiles, chabitte ! */
   .nomobile { display: none; }
-  
+
 }
+
+
 /**
  * 8- homo tablettes
  */
 @media (max-width: 768px) {
-  
+
   /* cachage des éléments inutiles, chabitte ! */
   .notablet { display: none; }
-  
+
 }
 
 
@@ -457,30 +457,30 @@ input:focus:required:valid, textarea:focus:required:valid, select:focus:required
 @media print {
   /* ajouter là-dedans les éléments qui ont besoin d'être 
      resetés de manière très bourrine pour le print */
-  body, html{ 
+  body,
+  html {
     width: auto;
-    height: auto;  
+    height: auto;
     min-height: auto;
-    margin: 0; 
-    background-color: #fff; 
-    color: #000; 
-    background-image: none; 
+    margin: 0;
+    background-color: #fff;
+    color: #000;
+    background-image: none;
     padding: 0;
     float: none;
     position: static;
-  } 
-  
-  body{
+  }
+
+  body {
     padding: .5em;
   }
-  
-  
+
   /* cachage des éléments inutiles, chabitte ! */
-  #navigation, #menuaccess, .noprint, .rsalc{
+  #navigation, #menuaccess, .noprint, .rsalc {
     display: none;
   }
-  
+
   /* ici fix propriétés particulières */
-  
-  
+
+
 } /* end print */
