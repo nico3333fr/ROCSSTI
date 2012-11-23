@@ -309,8 +309,8 @@ input {
 .mb2 { margin-bottom: 2em; }
 .ml1 { margin-left: 1em; }
 .ml2 { margin-left: 2em; }
-.ml2 { margin-left: 2em; }
-.ml2 { margin-left: 2em; }
+.m1  { margin: 1em; }
+.m2  { margin: 2em; }
 
 /* paddings */
 .pt1 { padding-top: 1em; }
