@@ -91,9 +91,9 @@ h6,
   text-transform: uppercase;
 }
 
-.nomargin { margin: 0; }
+.nomargin    { margin: 0; }
 .nomargintop { margin-top: 0; }
-.nopadding { padding: 0; }
+.nopadding   { padding: 0; }
 .noborder,
 iframe { border: 0; }
 
@@ -259,6 +259,12 @@ input {
 .clear {
   clear: both;
 }
+.clearleft {
+  clear: left;
+}
+.clearright {
+  clear: right;
+}
 .clearhidden {
   clear: both;
   visibility: hidden;
@@ -274,22 +280,25 @@ input {
 
 
 /* largeurs de blocks */
-.w10 { width: 10%; }
-.w20 { width: 20%; }
-.w25 { width: 25%; }
-.w30 { width: 30%; }
-.w33 { width: 33.333%; }
-.w40 { width: 40%; }
-.w45 { width: 45%; }
-.w49 { width: 49%; }
-.w50 { width: 50%; }
-.w60 { width: 60%; }
-.w66 { width: 66.666%; }
-.w70 { width: 70%; }
-.w75 { width: 75%; }
-.w80 { width: 80%; }
-.w90 { width: 90%; }
+.w10  { width: 10%; }
+.w20  { width: 20%; }
+.w25  { width: 25%; }
+.w30  { width: 30%; }
+.w33  { width: 33.333%; }
+.w40  { width: 40%; }
+.w45  { width: 45%; }
+.w49  { width: 49%; }
+.w50  { width: 50%; }
+.w60  { width: 60%; }
+.w66  { width: 66.666%; }
+.w70  { width: 70%; }
+.w75  { width: 75%; }
+.w80  { width: 80%; }
+.w90  { width: 90%; }
 .w100 { width: 100%; }
+
+/* ici ajouter les largeur en pixels */
+.w500p { width: 500px; }
 
 /* margins */
 .mt1 { margin-top: 1em; }
@@ -299,6 +308,8 @@ input {
 .mb1 { margin-bottom: 1em; }
 .mb2 { margin-bottom: 2em; }
 .ml1 { margin-left: 1em; }
+.ml2 { margin-left: 2em; }
+.ml2 { margin-left: 2em; }
 .ml2 { margin-left: 2em; }
 
 /* paddings */
@@ -310,6 +321,8 @@ input {
 .pb2 { padding-bottom: 2em; }
 .pl1 { padding-left: 1em; }
 .pl2 { padding-left: 2em; }
+.p1  { padding: 1em; }
+.p2  { padding: 2em; }
 
 /* spécial hr de 1px de haut */
 hr {
@@ -333,10 +346,11 @@ hr {
   width: 1px;
 }
 
-.hidden { display: none; } /* caché partout */
-.noprint {} /* caché sur print */
-.notablet {} /* caché sur tablettes */
-.nomobile {} /* caché sur mobile */
+.hidden    { display: none; } /* caché partout */
+.nodesktop { display: none; } /* caché sur desktop */
+.noprint   {} /* caché sur print */
+.notablet  {} /* caché sur tablettes */
+.nomobile  {} /* caché sur mobile */
 
 
 /**
@@ -430,9 +444,15 @@ textarea {
   padding: .5em;
   border-radius: 5px;
 }
+/* 
+ * évite dimensionnement des radios et checkboxes
+ * et un affichage différent sous IE 
+ */
 input[type="radio"],
 input[type="checkbox"] {
   width: auto;
+  border: 0;
+  background-color: none;
 }
 
 /* messages d'erreur ou de confirmation */
@@ -458,7 +478,8 @@ input[type="checkbox"] {
 }
 
 /* peut être complété par les attributs HTML5 required
- * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi*/
+ * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi
+ */
 select:required:invalid,
 input:required:invalid,
 input:focus:invalid,
@@ -492,6 +513,8 @@ select:focus:required:valid {
   /* cachage des éléments inutiles, chabitte ! */
   .nomobile { display: none; }
 
+  /* ici fix propriétés particulières */
+
 }
 
 
@@ -503,6 +526,8 @@ select:focus:required:valid {
   /* cachage des éléments inutiles, chabitte ! */
   .notablet { display: none; }
 
+  /* ici fix propriétés particulières */
+
 }
 
 
@@ -510,8 +535,9 @@ select:focus:required:valid {
  * 9- print
  */
 @media print {
-  /* ajouter là-dedans les éléments qui ont besoin d'être 
-     resetés de manière très bourrine pour le print */
+  /* ajouter là-dedans les éléments qui ont besoin d'être
+   * resetés de manière très bourrine pour le print
+   */
   body,
   html {
     width: auto;
