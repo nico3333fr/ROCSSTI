@@ -556,6 +556,7 @@ select:focus:required:valid {
     padding: 0;
     float: none;
     position: static;
+    border: 0;
   }
 
   body {
