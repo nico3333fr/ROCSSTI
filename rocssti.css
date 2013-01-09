@@ -6,26 +6,27 @@
  * inspiré par http://www.knacss.com/
  *
  * ROCSSTI est sous licence CC-BY : http://creativecommons.org/licenses/by/3.0/fr/
- *  
+ * 
  * cette CSS est fournie telle quelle, sans aucune garantie d'aucun type, 
  * l'auteur ne saurait être tenu responsable de quoi que ce soit pour 
  * l'utilisation de RÖCSSTI.
  * 
  * résumé
- * 1- reset
- * 2- ainsi font font font + liens
- * 3- layout et modules
- * 4- structure (page / menuaccess / header / main content / footer)
- * 5- forms
- * 6- dans le contenu
- * 7- mobile
- * 8- homo tablettes
- * 9- print
+ * 1 - reset
+ * 2 - ainsi font font font + liens
+ * 3 - layout et modules
+ * 4 - structure (page / menuaccess / header / main content / footer)
+ * 5 - forms
+ * 6 - dans le contenu
+ * 7 - homo tablettes
+ * 8 - mobile
+ * 9 - print
+ * 10- fix viewport 
  */
 
 
 /**
- * 1- reset
+ * 1 - reset
  */
 /* spécial HTML 5 */
 article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, menu, nav, section, video { display: block; }
@@ -48,7 +49,7 @@ body {
 
 
 /**
- * 2- ainsi font font font = ici les web fonts
+ * 2 - ainsi font font font = ici les web fonts
  */
 @font-face {
 
@@ -97,12 +98,6 @@ h6,
   text-transform: uppercase;
 }
 
-.nomargin    { margin: 0; }
-.nomargintop { margin-top: 0; }
-.nopadding   { padding: 0; }
-.noborder,
-iframe { border: 0; }
-
 /* autres classes utiles */
 .smaller {
   font-size: .7143em; /* equiv 10px */
@@ -129,6 +124,13 @@ iframe { border: 0; }
   line-height: 1.05em;
   margin: 1.05em 0;
 }
+
+.nomargin    { margin: 0; }
+.nomargintop { margin-top: 0; }
+.nopadding   { padding: 0; }
+.noborder,
+iframe { border: 0; }
+
 
 /* éviter problèmes de margin */
 h1:first-child,
@@ -236,7 +238,7 @@ a[href$=".pdf"] {
 
 
 /**
- * 3- layout et modules
+ * 3 - layout et modules
  */
 
 /* ça dépend, ça dépasse */
@@ -360,7 +362,7 @@ hr {
 
 
 /**
- * 4- structure globale (page / menuaccess / header / contenu principal / footer)
+ * 4 - structure globale (page / menuaccess / header / contenu principal / footer)
  */
 
 /* --- page --- */
@@ -417,7 +419,7 @@ hr {
 
 
 /**
- * 5- forms
+ * 5 - forms
  */
 
 /* donne envie de cliquer sur un bouton */
@@ -504,7 +506,7 @@ select:focus:required:valid {
 
 
 /**
- * 6- dans le contenu (contenus spécifiques aux pages)
+ * 6 - dans le contenu (contenus spécifiques aux pages)
  */
 
 /* home */
@@ -512,22 +514,12 @@ select:focus:required:valid {
 
 
 /**
- * 7- mobile
- */
-@media (max-width: 640px) {
-
-  /* cachage des éléments inutiles, chabitte ! */
-  .nomobile { display: none; }
-
-  /* ici fix propriétés particulières */
-
-}
-
-
-/**
- * 8- homo tablettes
+ * 7 - homo tablettes
  */
 @media (max-width: 768px) {
+   
+  /* affichage des éléments */
+  .nodesktop { display: block; }
 
   /* cachage des éléments inutiles, chabitte ! */
   .notablet { display: none; }
@@ -537,8 +529,28 @@ select:focus:required:valid {
 }
 
 
+
 /**
- * 9- print
+ * 8 - mobile
+ */
+@media (max-width: 640px) {
+
+  /* affichage des éléments */
+  .notablet { display: block; }
+
+  /* cachage des éléments inutiles, chabitte ! */
+  .nomobile { display: none; }
+
+  /* ici fix propriétés particulières */
+
+}
+
+
+
+
+
+/**
+ * 9 - print
  */
 @media print {
   /* ajouter là-dedans les éléments qui ont besoin d'être
@@ -575,3 +587,38 @@ select:focus:required:valid {
 
 
 } /* end print */
+
+
+
+
+/**
+ * 10 - fix viewport
+ */
+
+/* fix viewport pour Win8 (snap mode) et préparer le jour 
+ * où le viewport sera supporté par tous les moteurs 
+ *  
+ * Exemples : http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/
+ * width=device-width   => width: device-width;
+ * height=device-height => height: device-height;
+ * initial-scale=2      => zoom: 2;
+ * maximum-scale=2      => max-zoom: 2;
+ * minimum-scale=0.5    => min-zoom: 0.5;
+ * user-scalable=no     => user-zoom: fixed;
+ */
+
+@-webkit-viewport {
+  zoom: 1;
+}
+@-moz-viewport {
+  zoom: 1;
+}
+@-ms-viewport {
+  zoom: 1;
+}
+@-o-viewport {
+  zoom: 1;
+}
+@viewport {
+  zoom: 1;
+}
