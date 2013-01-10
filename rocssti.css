@@ -605,20 +605,22 @@ select:focus:required:valid {
  * maximum-scale=2      => max-zoom: 2;
  * minimum-scale=0.5    => min-zoom: 0.5;
  * user-scalable=no     => user-zoom: fixed;
+ * 
+ * pour le snap mode de Win8 => seul width: device-width; fonctionne pour l'instant  
  */
 
 @-webkit-viewport {
-  zoom: 1;
+  width: device-width;
 }
 @-moz-viewport {
-  zoom: 1;
+  width: device-width;
 }
 @-ms-viewport {
-  zoom: 1;
+  width: device-width;
 }
 @-o-viewport {
-  zoom: 1;
+  width: device-width;
 }
 @viewport {
-  zoom: 1;
+  width: device-width;
 }
