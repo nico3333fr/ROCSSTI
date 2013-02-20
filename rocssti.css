@@ -597,6 +597,7 @@ select:focus:required:valid {
     background-color: #fff;
     color: #000;
     background-image: none;
+    box-shadow: none;
     padding: 0;
     float: none;
     position: static;
@@ -617,11 +618,20 @@ select:focus:required:valid {
     display: block;
   }
   
+  /* éviter saut de page hasardeux */
   blockquote, ul, ol {
     page-break-inside: avoid;
   }
   h1, h2, h3, caption {
     page-break-after: avoid;
+  }
+  
+  /* affichage des liens, sauf pour image contenue */
+  a:after {
+    content: " (" attr(href) ") ";
+  }
+  a:after img {
+    content: "";
   }
 
   /* ici fix propriétés particulières */
