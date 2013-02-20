@@ -463,6 +463,11 @@ input[type="checkbox"] {
   background-color: none;
 }
 
+/* pour annuler la taille des inputs ou autres */
+.auto {
+  width: auto;
+}
+
 /* messages d'erreur ou de confirmation */
 .alert,
 .alert input,
