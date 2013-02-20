@@ -523,8 +523,21 @@ select:focus:required:valid {
 
   /* cachage des éléments inutiles, chabitte ! */
   .notablet { display: none; }
+  
+  /* linéarisation contenus flottants */
+  .autotablet {
+    width: auto;
+    float: none;
+  }
 
-  /* ici fix propriétés particulières */
+  /**
+   * adaptation structure globale (page / menuaccess / header / contenu principal / footer)
+   */
+  
+  
+  /**
+   * dans le contenu (contenus spécifiques aux pages)
+   */
 
 }
 
@@ -541,7 +554,20 @@ select:focus:required:valid {
   /* cachage des éléments inutiles, chabitte ! */
   .nomobile { display: none; }
 
-  /* ici fix propriétés particulières */
+  /* linéarisation contenus flottants */
+  .automobile {
+    width: auto;
+    float: none;
+  }
+
+  /**
+   * adaptation structure globale (page / menuaccess / header / contenu principal / footer)
+   */
+  
+  
+  /**
+   * dans le contenu (contenus spécifiques aux pages)
+   */
 
 }
 
@@ -557,7 +583,8 @@ select:focus:required:valid {
    * resetés de manière très bourrine pour le print
    */
   body,
-  html {
+  html,
+  #page {
     width: auto;
     height: auto;
     min-height: auto;
@@ -576,11 +603,20 @@ select:focus:required:valid {
   }
 
   /* cachage des éléments inutiles, chabitte ! */
-  #navigation,
-  #menuaccess,
-  .noprint,
-  .rsalc {
+  .noprint {
     display: none;
+  }
+  
+  /* affichage éléments spécifiques au print */
+  .onprint {
+    display: block;
+  }
+  
+  blockquote, ul, ol {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, caption {
+    page-break-after: avoid;
   }
 
   /* ici fix propriétés particulières */
