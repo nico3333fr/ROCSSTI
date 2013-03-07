@@ -452,6 +452,16 @@ textarea {
   padding: .5em;
   border-radius: 5px;
 }
+
+/* à adapter selon le design voulu */
+.button {
+  background: #fff;
+  color: #000;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 1px #ddd; 
+  box-shadow: 1px 1px 1px #ddd; 
+}
+
 /* 
  * évite dimensionnement des radios et checkboxes
  * et un affichage différent sous IE 
@@ -627,6 +637,8 @@ select:focus:required:valid {
   }
   
   /* affichage des liens, sauf pour image contenue */
+  /* attention, penser à vérifier le résultat et penser 
+   * à limiter cette possibilité aux liens dans le contenu */
   a:after {
     content: " (" attr(href) ") ";
   }
