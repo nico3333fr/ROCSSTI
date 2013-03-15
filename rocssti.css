@@ -22,6 +22,7 @@
  * 8 - mobile
  * 9 - print
  * 10- fix viewport 
+ * Bonus : Fixes IE
  */
 
 
@@ -687,3 +688,36 @@ select:focus:required:valid {
 @viewport {
   width: device-width;
 }
+
+
+
+/**
+ * Bonus : Fixes IE
+ */
+
+/*  
+ * basé sur les classes conditionnelles sur l'élément HTML
+ *  
+ * à utiliser seulement si peu de corrections et 
+ * pas d'impact sur les perfs sur les autres navigateurs
+ *       
+ */
+
+/* less than IE 9 */
+.oldies .nooldies {
+  display: none;
+}
+
+.ie6 .noie6 {
+  display: none;
+}
+.ie7 .noie7 {
+  display: none;
+}
+.ie8 .noie8 {
+  display: none;
+}
+.ie9 .noie9 {
+  display: none;
+}
+
