@@ -222,7 +222,7 @@ a[href^="http://"],
 a[href^="https://"] {
 
 }
-/* if si full URL of the website on an external link, remove icon */
+/* if full URL of the website in an internal link, remove icon */
 a[href^="http://www.mydomaine.com"] {
 
 }
@@ -443,7 +443,7 @@ select {
   vertical-align: middle;
 }
 
-/* to adapt to wanted design */
+/* to adapt to your design */
 input,
 select,
 textarea {
@@ -453,7 +453,7 @@ textarea {
   border-radius: 5px;
 }
 
-/* to adapt to wanted design */
+/* to adapt to your design */
 .button {
   background: #fff;
   color: #000;
