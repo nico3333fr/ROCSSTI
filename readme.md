@@ -11,7 +11,7 @@ L'idée est la suivante :
 
 Si vous doutez du côté pratique, cette base CSS sera enrichie au fil des projets réels que je réaliserai avec. Pour information, mon job actuel m'a permis de faire 10 réalisations dans des styles très différents avec RÖCSSTI, cela va de sites relativement simples à des sites plus complexes en responsive. Le gain de temps au démarrage du projet ainsi que la réutilisabilité du code sont réelles et perceptibles.
 
-onventions de nommage
+Conventions de nommage
     
     
 - Indentation : 2 espaces pour les propriétés
