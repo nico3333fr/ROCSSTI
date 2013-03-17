@@ -20,11 +20,17 @@ onventions de nommage
 - Écriture des propriétés ainsi : 
           
 Sur une ligne (1 ou 2 propriétés max) : p { margin: 0 0 1em; }
+
 Sur plusieurs lignes 
+
 h1, 
+
 .h1 {
+
   font-size: 1.8571em;
+
   /* etc. */
+
 }
           
       
