@@ -186,11 +186,18 @@ code {
 table {
   margin-bottom: 1.5em;
 }
-/* important, abbr are good */
+
 abbr {
   cursor: help;
   border-bottom: 1px dotted #000;
 }
+/* important, abbr are good */
+/* only those with a title are shown */
+abbr[title] {
+  cursor: help;
+  border-bottom: dotted 1px; 
+  /* color inherited from text */
+} 
 
 /* text aligns */
 .alignright  { text-align: right; }
