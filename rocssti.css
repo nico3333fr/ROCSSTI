@@ -188,10 +188,12 @@ table {
   margin-bottom: 1.5em;
 }
 /* j'y tiens, les abbr c'est bon pour la planète */
-abbr {
+/* seuls ceux ayant un title sont signalés */
+abbr[title] {
   cursor: help;
-  border-bottom: 1px dotted #000;
-}
+  border-bottom: dotted 1px; 
+  /* couleur héritée du texte */
+} 
 
 /* alignements de textes */
 .alignright  { text-align: right; }
