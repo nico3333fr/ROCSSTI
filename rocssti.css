@@ -291,6 +291,10 @@ input {
 
 
 /* largeurs de blocks */
+.w1   { width: 1%; }
+.w2   { width: 2%; }
+.w3   { width: 3%; }
+.w5   { width: 5%; }
 .w10  { width: 10%; }
 .w20  { width: 20%; }
 .w25  { width: 25%; }
