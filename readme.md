@@ -37,5 +37,6 @@ h1,
 - Utilisation des minuscules pour les valeurs hexadécimales, exemple : `#efe`
 - Utilisation des notations compactes, exemple : `margin: .5em;`
 - Pour toute valeur nulle, pas d'unité quand c'est autorisé, exemple : `margin: 0;`
+- Nommage des propriétés CSS par ordre alphabétique, quand c'est possible.
 
 http://rocssti.nicolas-hoffmann.net/
