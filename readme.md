@@ -2,12 +2,15 @@
 
 # RÖCSSTI : pour démarrer vos CSS avec la patate !
 
-RÖCSSTI – prononcez Rochti – est ma petite base de départ en matière de CSS. Le nom – volontairement ridicule – est un clin d'oeil amical à KNACSS, un excellent micro-framework CSS de Raphaël Goetter, dont RÖCSSTI reprend des éléments, réaccomodés à ma façon pour répondre à mes besoins et mes habitudes au boulot.
+RÖCSSTI – prononcez Rochti – est ma petite base de départ en matière de CSS. 
+
+Le nom – volontairement ridicule – est un clin d'oeil amical à KNACSS, un excellent micro-framework CSS de Raphaël Goetter, dont RÖCSSTI reprend des éléments, réaccomodés à ma façon pour répondre à mes besoins et mes habitudes au boulot.
 
 L'idée est la suivante :
 
 - Avoir une organisation de travail (via une méthode de rangement et une convention de nommage) ;
 - Penser une bonne base de départ, incluant quelques éléments d'accessibilité, comme les liens d'évitement, afin d'être sûr de ne pas les oublier ;
+- Avoir un système de classes réutilisables et favorisant une approche DRY ;
 - Avoir de petites astuces pratiques et sympathiques qui améliorent la conception et l'utilisation d'un site ;
 - Bref, avoir un socle robuste et éprouvé par des réalisations en milieu professionnel qui l'utilisent et le nourrissent.
 
