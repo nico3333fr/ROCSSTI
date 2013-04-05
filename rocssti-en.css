@@ -187,10 +187,6 @@ table {
   margin-bottom: 1.5em;
 }
 
-abbr {
-  border-bottom: 1px dotted #000;
-  cursor: help;
-}
 /* important, abbr are good */
 /* only those with a title are shown */
 abbr[title] {
