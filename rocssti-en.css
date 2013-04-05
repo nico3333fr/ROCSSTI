@@ -155,8 +155,8 @@ table:last-child {
 /* avoid margin on nested elements */
 li p,
 li ul {
-  margin-top: 0;
   margin-bottom: 0;
+  margin-top: 0;
 }
 /* Thou shalt not pass (Moïse or Gandalf, don't remember) */
 textarea,
@@ -188,8 +188,8 @@ table {
 }
 
 abbr {
-  cursor: help;
   border-bottom: 1px dotted #000;
+  cursor: help;
 }
 /* important, abbr are good */
 /* only those with a title are shown */
@@ -257,8 +257,8 @@ code,
 pre,
 textarea,
 input {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 /* no reset on embed, object & video, some players don't like */
 
@@ -282,9 +282,9 @@ input {
 }
 .clearhidden {
   clear: both;
-  visibility: hidden;
   margin: 0;
   padding: 0;
+  visibility: hidden;
 }
 
 /* centered block */
@@ -345,12 +345,12 @@ input {
 
 /* for 1px-high hr */
 hr {
+  background-color: #000;
+  border: 0;
+  color: #000;
+  height: 1px;
   margin: 0 0 1em;
   padding: 0;
-  color: #000;
-  background-color: #000;
-  height: 1px;
-  border: 0;
 }
 
 /* to hide text with accessibility… a11y */
@@ -459,18 +459,18 @@ input,
 select,
 textarea {
   border: 1px solid #000;
+  border-radius: 5px;
   width: 250px;
   padding: .5em;
-  border-radius: 5px;
 }
 
 /* to adapt to your design */
 .button {
   background: #fff;
-  color: #000;
   border-radius: 5px;
   -webkit-box-shadow: 1px 1px 1px #ddd; 
   box-shadow: 1px 1px 1px #ddd; 
+  color: #000;
 }
 
 /* 
@@ -479,9 +479,9 @@ textarea {
  */
 input[type="radio"],
 input[type="checkbox"] {
-  width: auto;
-  border: 0;
   background-color: none;
+  border: 0;
+  width: auto;
 }
 
 /* to cancel input sizing or other if needed */
@@ -552,8 +552,8 @@ select:focus:required:valid {
   
   /* linearization of floating content */
   .autotablet {
-    width: auto;
     float: none;
+    width: auto;
   }
 
   /**
@@ -582,8 +582,8 @@ select:focus:required:valid {
 
   /* linearization of floating content */
   .automobile {
-    width: auto;
     float: none;
+    width: auto;
   }
 
   /**
@@ -611,18 +611,18 @@ select:focus:required:valid {
   body,
   html,
   #page {
-    width: auto;
+    background-color: #fff;
+    background-image: none;
+    border: 0;
+    box-shadow: none;
+    color: #000;
+    float: none;
     height: auto;
     min-height: auto;
     margin: 0;
-    background-color: #fff;
-    color: #000;
-    background-image: none;
-    box-shadow: none;
     padding: 0;
-    float: none;
     position: static;
-    border: 0;
+    width: auto;
   }
 
   body {
