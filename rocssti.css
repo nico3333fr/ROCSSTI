@@ -156,8 +156,8 @@ table:last-child {
 /* éviter marges supplémentaires sur éléments imbriqués */
 li p,
 li ul {
-  margin-top: 0;
   margin-bottom: 0;
+  margin-top: 0;
 }
 /* Vous ne passerez PAS (Gandalf) */
 textarea,
@@ -190,8 +190,8 @@ table {
 /* j'y tiens, les abbr c'est bon pour la planète */
 /* seuls ceux ayant un title sont signalés */
 abbr[title] {
-  cursor: help;
   border-bottom: dotted 1px; 
+  cursor: help;
   /* couleur héritée du texte */
 } 
 
@@ -253,8 +253,8 @@ code,
 pre,
 textarea,
 input {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 /* pas de reset sur embed, object et video, ça fait foirer certains players */
 
@@ -278,9 +278,9 @@ input {
 }
 .clearhidden {
   clear: both;
-  visibility: hidden;
   margin: 0;
   padding: 0;
+  visibility: hidden;
 }
 
 /* bloc centré */
@@ -341,12 +341,12 @@ input {
 
 /* spécial hr de 1px de haut */
 hr {
+  background-color: #000;
+  border: 0;
+  color: #000;
+  height: 1px;
   margin: 0 0 1em;
   padding: 0;
-  color: #000;
-  background-color: #000;
-  height: 1px;
-  border: 0;
 }
 
 /* pour cacher du texte de manière accessible… toussââââ */
@@ -374,9 +374,9 @@ hr {
 
 /* --- page --- */
 #page {
+  margin: 0 auto;
   position: relative;
   width: 960px;
-  margin: 0 auto;
 }
 
 /* --- menuaccess = liens d'évitement --- */
@@ -455,18 +455,18 @@ input,
 select,
 textarea {
   border: 1px solid #000;
-  width: 250px;
-  padding: .5em;
   border-radius: 5px;
+  padding: .5em;
+  width: 250px;
 }
 
 /* à adapter selon le design voulu */
 .button {
   background: #fff;
-  color: #000;
   border-radius: 5px;
   -webkit-box-shadow: 1px 1px 1px #ddd; 
   box-shadow: 1px 1px 1px #ddd; 
+  color: #000;
 }
 
 /* 
@@ -475,9 +475,9 @@ textarea {
  */
 input[type="radio"],
 input[type="checkbox"] {
-  width: auto;
-  border: 0;
   background-color: none;
+  border: 0;
+  width: auto;
 }
 
 /* pour annuler la taille des inputs ou autres */
@@ -548,8 +548,8 @@ select:focus:required:valid {
   
   /* linéarisation contenus flottants */
   .autotablet {
-    width: auto;
     float: none;
+    width: auto;
   }
 
   /**
@@ -578,8 +578,8 @@ select:focus:required:valid {
 
   /* linéarisation contenus flottants */
   .automobile {
-    width: auto;
     float: none;
+    width: auto;
   }
 
   /**
@@ -607,18 +607,18 @@ select:focus:required:valid {
   body,
   html,
   #page {
-    width: auto;
-    height: auto;
-    min-height: auto;
-    margin: 0;
     background-color: #fff;
-    color: #000;
     background-image: none;
-    box-shadow: none;
-    padding: 0;
-    float: none;
-    position: static;
     border: 0;
+    box-shadow: none;
+    color: #000;
+    float: none;
+    height: auto;
+    margin: 0;
+    min-height: auto;
+    padding: 0;
+    position: static;
+    width: auto;
   }
 
   body {
