@@ -183,6 +183,12 @@ samp {
 code {
   line-height: 1em;
 }
+kbd {
+  border: solid 1px;
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+  padding: 0 .25em;
+}
 table {
   margin-bottom: 1.5em;
 }
