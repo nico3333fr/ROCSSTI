@@ -264,6 +264,12 @@ input {
 }
 /* pas de reset sur embed, object et video, ça fait foirer certains players */
 
+/* utile pour gérer les floattants */
+/* contient des floats */
+.mod { 
+  overflow: auto;
+}
+
 /* quelques floattants */
 .left {
   float: left;
@@ -287,6 +293,18 @@ input {
   margin: 0;
   padding: 0;
   visibility: hidden;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* gouttière */
+.gut {
+  height: 1px;
 }
 
 /* bloc centré */
