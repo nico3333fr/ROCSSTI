@@ -264,6 +264,12 @@ input {
 }
 /* no reset on embed, object & video, some players don't like */
 
+/* useful to manage floats */
+/* containing floats */
+.mod { 
+  overflow: auto;
+}
+
 /* some floattings */
 .left {
   float: left;
@@ -287,6 +293,18 @@ input {
   margin: 0;
   padding: 0;
   visibility: hidden;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* gut : "spacing" empty div */
+.gut {
+  height: 1px;
 }
 
 /* centered block */
