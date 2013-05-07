@@ -175,6 +175,16 @@ p {
   -o-hyphens: auto;
   hyphens: auto;
 }
+/* remove hyphenation if needed */
+.nocut {
+  word-wrap: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  hyphens: none;
+}
+
 code,
 pre,
 samp {
