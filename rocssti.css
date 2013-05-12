@@ -132,6 +132,18 @@ h6,
 .noborder,
 iframe { border: 0; }
 
+/* éviter interlignage disgracieux */
+sup,
+sub {
+  vertical-align: 0;
+  position: relative;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
 
 /* éviter problèmes de margin */
 h1:first-child,
