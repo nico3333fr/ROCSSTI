@@ -240,9 +240,10 @@ a:active,
 a:focus {
   color: #000;
 }
-/* avoid border on images in links */
+/* avoid border on images in links + fix border image IE */
 a:link img,
-a:visited img {
+a:visited img,
+img {
   border-style: none;
 }
 
