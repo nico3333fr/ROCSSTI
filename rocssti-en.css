@@ -29,7 +29,7 @@
  * 1 - reset
  */
 /* for HTML 5 */
-article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, menu, nav, section, video { display: block; }
+article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section, video { display: block; }
 abbr, eventsource, mark, meter, time, progress, output, bb { display: inline; }
 
 /* reset minimum */
