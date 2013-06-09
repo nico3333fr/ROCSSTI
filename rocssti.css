@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* UTF-8 déclaré avant toute chose */
 
-/**
+/******************************************************************
  * ROCSSTI : une base CSS par Nicolas Hoffmann http://rocssti.nicolas-hoffmann.net/
  * inspiré par http://www.knacss.com/
  *
@@ -12,23 +12,33 @@
  * l'utilisation de RÖCSSTI.
  * 
  * résumé
- * 1 - reset
- * 2 - ainsi font font font + liens
- * 3 - layout et modules
- * 4 - structure (page / menuaccess / header / main content / footer)
- * 5 - forms
- * 6 - dans le contenu
- * 7 - homo tablettes
- * 8 - mobile
- * 9 - print
- * 10- fix viewport 
- * Bonus : Fixes IE
+ * 01 -- reset
+ * 02 -- ainsi font font font + structure Hx
+ * 03 -- classes utilitaires + fix typos + styles "balises fixes"
+ * 04 -- liens + icônes
+ * 05 -- layout et modules
+ * 06 -- structure (page / menuaccess / header / main content / footer)
+ * 07 -- forms
+ * 08 -- dans le contenu
+ * 09 -- breakpoints mineurs entre desktop et tablettes
+ * 10 -- homo tablettes - breakpoint majeur
+ * 11 -- breakpoints mineurs entre tablettes et mobile
+ * 12 -- mobile - breakpoint majeur
+ * 13 -- breakpoints mineurs tout petit mobile
+ * 14 -- print
+ * 15 -- fix viewport 
+ * 16 -- bonus : Fixes IE
  */
 
 
-/**
- * 1 - reset
+
+
+/*
+ *****************************************************************
+ * 1 -- reset
+ *****************************************************************
  */
+
 /* spécial HTML 5 */
 article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section, video { display: block; }
 abbr, eventsource, mark, meter, time, progress, output, bb { display: inline; }
@@ -38,6 +48,7 @@ html, body, blockquote, ul, ol, form { margin: 0; padding: 0; }
 p { margin: 0 0 1em; }
 ul, ol { padding-left: 2em; }
 
+
 /* la base correspond à 10px */
 html { font-size: 62.5%; }
 body {
@@ -45,13 +56,18 @@ body {
   color: #333;
   font-family: Arial, helvetica, sans-serif;
   font-size: 1.4em; /* taille de base équiv à 14px */
-  line-height: 150%; /* à corriger si besoin est */
+  line-height: 1.5; /* à corriger si besoin est */
 }
 
 
-/**
- * 2 - ainsi font font font = ici les web fonts
- */
+
+
+/*
+ *****************************************************************
+ * 02 -- ainsi font font font + structure Hx
+ *****************************************************************
+ */ 
+
 @font-face {
 
 }
@@ -125,6 +141,15 @@ h6,
   line-height: 1.05em;
   margin: 1.05em 0;
 }
+
+
+
+
+/*
+ *****************************************************************
+ * 03 -- classes utilitaires + fix typos + styles "balises fixes"
+ *****************************************************************
+ */
 
 .nomargin    { margin: 0; }
 .nomargintop { margin-top: 0; }
@@ -230,9 +255,19 @@ abbr[title] {
 .aligntop    { vertical-align: top; }
 .alignbottom { vertical-align: bottom; }
 
+
+
+
+/*
+ *****************************************************************
+ * 04 -- liens + icônes
+ *****************************************************************
+ */
+
 /* Liens */
 a {
   color: #2573be;
+  cursor: pointer;
 }
 /* penser au focus */
 a:hover,
@@ -269,8 +304,12 @@ a[href$=".pdf"] {
 }
 
 
-/**
- * 3 - layout et modules
+
+
+/*
+ *****************************************************************
+ * 05 -- layout et modules
+ *****************************************************************
  */
 
 /* ça dépend, ça dépasse */
@@ -330,6 +369,16 @@ input {
   height: 1px;
 }
 
+/* gestion du table-design en CSS */
+.row {
+  display: table;
+}
+.col {
+  display: table-cell;
+  vertical-align: top;
+}
+
+
 /* bloc centré */
 .margesauto {
   margin-left: auto;
@@ -361,6 +410,9 @@ input {
 
 /* ici ajouter les largeurs en pixels */
 .w500p { width: 500px; }
+
+/* ici ajouter les largeurs max en pixels */
+.mw960p { max-width: 960px; }
 
 /* margins */
 .mt1 { margin-top: 1em; }
@@ -415,18 +467,23 @@ hr {
 .nomobile  {} /* caché sur mobile */
 
 
-/**
- * 4 - structure globale (page / menuaccess / header / contenu principal / footer)
+
+
+/*
+ *****************************************************************
+ * 06 -- structure globale 
+ *      (page / menuaccess / header / contenu principal / footer)
+ *****************************************************************
  */
 
-/* --- page --- */
+/* === page === */
 #page {
   margin: 0 auto;
   position: relative;
   width: 960px;
 }
 
-/* --- menuaccess = liens d'évitement --- */
+/* === menuaccess = liens d'évitement === */
 #menuaccess {
 
 }
@@ -443,7 +500,7 @@ hr {
 
 
 
-/* --- header --- */
+/* === header === */
 #header {
 
 }
@@ -455,13 +512,13 @@ hr {
 }
 
 
-/* --- contenu principal --- */
+/* === contenu principal === */
 #main {
 
 }
 
 
-/* --- footer --- */
+/* === footer === */
 #footer {
 
 }
@@ -472,8 +529,12 @@ hr {
 }
 
 
-/**
- * 5 - forms
+
+
+/*
+ *****************************************************************
+ * 07 -- forms
+ *****************************************************************
  */
 
 /* donne envie de cliquer sur un bouton */
@@ -517,11 +578,12 @@ textarea {
 }
 
 /* 
- * évite dimensionnement des radios et checkboxes
+ * évite dimensionnement des radios, checkboxes et images
  * et un affichage différent sous IE 
  */
 input[type="radio"],
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="image"] {
   background-color: none;
   border: 0;
   width: auto;
@@ -554,7 +616,8 @@ input[type="checkbox"] {
 
 }
 
-/* peut être complété par les attributs HTML5 required
+/* 
+ * peut être complété par les attributs HTML5 required
  * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi
  */
 select:required:invalid,
@@ -574,17 +637,36 @@ select:focus:required:valid {
 }
 
 
-/**
- * 6 - dans le contenu (contenus spécifiques aux pages)
+
+
+/*
+ *****************************************************************
+ * 08 -- dans le contenu (contenus spécifiques aux pages)
+ *****************************************************************
  */
 
 /* home */
 
 
 
-/**
- * 7 - homo tablettes
+
+
+/*
+ *****************************************************************
+ * 09 -- breakpoints mineurs entre desktop et tablettes
+ *****************************************************************
  */
+
+
+
+
+
+/*
+ *****************************************************************
+ * 10 -- homo tablettes - breakpoint majeur
+ *****************************************************************
+ */ 
+
 @media (max-width: 768px) {
    
   /* affichage des éléments */
@@ -612,9 +694,24 @@ select:focus:required:valid {
 
 
 
-/**
- * 8 - mobile
+
+/*
+ *****************************************************************
+ * 11 -- breakpoints mineurs entre tablettes et mobile
+ *****************************************************************
  */
+
+
+
+
+
+
+/*
+ *****************************************************************
+ * 12 -- mobile - breakpoint majeur
+ *****************************************************************
+ */
+
 @media (max-width: 640px) {
 
   /* affichage des éléments */
@@ -643,10 +740,22 @@ select:focus:required:valid {
 
 
 
-
-/**
- * 9 - print
+/*
+ *****************************************************************
+ * 13 -- breakpoints mineurs tout petit mobile
+ *****************************************************************
  */
+
+
+
+
+
+/*
+ *****************************************************************
+ * 14 -- print
+ *****************************************************************
+ */
+
 @media print {
   /* ajouter là-dedans les éléments qui ont besoin d'être
    * resetés de manière très bourrine pour le print
@@ -708,8 +817,10 @@ select:focus:required:valid {
 
 
 
-/**
- * 10 - fix viewport
+/*
+ *****************************************************************
+ * 15 -- fix viewport
+ *****************************************************************
  */
 
 /* fix viewport pour Win8 (snap mode) et préparer le jour 
@@ -744,8 +855,11 @@ select:focus:required:valid {
 
 
 
-/**
- * Bonus : Fixes IE
+
+/*
+ *****************************************************************
+ * 16 -- Bonus : Fixes IE
+ *****************************************************************
  */
 
 /*  
@@ -774,3 +888,7 @@ select:focus:required:valid {
   display: none;
 }
 
+.ie7 .col, 
+.ie6 .col {
+  float: left;
+}
