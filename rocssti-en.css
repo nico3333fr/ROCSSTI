@@ -6,28 +6,38 @@
  * inspired by http://www.knacss.com/
  *
  * ROCSSTI is under CC-BY licence : http://creativecommons.org/licenses/by/3.0/
- * 
- * this CSS is provided "as is", without any warranty of any type, 
+ *
+ * this CSS is provided "as is", without any warranty of any type,
  * author can't be responsible of anything you might do with RÖCSSTI
  * 
  * summary
- * 1 - reset
- * 2 - webfonts + links
- * 3 - layout & modules
- * 4 - structure (page / menuaccess / header / main content / footer)
- * 5 - forms
- * 6 - inside content
- * 7 - tablets
- * 8 - mobile
- * 9 - print
- * 10- fix viewport 
- * Bonus : Fixes IE
+ * 01 -- reset
+ * 02 -- webfonts + Hx structure
+ * 03 -- useful classes (utils) + typo fix + styles for "fixed tags"
+ * 04 -- links + icons
+ * 05 -- layout & modules
+ * 06 -- structure (page / menuaccess / header / main content / footer)
+ * 07 -- forms
+ * 08 -- inside content
+ * 09 -- minor breakpoints between desktop and tablets
+ * 10 -- tablets - major breakpoint
+ * 11 -- minor breakpoints between tablets and mobile
+ * 12 -- mobile - major breakpoint
+ * 13 -- minor breakpoints for very small mobiles
+ * 14 -- print
+ * 15 -- fix viewport 
+ * 16 -- bonus : Fixes IE
  */
 
 
-/**
- * 1 - reset
+
+
+/*
+ *****************************************************************
+ * 1 -- reset
+ *****************************************************************
  */
+
 /* for HTML 5 */
 article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section, video { display: block; }
 abbr, eventsource, mark, meter, time, progress, output, bb { display: inline; }
@@ -37,6 +47,7 @@ html, body, blockquote, ul, ol, form { margin: 0; padding: 0; }
 p { margin: 0 0 1em; }
 ul, ol { padding-left: 2em; }
 
+
 /* base font size at 10px */
 html { font-size: 62.5%; }
 body {
@@ -44,13 +55,18 @@ body {
   color: #333;
   font-family: Arial, helvetica, sans-serif;
   font-size: 1.4em; /* font-size equiv to 14px */
-  line-height: 150%; /* to update if needed */
+  line-height: 1.5; /* to update if needed */
 }
 
 
-/**
- * 2 - webfonts + links
- */
+
+
+/*
+ *****************************************************************
+ * 02 -- webfonts + Hx structure 
+ *****************************************************************
+ */ 
+
 @font-face {
 
 }
@@ -98,7 +114,7 @@ h6,
   text-transform: uppercase;
 }
 
-/* other useful classes */
+/*  other useful classes */
 .smaller {
   font-size: .7143em; /* equiv 10px */
   line-height: 2.1em;
@@ -124,6 +140,15 @@ h6,
   line-height: 1.05em;
   margin: 1.05em 0;
 }
+
+
+
+
+/*
+ *****************************************************************
+ * 03 -- useful classes (utils) + typo fix + styles for "fixed tags"
+ *****************************************************************
+ */
 
 .nomargin    { margin: 0; }
 .nomargintop { margin-top: 0; }
@@ -214,12 +239,11 @@ kbd {
 table {
   margin-bottom: 1.5em;
 }
-
 /* important, abbr are good */
 /* only those with a title are shown */
 abbr[title] {
-  cursor: help;
   border-bottom: dotted 1px; 
+  cursor: help;
   /* color inherited from text */
 } 
 
@@ -230,9 +254,19 @@ abbr[title] {
 .aligntop    { vertical-align: top; }
 .alignbottom { vertical-align: bottom; }
 
+
+
+
+/*
+ *****************************************************************
+ * 04 -- links + icons
+ *****************************************************************
+ */
+
 /* links */
 a {
   color: #2573be;
+  cursor: pointer;
 }
 /* remember focus */
 a:hover,
@@ -242,7 +276,7 @@ a:focus {
 }
 /* avoid border on images in links + fix border image IE */
 a:link img,
-a:visited img,
+a:visited img, 
 img {
   border-style: none;
 }
@@ -269,8 +303,12 @@ a[href$=".pdf"] {
 }
 
 
-/**
- * 3 - layout & modules
+
+
+/*
+ *****************************************************************
+ * 05 -- layout & modules
+ *****************************************************************
  */
 
 /* it depends, it exceeds (french joke) */
@@ -289,7 +327,7 @@ input {
 
 /* useful to manage floats */
 /* containing floats */
-.mod { 
+.mod {
   overflow: auto;
 }
 
@@ -330,6 +368,16 @@ input {
   height: 1px;
 }
 
+/* table-design in CSS */
+.row {
+  display: table;
+}
+.col {
+  display: table-cell;
+  vertical-align: top;
+}
+
+
 /* centered block */
 .margesauto {
   margin-left: auto;
@@ -361,6 +409,9 @@ input {
 
 /* here you may add pixel widths */
 .w500p { width: 500px; }
+
+/* here you may add pixel max-widths */
+.mw960p { max-width: 960px; }
 
 /* margins */
 .mt1 { margin-top: 1em; }
@@ -415,15 +466,19 @@ hr {
 .nomobile  {} /* hidden on mobile */
 
 
-/**
- * 4 - structure (page / menuaccess / header / main content / footer)
+
+
+/*
+ *****************************************************************
+ * 06 -- structure (page / menuaccess / header / main content / footer)
+ *****************************************************************
  */
 
-/* --- page --- */
+/* === page === */
 #page {
+  margin: 0 auto;
   position: relative;
   width: 960px;
-  margin: 0 auto;
 }
 
 /* --- menuaccess = skip links --- */
@@ -472,8 +527,12 @@ hr {
 }
 
 
-/**
- * 5 - forms
+
+
+/*
+ *****************************************************************
+ * 07 -- forms
+ *****************************************************************
  */
 
 /* makes you want to click on */
@@ -511,17 +570,18 @@ textarea {
 .button {
   background: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 1px 1px 1px #ddd; 
-  box-shadow: 1px 1px 1px #ddd; 
+  -webkit-box-shadow: 1px 1px 1px #ddd;
+  box-shadow: 1px 1px 1px #ddd;
   color: #000;
 }
 
-/* 
- * avoids dimensioning for radio and checkboxes
- * and a different display on IE 
- */
+/*
+* avoids dimensioning for radio, checkboxes and images
+* and a different display on IE
+*/
 input[type="radio"],
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="image"] {
   background-color: none;
   border: 0;
   width: auto;
@@ -555,8 +615,8 @@ input[type="checkbox"] {
 }
 
 /* can be completed with HTML5 required attribute
- * example with a color, remember not only displaying information with it
- */
+* example with a color, remember not only displaying information with it
+*/
 select:required:invalid,
 input:required:invalid,
 input:focus:invalid,
@@ -574,17 +634,37 @@ select:focus:required:valid {
 }
 
 
-/**
- * 6 - inside content (other styles for pages)
+
+
+
+/*
+ *****************************************************************
+ * 08 -- inside content (other styles for pages)
+ *****************************************************************
  */
 
 /* home */
 
 
 
-/**
- * 7 - tablets
+
+
+/*
+ *****************************************************************
+ * 09 -- minor breakpoints between desktop and tablets
+ *****************************************************************
  */
+
+
+
+
+
+/*
+ *****************************************************************
+ * 10 -- tablets - major breakpoint
+ *****************************************************************
+ */ 
+
 @media (max-width: 768px) {
    
   /* display elements */
@@ -612,9 +692,25 @@ select:focus:required:valid {
 
 
 
-/**
- * 8 - mobile
+
+/*
+ *****************************************************************
+ * 11 -- minor breakpoints between tablets and mobile
+ *****************************************************************
  */
+
+
+
+
+
+
+
+/*
+ *****************************************************************
+ * 12 -- mobile - major breakpoint
+ *****************************************************************
+ */
+
 @media (max-width: 640px) {
 
   /* display elements */
@@ -643,12 +739,25 @@ select:focus:required:valid {
 
 
 
-
-/**
- * 9 - print
+/*
+ *****************************************************************
+ * 13 -- minor breakpoints for very small mobiles
+ *****************************************************************
  */
+
+
+
+
+
+/*
+ *****************************************************************
+ * 14 -- print
+ *****************************************************************
+ */
+
 @media print {
-  /* 
+
+  /*
    * add in this all elements which need to be hardly reseted for print
    */
   body,
@@ -708,21 +817,23 @@ select:focus:required:valid {
 
 
 
-/**
- * 10 - fix viewport
+/*
+ *****************************************************************
+ * 15 -- fix viewport
+ *****************************************************************
  */
 
-/* fix viewport for Win8 (snap mode) and preparing day 
- * when viewport will be supported by all render engines 
- *  
+/* fix viewport for Win8 (snap mode) and preparing day
+ * when viewport will be supported by all render engines
+ *
  * Examples : http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/
- * width=device-width   => width: device-width;
+ * width=device-width => width: device-width;
  * height=device-height => height: device-height;
- * initial-scale=2      => zoom: 2;
- * maximum-scale=2      => max-zoom: 2;
- * minimum-scale=0.5    => min-zoom: 0.5;
- * user-scalable=no     => user-zoom: fixed;
- * 
+ * initial-scale=2 => zoom: 2;
+ * maximum-scale=2 => max-zoom: 2;
+ * minimum-scale=0.5 => min-zoom: 0.5;
+ * user-scalable=no => user-zoom: fixed;
+ *
  * for Win8 snap mode => only width: device-width; works for the moment
  */
 
@@ -744,16 +855,19 @@ select:focus:required:valid {
 
 
 
-/**
- * Bonus : Fixes IE
+
+/*
+ *****************************************************************
+ * 16 -- Bonus: Fixes IE
+ *****************************************************************
  */
 
-/*  
+/*
  * based on conditional classes on HTML element
- *  
- * to be used only if there are not to many fixes & 
+ *
+ * to be used only if there are not to many fixes &
  * small impact on webperfs for other browsers
- *       
+ *
  */
 
 /* less than IE 9 */
@@ -774,3 +888,7 @@ select:focus:required:valid {
   display: none;
 }
 
+.ie7 .col, 
+.ie6 .col {
+  float: left;
+}
