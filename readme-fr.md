@@ -1,20 +1,24 @@
 <img src="http://rocssti.nicolas-hoffmann.net/style/rocssti_logo.png" alt="RÖCSSTI" />
 
-# RÖCSSTI : pour démarrer vos CSS avec la patate !
+# RÖCSSTI : le micro-framework CSS pour démarrer vos CSS avec la patate !
 
-RÖCSSTI – prononcez Rochti – est ma petite base de départ en matière de CSS. 
+RÖCSSTI – prononcez Rochti – est ma base de départ en matière de CSS. 
 
 Le nom – volontairement ridicule – est un clin d'oeil amical à KNACSS, un excellent micro-framework CSS de Raphaël Goetter, dont RÖCSSTI reprend des éléments, réaccomodés à ma façon pour répondre à mes besoins et mes habitudes au boulot.
 
 L'idée est la suivante :
 
 - Avoir une organisation de travail (via une méthode de rangement et une convention de nommage) ;
+- Permettre une approche allant toujours du plus global au plus particulier, ce qui permet de tirer un avantage maximal de la cascade CSS ;
 - Penser une bonne base de départ, incluant quelques éléments d'accessibilité, comme les liens d'évitement, afin d'être sûr de ne pas les oublier ;
 - Avoir un système de classes réutilisables et favorisant une approche DRY ;
 - Avoir de petites astuces pratiques et sympathiques qui améliorent la conception et l'utilisation d'un site ;
-- Bref, avoir un socle robuste et éprouvé par des réalisations en milieu professionnel qui l'utilisent et le nourrissent.
 
-Si vous doutez du côté pratique, cette base CSS sera enrichie au fil des projets réels que je réaliserai avec. Pour information, mon job actuel m'a permis de faire 10 réalisations dans des styles très différents avec RÖCSSTI, cela va de sites relativement simples à des sites plus complexes en responsive. Le gain de temps au démarrage du projet ainsi que la réutilisabilité du code sont réelles et perceptibles.
+Bref, avoir un socle robuste et éprouvé par des réalisations en milieu professionnel qui l'utilisent et le nourrissent.
+
+RÖCSSTI a aussi une version LESS, jetez un oeil dans le répertoire "less".
+
+Si vous doutez du côté pratique, cette base CSS sera enrichie au fil des projets réels que je réaliserai avec. Pour information, mon job actuel m'a permis de faire 14 réalisations dans des styles très différents avec RÖCSSTI, cela va de sites relativement simples à des sites plus complexes en responsive. Le gain de temps au démarrage du projet ainsi que la réutilisabilité du code sont réelles et perceptibles.
 
 ## Conventions de nommage
 
