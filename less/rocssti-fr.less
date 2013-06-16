@@ -64,7 +64,7 @@
 /* calculées via http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil */
 
 
-// rounding value is for number of digits after comma => 10000 => 1.6667 ; 100000 => 1.13374
+// valeur d'arrondi, pour le nombre de chiffres après la virgule => 10000 => 1.6667 ; 100000 => 1.13374
 .flow_hx(@font-size, @base-font: @basefont, @base-height: @l-h, @rounding-value: 10000) {
 
   @coef: ceil(1 / (@base-height * @base-font / @font-size));
@@ -79,7 +79,7 @@ margin: ( round(@mar-top*@rounding-value)/@rounding-value * @other_coef + 0em) 0
 
 }
 
-
+// pour les classes smaller, bigger, etc.
 .flow_other(@font-size, @base-font: @basefont, @base-height: @l-h, @rounding-value: 10000) {
 
 
