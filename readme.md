@@ -9,13 +9,16 @@ The name – absolutely ridiculous – is a friendly reference to KNACSS, a grea
 The goals are :
 
 - Having a workflow (including order and naming convention) ;
+- Having a structure that allows to go from global to particular ;
 - Thinking of a good CSS startbase, including accessibility elements, as skip links, to avoid forgetting them ;
 - Having a reusable class system (DRY : Don't Repeat Yourself) ;
 - Having some nice and practical tips that enhance integration and use of a website ;
-- To sum up, having a strong CSS base, used for and built from professional realisations.
+ 
+To sum up, having a strong CSS base, used for and built from professional realisations.
 
+RÖCSSTI has also a LESS version, see in "less" folder.
 
-Information : In my actual job, RÖCSSTI has been used for about 10 websites, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
+Information : In my actual job, RÖCSSTI has been used for about 14websites, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
 
 ## Naming conventions
 
