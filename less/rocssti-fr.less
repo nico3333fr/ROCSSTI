@@ -314,15 +314,16 @@ abbr[title] {
  */
 
 /* Liens */
+/* penser au focus */
 a {
   color: @color-links;
   cursor: pointer;
-}
-/* penser au focus */
-a:hover,
-a:active,
-a:focus {
-  color: @color-hover;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: @color-hover;
+  }
 }
 /* éviter la bordure sur une image comprise dans un lien + fix bordure image IE */
 a:link img,
@@ -533,18 +534,20 @@ hr {
 }
 
 /* === menuaccess = liens d'évitement === */
+
 #menuaccess {
-
-}
-/* idéalement mettez-les visibles pas uniquement au focus */
-#menuaccess a {
-
-}
-/* sinon pensez à les rendre visibles au focus */
-#menuaccess a:hover,
-#menuaccess a:active,
-#menuaccess a:focus {
-
+  /* positionnement des liens */
+  
+  & a { 
+  /* idéalement mettez-les visibles pas uniquement au focus */  
+    
+    
+    &:hover,
+    &:active,
+    &:focus {
+      /* sinon pensez à les rendre visibles au focus */
+    }
+  }
 }
 
 
