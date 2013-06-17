@@ -319,11 +319,24 @@ abbr[title] {
  */
 
 /* links */
+/* remember focus */
+a {
+  color: @color-links;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: @color-hover;
+  }
+}
+
+
 a {
   color: @color-links;
   cursor: pointer;
 }
-/* remember focus */
+
 a:hover,
 a:active,
 a:focus {
@@ -537,18 +550,20 @@ hr {
 }
 
 /* --- menuaccess = skip links --- */
+
 #menuaccess {
-
-}
-/* they should be visible not only on focus */
-#menuaccess a {
-
-}
-/* anyway remember making them visible on focus */
-#menuaccess a:hover,
-#menuaccess a:active,
-#menuaccess a:focus {
-
+  /* positionning of skip links */
+  
+  & a {
+  /* they should be visible not only on focus */
+    
+    
+    &:hover,
+    &:active,
+    &:focus {
+      /* anyway remember making them visible on focus */
+    }
+  }
 }
 
 
