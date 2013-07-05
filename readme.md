@@ -18,7 +18,9 @@ To sum up, having a strong CSS base, used for and built from professional realis
 
 RÖCSSTI has also a LESS version, see in "less" folder.
 
-Information: In my actual job, RÖCSSTI has been used for about 14 websites, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
+New : RÖCSSTI has a Sass version, see in "sass" folder.
+
+Information: In my actual job, RÖCSSTI has been used for about 15 websites, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
 
 ## Naming conventions
 
