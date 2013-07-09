@@ -41,7 +41,7 @@
 // Compass import 
 @import "compass/css3";
  
-// Sass values : adaptez-les à vos designs
+// Sass variables : adaptez-les à vos designs
 $basefont : 14; // si "14" alors 1em = 14px
 $l-h : 1.5; // equiv line-height 1.5em
 
@@ -439,6 +439,7 @@ input {
 /* gestion du table-design en CSS */
 .row {
   display: table;
+  table-layout: fixed;
 }
 .col {
   display: table-cell;
