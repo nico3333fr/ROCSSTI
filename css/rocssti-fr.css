@@ -893,3 +893,7 @@ select:focus:required:valid {
 .ie6 .col {
   float: left;
 }
+.ie7 .row,
+.ie6 .row {
+  overflow: auto;
+}
