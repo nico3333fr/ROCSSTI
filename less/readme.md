@@ -1,8 +1,8 @@
 <img src="http://rocssti.nicolas-hoffmann.net/style/rocssti_logo.png" alt="RÖCSSTI" />
 
-# RÖCSSTI : LESS version
+# RÖCSSTI: LESS version
 
-Here you may find english and french speaking LESS versions of RÖCSSTI.
+Here you may find english and french-speaking LESS versions of RÖCSSTI.
 
 
 ## Questions, remarks
