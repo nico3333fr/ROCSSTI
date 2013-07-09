@@ -371,6 +371,7 @@ input {
 /* table-design in CSS */
 .row {
   display: table;
+  table-layout: fixed;
 }
 .col {
   display: table-cell;
