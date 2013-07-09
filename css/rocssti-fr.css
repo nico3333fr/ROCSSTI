@@ -372,6 +372,7 @@ input {
 /* gestion du table-design en CSS */
 .row {
   display: table;
+  table-layout: fixed;
 }
 .col {
   display: table-cell;
