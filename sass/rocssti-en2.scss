@@ -1,0 +1,969 @@
+@charset "UTF-8";
+/* UTF-8 before doing anything */
+
+/**
+ * ROCSSTI : a CSS base by Nicolas Hoffmann http://rocssti.nicolas-hoffmann.net/
+ * inspired by http://www.knacss.com/
+ *
+ * ROCSSTI is under CC-BY licence : http://creativecommons.org/licenses/by/3.0/
+ *
+ * this CSS is provided "as is", without any warranty of any type,
+ * author can't be responsible of anything you might do with RÖCSSTI
+ *
+ * summary
+ * 00 -- Sass
+ * 01 -- reset
+ * 02 -- webfonts + Hx structure
+ * 03 -- useful classes (utils) + typo fix + styles for "fixed tags"
+ * 04 -- links + icons
+ * 05 -- layout & modules
+ * 06 -- structure (page / menuaccess / header / main content / footer)
+ * 07 -- forms
+ * 08 -- inside content
+ * 09 -- minor breakpoints between desktop and tablets
+ * 10 -- tablets - major breakpoint
+ * 11 -- minor breakpoints between tablets and mobile
+ * 12 -- mobile - major breakpoint
+ * 13 -- minor breakpoints for very small mobiles
+ * 14 -- print
+ * 15 -- fix viewport
+ * 16 -- bonus : Fixes IE
+ */
+
+
+/*
+*****************************************************************
+* 00 -- Sass
+*****************************************************************
+*/
+
+// Compass import
+@import "compass/css3";
+ 
+// Sass variables : adapt them to your designs
+$basefont : 14; // if "14" then 1em = 14px
+$l-h : 1.5; // equiv line-height 1.5em
+
+// colors
+$color-links : #2573be;
+$color-hover : #000;
+$hr : #000;
+$hr-height : 1px;
+$color-alert : #bf0000;
+
+// inputs
+$input-defaut-size : 250px;
+$input-defaut-border : 1px solid #000;
+
+
+// Sass functions : don't touch if you are not sure ;)
+
+@function em($px, $base: $basefont) {
+
+  @return ($px / $base) * 1em;
+
+}
+
+// based on http://soqr.fr/vertical-rhythm/ thanks @goetter & @eQRoeil */
+
+@function lineheight_em ($font-size, $base-height, $base-font){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+  $height: ($base-font * $base-height / $font-size) ;
+
+  @return ($height * $coef) * 1em;
+
+}
+
+@function margin_em ($font-size, $base-height, $base-font){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+  $other_coef: ceil($base-height * $base-font / $font-size);
+  $height: ($base-font * $base-height / $font-size) ;
+  $mar-top: ($height * $coef );
+
+  @return ( ($mar-top * $other_coef)*1em 0 ( ($mar-top/2) * $other_coef) *1em 0 );
+
+}
+
+@function margin_em_other ($font-size, $base-height, $base-font){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+  $height: ($base-font * $base-height / $font-size) ;
+  $mar-top: ($height * $coef );
+
+  @return ( ($mar-top)*1em 0 );
+
+}
+
+@mixin flow_hr( $value ){
+
+  font-size: em($value);
+  line-height: lineheight_em($value, $l-h, $basefont);
+  margin: margin_em($value, $l-h, $basefont) ;
+
+}
+
+@mixin flow_other( $value ){
+
+  font-size: em($value);
+  line-height: lineheight_em($value, $l-h, $basefont);
+  margin: margin_em_other($value, $l-h, $basefont) ;
+
+}
+
+@mixin vendor-prefix($name, $argument) {
+
+  -webkit-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+  -ms-#{$name}: $argument;
+  -o-#{$name}: $argument;
+  #{$name}: $argument;
+
+}
+
+
+
+/*
+*****************************************************************
+* 1 -- reset
+*****************************************************************
+*/
+
+/* for HTML 5 */
+article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section, video { display: block; }
+abbr, eventsource, mark, meter, time, progress, output, bb { display: inline; }
+
+/* reset minimum */
+html, body, blockquote, ul, ol, form { margin: 0; padding: 0; }
+p { margin: 0 0 1em; }
+ul, ol { padding-left: 2em; }
+
+
+/* base font size at 10px */
+html { font-size: 62.5%; }
+body {
+  background: #fff;
+  color: #333;
+  font-family: Arial, helvetica, sans-serif;
+  font-size: ($basefont / 10) + 0em;
+  line-height: $l-h; /* à corriger si besoin est */
+}
+
+
+
+
+/*
+*****************************************************************
+* 02 -- webfonts + Hx structure
+*****************************************************************
+*/
+
+/* here the font faces */
+@font-face {
+
+}
+
+h1,
+.h1 {
+  @include flow_hr(26); // equiv 26px
+  font-weight: normal;
+}
+h2,
+.h2 {
+  @include flow_hr(24); // equiv 24px
+  font-weight: normal;
+}
+h3,
+.h3 {
+  @include flow_hr(22); // equiv 22px
+  font-weight: normal;
+}
+h4,
+.h4 {
+  @include flow_hr(20); // equiv 20px
+  font-weight: normal;
+}
+h5,
+.h5 {
+  @include flow_hr(18); // equiv 18px
+  font-weight: normal;
+}
+h6,
+.h6 {
+  @include flow_hr(16); // equiv 16px
+  font-weight: normal;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* other useful classes */
+.smaller {
+  @include flow_other(10); // equiv 10px
+}
+.small {
+  @include flow_other(12); // equiv 12px
+}
+.big {
+  @include flow_other(16); // equiv 16px
+}
+.bigger {
+  @include flow_other(18);; // equiv 18px
+}
+.biggest {
+  @include flow_other(20);; // equiv 20px
+}
+
+
+
+
+/*
+*****************************************************************
+* 03 --  useful classes (utils) + typo fix + styles for "fixed tags"
+*****************************************************************
+*/
+
+.nomargin { margin: 0; }
+.nomargintop { margin-top: 0; }
+.nopadding { padding: 0; }
+.noborder,
+iframe { border: 0; }
+
+/* avoid ugly line-height */
+sup,
+sub {
+  vertical-align: 0;
+  position: relative;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
+
+/* avoid margin problems */
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+/* remove bottom margin on last child */
+p:last-child,
+ul:last-child,
+ol:last-child,
+dl:last-child,
+blockquote:last-child,
+pre:last-child,
+table:last-child {
+  margin-bottom: 0;
+}
+
+/* avoid margin on nested elements */
+li p,
+li ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+/* Thou shalt not pass (Moïse or Gandalf, don't remember) */
+textarea,
+table,
+td,
+th,
+code,
+pre,
+samp,
+div,
+p {
+  word-wrap: break-word;
+  @include vendor-prefix(hyphens, auto);
+}
+/* remove hyphenation if needed */
+.nocut {
+  word-wrap: normal;
+  @include vendor-prefix(hyphens, none);
+}
+
+code,
+pre,
+samp {
+  white-space: pre-wrap;
+}
+code {
+  line-height: 1em;
+}
+kbd {
+  border: solid 1px;
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+  padding: 0 .25em;
+}
+table {
+  margin-bottom: 1.5em;
+}
+/* important, abbr are good */
+/* only those with a title are shown */
+abbr[title] {
+  border-bottom: dotted 1px;
+  cursor: help;
+  /* color inherited from text */
+}
+
+/* text aligns */
+.alignright  { text-align: right; }
+.aligncenter { text-align: center; }
+.alignleft   { text-align: left; }
+.aligntop    { vertical-align: top; }
+.alignbottom { vertical-align: bottom; }
+
+
+
+
+/*
+*****************************************************************
+* 04 -- links + icons
+*****************************************************************
+*/
+
+/* links */
+/* remember focus */
+a {
+  color: $color-links;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-hover;
+  }
+}
+/* avoid border on images in links + fix border image IE */
+a:link img,
+a:visited img,
+img {
+  border-style: none;
+}
+
+/* links with icons, may use DATA-URI */
+
+/* external links */
+a[href^="http://"],
+a[href^="https://"] {
+
+}
+/* if full URL of the website in an internal link, remove icon */
+a[href^="http://www.mondomaine.com"] {
+
+}
+/* contact, mailto links */
+.mail,
+a[href^="mailto:"] {
+
+}
+/* if URL ends with .pdf or whatever */
+a[href$=".pdf"] {
+
+}
+
+
+
+
+/*
+*****************************************************************
+* 05 -- layout & modules
+*****************************************************************
+*/
+
+/* it depends, it exceeds (french joke) */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input {
+  height: auto;
+  max-width: 100%;
+}
+/* no reset on embed, object & video, some players don't like */
+
+/* useful to manage floats */
+/* containing floats */
+.mod {
+  overflow: auto;
+}
+
+/* some floattings */
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+/* clear floats */
+.clear {
+  clear: both;
+}
+.clearleft {
+  clear: left;
+}
+.clearright {
+  clear: right;
+}
+.clearhidden {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* gut : "spacing" empty div */
+.gut {
+  height: 1px;
+}
+
+/* table-design in CSS */
+.row {
+  display: table;
+  table-layout: fixed;
+}
+.col {
+  display: table-cell;
+  vertical-align: top;
+}
+
+
+/* centered block */
+.margesauto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* block widths */
+.w1 { width: 1%; }
+.w2 { width: 2%; }
+.w3 { width: 3%; }
+.w5 { width: 5%; }
+.w10 { width: 10%; }
+.w20 { width: 20%; }
+.w25 { width: 25%; }
+.w30 { width: 30%; }
+.w33 { width: 33.333%; }
+.w40 { width: 40%; }
+.w45 { width: 45%; }
+.w49 { width: 49%; }
+.w50 { width: 50%; }
+.w60 { width: 60%; }
+.w66 { width: 66.666%; }
+.w70 { width: 70%; }
+.w75 { width: 75%; }
+.w80 { width: 80%; }
+.w90 { width: 90%; }
+.w100 { width: 100%; }
+
+/* here you may add pixel widths */
+.w500p { width: 500px; }
+
+/* here you may add pixel max-widths */
+.mw960p { max-width: 960px; }
+
+/* margins */
+.mt1 { margin-top: 1em; }
+.mt2 { margin-top: 2em; }
+.mr1 { margin-right: 1em; }
+.mr2 { margin-right: 2em; }
+.mb1 { margin-bottom: 1em; }
+.mb2 { margin-bottom: 2em; }
+.ml1 { margin-left: 1em; }
+.ml2 { margin-left: 2em; }
+.m1 { margin: 1em; }
+.m2 { margin: 2em; }
+
+/* paddings */
+.pt1 { padding-top: 1em; }
+.pt2 { padding-top: 2em; }
+.pr1 { padding-right: 1em; }
+.pr2 { padding-right: 2em; }
+.pb1 { padding-bottom: 1em; }
+.pb2 { padding-bottom: 2em; }
+.pl1 { padding-left: 1em; }
+.pl2 { padding-left: 2em; }
+.p1 { padding: 1em; }
+.p2 { padding: 2em; }
+
+/* for 1px-high hr */
+hr {
+  background-color: $hr;
+  border: 0;
+  color: $hr;
+  height: $hr-height;
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+/* to hide text with accessibility… a11y */
+.invisible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.hidden    { display: none; } /* hidden everywhere */
+.nodesktop { display: none; } /* hidden on desktop */
+.noprint   {} /* hidden on print */
+.notablet  {} /* hidden on tablets */
+.nomobile  {} /* hidden on mobile */
+
+
+
+
+/*
+*****************************************************************
+* 06 -- structure (page / menuaccess / header / main content / footer)
+*****************************************************************
+*/
+
+/* === page === */
+#page {
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
+}
+
+/* --- menuaccess = skip links --- */
+
+#menuaccess {
+  /* positionning of skip links */
+  
+  & a {
+  /* they should be visible not only on focus */
+    
+    
+    &:hover,
+    &:active,
+    &:focus {
+      /* anyway remember making them visible on focus */
+    }
+  }
+}
+
+
+
+/* === header === */
+#header {
+
+}
+#logo {
+
+}
+#navigation {
+
+}
+
+
+/* === main content === */
+#main {
+
+}
+
+
+/* === footer === */
+#footer {
+
+}
+
+/* in french : Réseaux Sociaux À La Con : Stupid Sharing Buttons… often in footer */
+.rsalc {
+
+}
+
+
+
+
+/*
+*****************************************************************
+* 07 -- forms
+*****************************************************************
+*/
+
+/* makes you want to click on */
+label,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  cursor: pointer;
+}
+
+/* avoid dummy resize */
+textarea {
+  resize: vertical;
+}
+
+label,
+button,
+input,
+select {
+  vertical-align: middle;
+}
+
+/* to adapt to your design */
+input,
+select,
+textarea {
+  border: $input-defaut-border;
+  @include border-radius(5px);
+  padding: .5em;
+  width: $input-defaut-size;
+}
+
+/* to adapt to your design */
+.button {
+  background: #fff;
+  @include border-radius(5px);
+  @include single-box-shadow(#ddd, 1px, 1px, 1px);
+  color: #000;
+}
+
+/*
+ * avoids dimensioning for radio, checkboxes and images
+ * and a different display on IE
+ */
+input[type="radio"],
+input[type="checkbox"],
+input[type="image"] {
+  background-color: none;
+  border: 0;
+  width: auto;
+}
+
+/* to cancel input sizing or other if needed */
+.auto {
+  width: auto;
+}
+
+/* error or confirmation messages */
+.alert,
+.alert input,
+.alert textarea,
+.alert select {
+  color: $color-alert;
+  font-weight: bold;
+}
+/* .redborder is only used to debug */
+.alert input,
+.alert textarea,
+.alert select,
+.redborder {
+  border: 1px solid $color-alert;
+}
+.alert img {
+  border: 0;
+}
+.ok {
+
+}
+
+/*
+ * can be completed with HTML5 required attribute
+ * example with a color, remember not only displaying information with it
+ */
+select:required:invalid,
+input:required:invalid,
+input:focus:invalid,
+textarea:required:invalid,
+textarea:focus:invalid {
+  background: #fef6f6;
+  -moz-box-shadow: none;
+}
+
+input:focus:required:valid,
+textarea:focus:required:valid,
+select:focus:required:valid {
+  background: #efe;
+  -moz-box-shadow: none;
+}
+
+
+
+
+/*
+*****************************************************************
+* 08 -- inside content (other styles for pages)
+*****************************************************************
+*/
+
+/* home */
+
+
+
+
+
+/*
+*****************************************************************
+* 09 -- minor breakpoints between desktop and tablets
+*****************************************************************
+*/
+
+
+
+
+
+/*
+*****************************************************************
+* 10 -- tablets - major breakpoint
+*****************************************************************
+*/
+
+@media (max-width: 768px) {
+   
+  /* display elements */
+  .nodesktop { display: block; }
+
+  /* hide unnecessary elements */
+  .notablet { display: none; }
+  
+  /* linearization of floating content */
+  .autotablet {
+    float: none;
+    width: auto;
+  }
+
+  /**
+   * global structure adaptation (page / menuaccess / header / main content / footer)
+   */
+  
+  
+  /**
+   * inside content (other styles for pages)
+   */
+
+}
+
+
+
+
+/*
+*****************************************************************
+* 11 -- minor breakpoints between tablets and mobile
+*****************************************************************
+*/
+
+
+
+
+
+
+/*
+*****************************************************************
+* 12 -- mobile - major breakpoint
+*****************************************************************
+*/
+
+@media (max-width: 640px) {
+
+  /* display elements */
+  .notablet { display: block; }
+
+  /* hide unnecessary elements */
+  .nomobile { display: none; }
+
+  /* linearization of floating content */
+  .automobile {
+    float: none;
+    width: auto;
+  }
+
+  /**
+   * global structure adaptation (page / menuaccess / header / main content / footer)
+   */
+  
+  
+  /**
+   * inside content (other styles for pages)
+   */
+
+}
+
+
+
+
+/*
+*****************************************************************
+* 13 -- minor breakpoints for very small mobiles
+*****************************************************************
+*/
+
+
+
+
+
+/*
+*****************************************************************
+* 14 -- print
+*****************************************************************
+*/
+
+@media print {
+  /*
+   * add in this all elements which need to be hardly reseted for print
+   */
+  body,
+  html,
+  #page {
+    background-color: #fff;
+    background-image: none;
+    border: 0;
+    box-shadow: none;
+    color: #000;
+    float: none;
+    height: auto;
+    margin: 0;
+    min-height: auto;
+    padding: 0;
+    position: static;
+    width: auto;
+  }
+
+  body {
+    padding: .5em;
+  }
+
+  /* hide unnecessary elements */
+  .noprint {
+    display: none;
+  }
+  
+  /* display specific elements for print */
+  .onprint {
+    display: block;
+  }
+  
+  /* avoid problematic page break */
+  blockquote, ul, ol {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, caption {
+    page-break-after: avoid;
+  }
+  
+  /* display links, except for those containing images */
+  /* warning, remember checking the result & think to limitate
+   * this option only for inside content links */
+  a:after {
+    content: " (" attr(href) ") ";
+  }
+  a:after img {
+    content: "";
+  }
+
+  /* fix particular properties */
+
+
+} /* end print */
+
+
+
+
+/*
+ *****************************************************************
+ * 15 -- fix viewport
+ *****************************************************************
+ */
+
+/* fix viewport for Win8 (snap mode) and preparing day
+ * when viewport will be supported by all render engines
+ *
+ * Examples : http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/
+ * width=device-width => width: device-width;
+ * height=device-height => height: device-height;
+ * initial-scale=2 => zoom: 2;
+ * maximum-scale=2 => max-zoom: 2;
+ * minimum-scale=0.5 => min-zoom: 0.5;
+ * user-scalable=no => user-zoom: fixed;
+ *
+ * for Win8 snap mode => only width: device-width; works for the moment
+ */
+  
+
+/* if anyone has a mixin for this, feel free to share */
+
+  
+@-webkit-viewport {
+  width: device-width;
+}
+@-moz-viewport {
+  width: device-width;
+}
+@-ms-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+ 
+
+
+/*
+*****************************************************************
+* 16 -- Bonus : Fixes IE
+*****************************************************************
+*/
+
+/*
+ * based on conditional classes on HTML element
+ *
+ * to be used only if there are not to many fixes &
+ * small impact on webperfs for other browsers
+ *
+ */
+
+/* less than IE 9 */
+.oldies .nooldies {
+  display: none;
+}
+
+.ie6 .noie6 {
+  display: none;
+}
+.ie7 .noie7 {
+  display: none;
+}
+.ie8 .noie8 {
+  display: none;
+}
+.ie9 .noie9 {
+  display: none;
+}
+
+.ie7 .col,
+.ie6 .col {
+  float: left;
+}
+.ie7 .row,
+.ie6 .row {
+  overflow: auto;
+}
