@@ -748,6 +748,7 @@ select:focus:required:valid {
   /* linéarisation contenus flottants */
   .autotablet {
     float: none;
+    display: block;
     width: auto;
   }
 
@@ -793,6 +794,7 @@ select:focus:required:valid {
   /* linéarisation contenus flottants */
   .automobile {
     float: none;
+    display: block;
     width: auto;
   }
 
