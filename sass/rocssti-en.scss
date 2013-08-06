@@ -747,6 +747,7 @@ select:focus:required:valid {
   /* linearization of floating content */
   .autotablet {
     float: none;
+    display: block;
     width: auto;
   }
 
@@ -792,6 +793,7 @@ select:focus:required:valid {
   /* linearization of floating content */
   .automobile {
     float: none;
+    display: block;
     width: auto;
   }
 
