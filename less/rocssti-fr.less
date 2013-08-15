@@ -111,7 +111,11 @@ abbr, eventsource, mark, meter, time, progress, output, bb { display: inline; }
 
 /* reset minimum */
 html, body, blockquote, ul, ol, form { margin: 0; padding: 0; }
-p { margin: 0 0 1em; }
+p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
+  font-size: 1em;
+  line-height: @l-h;
+  margin: (@l-h + 0em) 0;
+}
 ul, ol { padding-left: 2em; }
 
 
