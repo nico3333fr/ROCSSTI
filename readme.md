@@ -16,11 +16,9 @@ The goals are:
  
 To sum up, having a strong CSS base, used for and built from professional realisations.
 
-RÖCSSTI has also a LESS version, see in "less" folder.
+**RÖCSSTI has also LESS ans Sass versions**, see in "less" ans "Sass" folders. **All versions are maintained in french and english**.
 
-New : RÖCSSTI has a Sass version, see in "sass" folder.
-
-Information: In my actual job, RÖCSSTI has been used for about 15 websites, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
+Information: to my knowledge, RÖCSSTI has been used for about 18 websites, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
 
 ## Naming conventions
 
