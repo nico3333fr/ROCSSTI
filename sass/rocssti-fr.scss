@@ -139,7 +139,7 @@ html, body, blockquote, ul, ol, form { margin: 0; padding: 0; }
 p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   font-size: 1em;
   line-height: $l-h;
-  margin: #{$l-h}em 0;
+  margin: $l-h * 1em 0;
 }
 ul, ol { padding-left: 2em; }
 
