@@ -229,9 +229,6 @@ h6,
 *****************************************************************
 */
 
-.nomargin { margin: 0; }
-.nomargintop { margin-top: 0; }
-.nopadding { padding: 0; }
 .noborder,
 iframe { border: 0; }
 
@@ -488,28 +485,38 @@ input {
 .mw960p { max-width: 960px; }
 
 /* margins */
+.mt0 { margin-top: 0; }
 .mt1 { margin-top: 1em; }
 .mt2 { margin-top: 2em; }
+.mr0 { margin-right: 0; }
 .mr1 { margin-right: 1em; }
 .mr2 { margin-right: 2em; }
+.mb0 { margin-bottom: 0; }
 .mb1 { margin-bottom: 1em; }
 .mb2 { margin-bottom: 2em; }
+.ml0 { margin-left: 0; }
 .ml1 { margin-left: 1em; }
 .ml2 { margin-left: 2em; }
-.m1 { margin: 1em; }
-.m2 { margin: 2em; }
+.m0  { margin: 0; }
+.m1  { margin: 1em; }
+.m2  { margin: 2em; }
 
 /* paddings */
+.pt0 { padding-top: 0; }
 .pt1 { padding-top: 1em; }
 .pt2 { padding-top: 2em; }
+.pr0 { padding-right: 0; }
 .pr1 { padding-right: 1em; }
 .pr2 { padding-right: 2em; }
+.pb0 { padding-bottom: 0; }
 .pb1 { padding-bottom: 1em; }
 .pb2 { padding-bottom: 2em; }
+.pl0 { padding-left: 0; }
 .pl1 { padding-left: 1em; }
 .pl2 { padding-left: 2em; }
-.p1 { padding: 1em; }
-.p2 { padding: 2em; }
+.p0  { padding: 0; }
+.p1  { padding: 1em; }
+.p2  { padding: 2em; }
 
 /* for 1px-high hr */
 hr {
