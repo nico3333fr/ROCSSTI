@@ -214,10 +214,10 @@ h6,
   @include flow_other(16); // equiv 16px
 }
 .bigger {
-  @include flow_other(18);; // equiv 18px
+  @include flow_other(18); // equiv 18px
 }
 .biggest {
-  @include flow_other(20);; // equiv 20px
+  @include flow_other(20); // equiv 20px
 }
 
 
