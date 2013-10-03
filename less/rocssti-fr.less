@@ -70,7 +70,7 @@
   @coef: ceil(1 / (@base-height * @base-font / @font-size));
   @other_coef: ceil(@base-height * @base-font / @font-size);
   @size: (@font-size / @base-font) + 0em;
-  @height: (@base-font * @base-height / @font-size) + 0em;
+  @height: (@base-font * @base-height / @font-size);
   @mar-top: (@height * @coef );
 
 font-size: round(@size * @rounding-value) / @rounding-value;
@@ -86,7 +86,7 @@ margin: ( round(@mar-top*@rounding-value)/@rounding-value * @other_coef + 0em) 0
   @coef: ceil(1 / (@base-height * @base-font / @font-size));
   @other_coef: ceil(@base-height * @base-font / @font-size);
   @size: (@font-size / @base-font) + 0em;
-  @height: (@base-font * @base-height / @font-size) + 0em;
+  @height: (@base-font * @base-height / @font-size);
   @mar-top: (@height * @coef );
 
 font-size: round(@size * @rounding-value) / @rounding-value;
@@ -280,7 +280,7 @@ samp {
   white-space: pre-wrap;
 }
 code {
-  line-height: 1em;
+  line-height: 1;
 }
 kbd {
   border: solid 1px;
