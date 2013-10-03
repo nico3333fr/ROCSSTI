@@ -42,7 +42,7 @@
  
 // Sass variables : adapt them to your designs
 $basefont : 14; // if "14" then 1em = 14px
-$l-h : 1.5; // equiv line-height 1.5em
+$l-h : 1.5;
 
 // colors
 $color-links : #2573be;
@@ -66,12 +66,12 @@ $input-defaut-border : 1px solid #000;
 
 // based on http://soqr.fr/vertical-rhythm/ thanks @goetter & @eQRoeil */
 
-@function lineheight_em ($font-size, $base-height, $base-font){
+@function lineheight ($font-size, $base-height, $base-font){
 
   $coef: ceil(1 / ($base-height * $base-font / $font-size));
   $height: ($base-font * $base-height / $font-size) ;
 
-  @return ($height * $coef) * 1em;
+  @return ($height * $coef);
 
 }
 
@@ -99,7 +99,7 @@ $input-defaut-border : 1px solid #000;
 @mixin flow_hr( $value ){
 
   font-size: em($value);
-  line-height: lineheight_em($value, $l-h, $basefont);
+  line-height: lineheight($value, $l-h, $basefont);
   margin: margin_em($value, $l-h, $basefont) ;
 
 }
@@ -107,7 +107,7 @@ $input-defaut-border : 1px solid #000;
 @mixin flow_other( $value ){
 
   font-size: em($value);
-  line-height: lineheight_em($value, $l-h, $basefont);
+  line-height: lineheight($value, $l-h, $basefont);
   margin: margin_em_other($value, $l-h, $basefont) ;
 
 }
@@ -296,7 +296,7 @@ samp {
   white-space: pre-wrap;
 }
 code {
-  line-height: 1em;
+  line-height: 1;
 }
 kbd {
   border: solid 1px;
