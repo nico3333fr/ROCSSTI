@@ -232,6 +232,10 @@ h6,
 .noborder,
 iframe { border: 0; }
 
+table {
+  table-layout: fixed;
+}
+
 /* éviter interlignage disgracieux */
 sup,
 sub {
@@ -446,6 +450,9 @@ input {
 .col {
   display: table-cell;
   vertical-align: top;
+}
+.col-noalign {
+  display: table-cell;
 }
 
 
