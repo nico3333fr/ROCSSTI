@@ -380,10 +380,10 @@ a[href$=".pdf"] {
 
 
 /*
-*****************************************************************
-* 05 -- layout et modules
-*****************************************************************
-*/
+ *****************************************************************
+ * 05 -- layout et modules
+ *****************************************************************
+ */
 
 /* éviter les dépassements */
 img,
@@ -712,9 +712,9 @@ input[type="image"] {
 }
 
 /*
-* peut être complété par les attributs HTML5 required
-* exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi
-*/
+ * peut être complété par les attributs HTML5 required
+ * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi
+ */
 select:required:invalid,
 input:required:invalid,
 input:focus:invalid,
@@ -854,8 +854,8 @@ select:focus:required:valid {
 
 @media print {
   /* ajouter là-dedans les éléments qui ont besoin d'être
-* totalement resetés pour le print
-*/
+   * totalement resetés pour le print
+   */
   body,
   html,
   #page {
@@ -962,7 +962,7 @@ select:focus:required:valid {
  */
 
 /*
- * Règles d'état
+ * Règles d'état = mises en bas pour être prioritaires
  *
  */
  
