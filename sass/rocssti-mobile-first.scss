@@ -579,9 +579,9 @@ hr {
   /* idéalement mettez-les visibles pas uniquement au focus */
     
     
+    &:focus,
     &:hover,
-    &:active,
-    &:focus {
+    &:active {
       /* sinon pensez à les rendre visibles au focus */
     }
   }
@@ -619,11 +619,15 @@ hr {
 
 
 /* linéarisation contenus flottants */
-.automobile {
+/* 
+    pour utiliser, décommentez et penser à copier les classes .wXX
+    ainsi que les floattants .left .right si nécessaire dans la media query
+ */
+/*.automobile {
   float: none;
   display: block;
   width: auto;
-}
+}*/
 
 
 
@@ -778,6 +782,18 @@ select:focus:required:valid {
     display: block;
     width: auto;
   }
+  /* surcharge éventuelle si utilisation .automobile & .autotablet */
+  /*.w33  { width: 33.333%; }
+  .w66  { width: 66.666%; }*/
+
+  /*
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  */
 
   /**
    * adaptation structure globale (page / menuaccess / header / contenu principal / footer)
@@ -820,6 +836,19 @@ select:focus:required:valid {
 
   /* cachage des éléments inutiles ! */
   .nodesktop { display: none; }
+
+  /* surcharge éventuelle si utilisation .automobile & .autotablet */
+  /*.w33  { width: 33.333%; }
+  .w66  { width: 66.666%; }*/
+
+  /*
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  */
 
 
   /**
