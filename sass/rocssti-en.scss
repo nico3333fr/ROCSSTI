@@ -342,9 +342,9 @@ a {
   color: $color-links;
   cursor: pointer;
 
+  &:focus,
   &:hover,
-  &:active,
-  &:focus {
+  &:active {
     color: $color-hover;
   }
 }
@@ -578,9 +578,9 @@ hr {
   /* they should be visible not only on focus */
     
     
+    &:focus,
     &:hover,
-    &:active,
-    &:focus {
+    &:active {
       /* anyway remember making them visible on focus */
     }
   }
