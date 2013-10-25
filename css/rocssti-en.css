@@ -275,9 +275,9 @@ a {
   cursor: pointer;
 }
 /* remember focus */
+a:focus,
 a:hover,
-a:active,
-a:focus {
+a:active {
   color: #000;
 }
 /* avoid border on images in links + fix border image IE */
@@ -509,9 +509,9 @@ hr {
 
 }
 /* anyway remember making them visible on focus */
+#menuaccess a:focus,
 #menuaccess a:hover,
-#menuaccess a:active,
-#menuaccess a:focus {
+#menuaccess a:active {
 
 }
 
