@@ -276,9 +276,9 @@ a {
   cursor: pointer;
 }
 /* penser au focus */
+a:focus,
 a:hover,
-a:active,
-a:focus {
+a:active {
   color: #000;
 }
 /* éviter la bordure sur une image comprise dans un lien + fix bordure image IE */
@@ -512,9 +512,9 @@ hr {
 
 }
 /* sinon pensez à les rendre visibles au focus */
+#menuaccess a:focus,
 #menuaccess a:hover,
-#menuaccess a:active,
-#menuaccess a:focus {
+#menuaccess a:active {
 
 }
 
