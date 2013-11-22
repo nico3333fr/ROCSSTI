@@ -170,31 +170,37 @@ body {
 
 h1,
 .h1 {
+  display: block;
   @include flow_hr(26); // equiv 26px
   font-weight: normal;
 }
 h2,
 .h2 {
+  display: block;
   @include flow_hr(24); // equiv 24px
   font-weight: normal;
 }
 h3,
 .h3 {
+  display: block;
   @include flow_hr(22); // equiv 22px
   font-weight: normal;
 }
 h4,
 .h4 {
+  display: block;
   @include flow_hr(20); // equiv 20px
   font-weight: normal;
 }
 h5,
 .h5 {
+  display: block;
   @include flow_hr(18); // equiv 18px
   font-weight: normal;
 }
 h6,
 .h6 {
+  display: block;
   @include flow_hr(16); // equiv 16px
   font-weight: normal;
 }
@@ -250,12 +256,12 @@ sub {
 }
 
 /* avoid margin problems */
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
+h1:first-child,.h1:first-child,
+h2:first-child,.h2:first-child,
+h3:first-child,.h3:first-child,
+h4:first-child,.h4:first-child,
+h5:first-child,.h5:first-child,
+h6:first-child,.h6:first-child {
   margin-top: 0;
 }
 /* remove bottom margin on last child */
