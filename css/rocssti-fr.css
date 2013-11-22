@@ -80,36 +80,42 @@ body {
 
 h1,
 .h1 {
+  display: block;
   font-size:  1.8571em; /* equiv 26px */
   line-height: 1.6154;
   margin: 1.6154em 0 .8077em 0;
 }
 h2,
 .h2 {
+  display: block;
   font-size: 1.7143em; /* equiv 24px */
   line-height: 1.75;
   margin: 1.75em 0 .875em 0;
 }
 h3,
 .h3 {
+  display: block;
   font-size: 1.5714em; /* equiv 22px */
   line-height: 1.909;
   margin: 1.909em 0 .9545em 0;
 }
 h4,
 .h4 {
+  display: block;
   font-size: 1.4286em; /* equiv 20px */
   line-height: 1.05;
   margin: 2.1em 0 1.05em 0;
 }
 h5,
 .h5 {
+  display: block;
   font-size: 1.2857em; /* equiv 18px */
   line-height: 1.1667;
   margin: 2.3334em 0 1.1667em 0;
 }
 h6,
 .h6 {
+  display: block;
   font-size: 1.1429em; /* equiv 16px */
   line-height: 1.3125;
   margin: 2.625em 0 1.3125em 0;
@@ -176,12 +182,12 @@ sub {
 }
 
 /* éviter problèmes de margin */
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
+h1:first-child,.h1:first-child,
+h2:first-child,.h2:first-child,
+h3:first-child,.h3:first-child,
+h4:first-child,.h4:first-child,
+h5:first-child,.h5:first-child,
+h6:first-child,.h6:first-child {
   margin-top: 0;
 }
 /* virer marge basse sur dernier enfant */
