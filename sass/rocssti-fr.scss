@@ -988,7 +988,9 @@ select:focus:required:valid {
 }
 
 .ie7 .col,
-.ie6 .col {
+.ie7 .col-noalign,
+.ie6 .col,
+.ie6 .col-noalign {
   float: left;
 }
 .ie7 .row,
