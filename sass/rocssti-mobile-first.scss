@@ -241,6 +241,37 @@ table {
   table-layout: fixed;
 }
 
+/*
+ * repris de http://tinytypo.tetue.net/ de @tetue
+ * tuné avec l'aide de  http://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
+ *
+ * voir http://en.wikipedia.org/wiki/International_variation_in_quotation_marks pour les références
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+:lang(fr) > q {
+  quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D" "\2018" "\2019";
+}
+:lang(en) > q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+:lang(es) > q {
+  quotes: "\00AB" "\00BB" "\201C" "\201D";
+}
+:lang(it) > q {
+  quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D";
+}
+:lang(de) > q {
+  quotes: "\201e" "\201c" "\201a" "\2018";
+}
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
+}
+
 /* éviter interlignage disgracieux */
 sup,
 sub {
