@@ -63,7 +63,12 @@ body {
   line-height: 1.5; /* à corriger si besoin est */
 }
 
-
+/* Quotes definitions */
+q:lang(fr) { quotes: "« " " »" "“" "”" }
+q:lang(it) { quotes: "«" "»" "“" "”" "‘" "’"}
+q:lang(en) { quotes: "“" "”" "‘" "’" }
+q::before	{ content:	open-quote }
+q::after	{ content: close-quote }
 
 
 /*
