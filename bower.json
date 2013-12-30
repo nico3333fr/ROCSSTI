@@ -1,0 +1,23 @@
+{
+  "name": "ROCSSTI",
+  "version": "2.3.1",
+  "homepage": "http://rocssti.nicolas-hoffmann.net/",
+  "authors": [
+    "Nicolas HOFFMANN"
+  ],
+  "description": "RÖCSSTI is a lightweight, extensible and responsive CSS to start your projects. This CSS micro-framework is especially designed for starting responsive websites. LESS and Sass versions are also available, with a mobile-first version for Sass.",
+  "main": "css/rocssti-en.css",
+  "keywords": [
+    "css", "micro-framework", "framework", "reset", "responsive", "rwd", "boilerplate", "workflow"
+  ],
+  "license": "CC-BY",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "less/readme.md",
+    "sass/readme.md",
+    "readme.md",
+    "readme-fr.md"
+  ]
+}
