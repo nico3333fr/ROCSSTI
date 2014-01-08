@@ -709,7 +709,7 @@ textarea {
 .button {
   background: #fff;
   @include border-radius(5px);
-  @include single-box-shadow(#ddd, 1px, 1px, 1px);
+  @include single-box-shadow(1px, 1px, 1px, 1px, #ddd);
   color: #000;
 }
 
