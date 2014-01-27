@@ -18,7 +18,7 @@ Bref, avoir un socle robuste et éprouvé par des réalisations en milieu profes
 
 **RÖCSSTI a aussi des versions LESS et Sass**, jetez un oeil dans le répertoire "less" et "Sass". **Toutes les versions sont maintenues en anglais et en français**.
 
-Si vous doutez du côté pratique, cette base CSS sera enrichie au fil des projets réels que je réaliserai avec. Pour information, à ma connaissance, **26 réalisations dans des styles très différents ont déjà été faites avec RÖCSSTI**, cela va de sites relativement simples à des sites plus complexes en responsive. Le gain de temps au démarrage du projet ainsi que la réutilisabilité du code sont réelles et perceptibles.
+Si vous doutez du côté pratique, cette base CSS sera enrichie au fil des projets réels que je réaliserai avec. Pour information, à ma connaissance, **31 réalisations dans des styles très différents ont déjà été faites avec RÖCSSTI**, cela va de sites relativement simples à des sites plus complexes en responsive. Le gain de temps au démarrage du projet ainsi que la réutilisabilité du code sont réelles et perceptibles.
 
 ## Conventions de nommage
 
