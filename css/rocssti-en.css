@@ -25,8 +25,9 @@
  * 12 -- mobile - major breakpoint
  * 13 -- minor breakpoints for very small mobiles
  * 14 -- print
- * 15 -- fix viewport 
- * 16 -- bonus : Fixes IE
+ * 15 -- fix viewport
+ * 16 -- state classes
+ * 17 -- bonus : Fixes IE
  */
 
 
@@ -537,18 +538,19 @@ hr {
   width: 960px;
 }
 
-/* --- menuaccess = skip links --- */
-#menuaccess {
+/* --- skip links --- */
+#skip-links {
 
 }
+/* .skip-link = 1 skip link  */
 /* they should be visible not only on focus */
-#menuaccess a {
+.skip-link {
 
 }
 /* anyway remember making them visible on focus */
-#menuaccess a:focus,
-#menuaccess a:hover,
-#menuaccess a:active {
+.skip-link:focus,
+.skip-link:hover,
+.skip-link:active {
 
 }
 
@@ -820,7 +822,8 @@ select:focus:required:valid {
    */
   body,
   html,
-  #page {
+  #page,
+  .reset4print {
     background-color: #fff;
     background-image: none;
     border: 0;
@@ -828,8 +831,9 @@ select:focus:required:valid {
     color: #000;
     float: none;
     height: auto;
-    min-height: auto;
     margin: 0;
+    max-width: 100%;
+    min-height: auto;
     padding: 0;
     position: static;
     width: auto;
@@ -860,12 +864,12 @@ select:focus:required:valid {
   /* display links, except for those containing images */
   /* warning, remember checking the result & think to limitate
    * this option only for inside content links */
-  a:after {
+  /*a:after {
     content: " (" attr(href) ") ";
   }
   a:after img {
     content: "";
-  }
+  }*/
 
   /* fix particular properties */
 
@@ -916,7 +920,27 @@ select:focus:required:valid {
 
 /*
  *****************************************************************
- * 16 -- Bonus: Fixes IE
+ * 16 -- state classes
+ *****************************************************************
+ */
+
+/*
+ * State classes = put here to take priority on all classes
+ *
+ */
+
+/*
+.is-hidden {
+
+}
+*/
+
+
+
+
+/*
+ *****************************************************************
+ * 17 -- Bonus: Fixes IE
  *****************************************************************
  */
 
