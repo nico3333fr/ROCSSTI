@@ -10,6 +10,10 @@
  * cette CSS est fournie telle quelle, sans aucune garantie d'aucun type, 
  * l'auteur ne saurait être tenu responsable de quoi que ce soit pour 
  * l'utilisation de RÖCSSTI.
+ *
+ * RTL = Right To Left => 
+ * pour adapter un site dans une langue qui se lit de droite à gauche
+ *
  * 
  * résumé
  * 01 -- reset
@@ -52,6 +56,13 @@ p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   margin: 1.5em 0;
 }
 ul, ol { padding-left: 2em; }
+
+/* RTL */
+[dir="rtl"] ul, 
+[dir="rtl"] ol { 
+  padding-left: 0; 
+  padding-right: 2em;
+}
 
 
 /* la base correspond à 10px */
@@ -299,6 +310,11 @@ abbr[title] {
 .alignbottom { vertical-align: bottom; }
 .alignmiddle { vertical-align: middle; }
 
+/* RTL */
+[dir="rtl"] .alignright  { text-align: left; }
+[dir="rtl"] .alignleft   { text-align: right; }
+
+
 
 
 
@@ -384,6 +400,7 @@ input {
   float: right;
 }
 
+
 /* clearer les floats */
 .clear {
   clear: both;
@@ -407,6 +424,22 @@ input {
   clear: both;
   visibility: hidden;
 }
+
+/* RTL */
+[dir="rtl"] .left {
+  float: right;
+}
+[dir="rtl"] .right {
+  float: left;
+}
+
+[dir="rtl"] .clearleft {
+  clear: right;
+}
+[dir="rtl"] .clearright {
+  clear: left;
+}
+
 
 /* gouttière */
 .gut {
@@ -479,6 +512,14 @@ input {
 .m1  { margin: 1em; }
 .m2  { margin: 2em; }
 
+/* RTL = attention, utiliser avec précaution */
+[dir="rtl"] .mr0 { margin-left: 0; }
+[dir="rtl"] .mr1 { margin-right: inherit; margin-left: 1em; }
+[dir="rtl"] .mr2 { margin-right: inherit; margin-left: 2em; }
+[dir="rtl"] .ml0 { margin-right: 0; }
+[dir="rtl"] .ml1 { margin-left: inherit; margin-right: 1em; }
+[dir="rtl"] .ml2 { margin-left: inherit; margin-right: 2em; }
+
 /* paddings */
 .pt0 { padding-top: 0; }
 .pt1 { padding-top: 1em; }
@@ -495,6 +536,14 @@ input {
 .p0  { padding: 0; }
 .p1  { padding: 1em; }
 .p2  { padding: 2em; }
+
+/* RTL = attention, utiliser avec précaution */
+[dir="rtl"] .pr0 { padding-left: 0; }
+[dir="rtl"] .pr1 { padding-right: 0; padding-left: 1em; }
+[dir="rtl"] .pr2 { padding-right: 0; padding-left: 2em; }
+[dir="rtl"] .pl0 { padding-right: 0; }
+[dir="rtl"] .pl1 { padding-left: 0; padding-right: 1em; }
+[dir="rtl"] .pl2 { padding-left: 0; padding-right: 2em; }
 
 /* spécial hr de 1px de haut */
 hr {
@@ -980,4 +1029,12 @@ select:focus:required:valid {
 .ie7 .row,
 .ie6 .row {
   overflow: auto;
+}
+
+/* RTL */
+[dir="rtl"] .ie7 .col,
+[dir="rtl"] .ie7 .col-noalign,
+[dir="rtl"] .ie6 .col,
+[dir="rtl"] .ie6 .col-noalign {
+  float: right;
 }
