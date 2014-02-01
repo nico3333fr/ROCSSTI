@@ -10,6 +10,11 @@
  * this CSS is provided "as is", without any warranty of any type,
  * author can't be responsible of anything you might do with RÖCSSTI
  *
+ * RTL = Right To Left =>
+ * to adapt a website in a language that is written from right to left
+ * set @rtl_option to true in 00 -- LESS to activate
+ *
+ *
  * summary
  * 00 -- LESS 
  * 01 -- reset
@@ -51,6 +56,9 @@
 
 // widths
 @input-defaut-size : 250px;
+
+// RTL
+@rtl_option : false;
 
 
 // LESS functions : don't touch ;)
@@ -120,6 +128,19 @@ html, body, blockquote, ul, ol, form { margin: 0; padding: 0; }
   margin: (@l-h + 0em) 0;
 }
 ul, ol { padding-left: 2em; }
+
+[dir="rtl"] {
+  & ol when (@rtl_option) {
+  /* RTL */
+  padding-left: 0;
+  padding-right: 2em;
+  }
+  & ul when (@rtl_option) {
+  /* RTL */
+  padding-left: 0;
+  padding-right: 2em;
+  }
+}
 
 
 /* base font size at 10px */
@@ -351,6 +372,18 @@ abbr[title] {
 .alignbottom { vertical-align: bottom; }
 .alignmiddle { vertical-align: middle; }
 
+[dir="rtl"] {
+  & .alignright when (@rtl_option) {
+    /* RTL */
+    text-align: left;
+  }
+  & .alignleft when (@rtl_option) {
+    /* RTL */
+    text-align: right;
+  }
+}
+
+
 
 
 
@@ -462,6 +495,26 @@ input {
   visibility: hidden;
 }
 
+[dir="rtl"] {
+  & .left when (@rtl_option) {
+    /* RTL */
+    float: right;
+  }
+  & .right when (@rtl_option) {
+    /* RTL */
+    float: left;
+  }
+  
+  & .clearleft when (@rtl_option) {
+    /* RTL */
+    clear: right;
+  }
+  & .clearright when (@rtl_option) {
+    /* RTL */
+    clear: left;
+  }
+}
+
 /* gut : "spacing" empty div */
 .gut {
   height: 1px;
@@ -533,6 +586,33 @@ input {
 .m1  { margin: 1em; }
 .m2  { margin: 2em; }
 
+[dir="rtl"] {
+  & .mr0 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-left: 0;
+  }
+  & .mr1 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-right: inherit; margin-left: 1em;
+  }
+  & .mr2 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-right: inherit; margin-left: 2em;
+  }
+  & .ml0 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-right: 0;
+  }
+  & .ml1 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-left: inherit; margin-right: 1em;
+  }
+  & .ml2 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-left: inherit; margin-right: 2em;
+  }
+}
+
 /* paddings */
 .pt0 { padding-top: 0; }
 .pt1 { padding-top: 1em; }
@@ -549,6 +629,33 @@ input {
 .p0  { padding: 0; }
 .p1  { padding: 1em; }
 .p2  { padding: 2em; }
+
+[dir="rtl"] {
+  & .pr0 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-left: 0;
+  }
+  & .pr1 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-right: inherit; padding-left: 1em;
+  }
+  & .pr2 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-right: inherit; padding-left: 2em;
+  }
+  & .pl0 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-right: 0;
+  }
+  & .pl1 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-left: inherit; padding-right: 1em;
+  }
+  & .pl2 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-left: inherit; padding-right: 2em;
+  }
+}
 
 /* for 1px-high hr */
 hr {
@@ -1034,4 +1141,23 @@ select:focus:required:valid {
 .ie7 .row,
 .ie6 .row {
   overflow: auto;
+}
+
+[dir="rtl"] {
+  & .ie7 .col  when (@rtl_option) {
+    /* RTL */
+    float: right;
+  }
+  & .ie7 .col-noalign  when (@rtl_option) {
+    /* RTL */
+    float: right;
+  }
+  & .ie6 .col  when (@rtl_option) {
+    /* RTL */
+    float: right;
+  }
+  & .ie6 .col-noalign  when (@rtl_option) {
+    /* RTL */
+    float: right;
+  }
 }
