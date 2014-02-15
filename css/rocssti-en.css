@@ -12,6 +12,7 @@
  *
  * RTL = Right To Left =>
  * to adapt a website in a language that is written from right to left
+ * designed for multilingual websites with LTR et RTL
  *
  *
  * summary
@@ -182,7 +183,7 @@ table {
 
 /*
  * taken from http://tinytypo.tetue.net/ made by @tetue
- * tuned with the help of  http://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
+ * tuned with the help of http://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
  *
  * see http://en.wikipedia.org/wiki/International_variation_in_quotation_marks for reference
  */
@@ -458,8 +459,18 @@ input {
   display: table-cell;
 }
 
+/* inline-block, useful for grids, and not only */
+.inbl {
+  display: inline-block;
+}
+
+/* to relativize */
+.relative {
+  position: relative;
+}
+
 /* centered block */
-.margesauto {
+.center {
   margin-left: auto;
   margin-right: auto;
 }
@@ -487,11 +498,18 @@ input {
 .w90  { width: 90%; }
 .w100 { width: 100%; }
 
+/* here you may add em widths */
+/*.w960e { width: 60em; }*/
+
 /* here you may add pixel widths */
-.w500p { width: 500px; }
+/*.w500p { width: 500px; }*/
+
+/* here you may add em max-widths */
+/*.mw960e { max-width: 60em; }*/
 
 /* here you may add pixel max-widths */
-.mw960p { max-width: 960px; }
+/*.mw960p { max-width: 960px; }*/
+
 
 /* margins */
 .mt0 { margin-top: 0; }
@@ -606,25 +624,25 @@ hr {
 
 
 /* --- header --- */
-#header {
+.header {
 
 }
-#logo {
+.logo {
 
 }
-#navigation {
+.navigation {
 
 }
 
 
 /* --- main content --- */
-#main {
+.main {
 
 }
 
 
 /* --- footer --- */
-#footer {
+.footer {
 
 }
 
@@ -671,6 +689,13 @@ textarea {
   border-radius: 5px;
   width: 250px;
   padding: .5em;
+  /** fix typo inputs **/
+  font-family: Arial, helvetica, sans-serif;
+}
+
+/* for field texts */
+.label {
+  display: inline-block;
 }
 
 /* to adapt to your design */
@@ -780,7 +805,7 @@ select:focus:required:valid {
   /* hide unnecessary elements */
   .notablet { display: none; }
   
-  /* linearization of floating content */
+  /* linearization of floating content/table-layout */
   .autotablet {
     float: none;
     display: block;
@@ -827,7 +852,7 @@ select:focus:required:valid {
   /* hide unnecessary elements */
   .nomobile { display: none; }
 
-  /* linearization of floating content */
+  /* linearization of floating content/table-layout */
   .automobile {
     float: none;
     display: block;
