@@ -21,7 +21,7 @@
  * 03 -- useful classes (utils) + typo fix + styles for "fixed tags"
  * 04 -- links + icons
  * 05 -- layout & modules
- * 06 -- structure (page / menuaccess / header / main content / footer)
+ * 06 -- structure (page / skip links / header / main content / footer)
  * 07 -- forms
  * 08 -- inside content
  * 09 -- minor breakpoints between desktop and tablets
@@ -594,7 +594,7 @@ hr {
 
 /*
  *****************************************************************
- * 06 -- structure (page / menuaccess / header / main content / footer)
+ * 06 -- structure (page / skip links / header / main content / footer)
  *****************************************************************
  */
 
@@ -691,6 +691,7 @@ textarea {
   padding: .5em;
   /** fix typo inputs **/
   font-family: Arial, helvetica, sans-serif;
+  font-size: 1em;
 }
 
 /* for field texts */
