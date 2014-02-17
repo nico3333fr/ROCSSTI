@@ -12,6 +12,7 @@
  *
  * RTL = Right To Left =>
  * to adapt a website in a language that is written from right to left
+ * designed for multilingual websites with LTR et RTL
  * set $rtl_option to true in 00 -- Sass to activate
  *
  *
@@ -22,7 +23,7 @@
  * 03 -- useful classes (utils) + typo fix + styles for "fixed tags"
  * 04 -- links + icons
  * 05 -- layout & modules
- * 06 -- structure (page / menuaccess / header / main content / footer)
+ * 06 -- structure (page / skip links / header / main content / footer)
  * 07 -- forms
  * 08 -- inside content
  * 09 -- minor breakpoints between desktop and tablets
@@ -49,6 +50,9 @@
 // Sass variables : adapt them to your designs
 $basefont : 14; // if "14" then 1em = 14px
 $l-h : 1.5;
+
+// fonts
+$font-family : 'Arial, helvetica, sans-serif';
 
 // colors
 $color-links : #2573be;
@@ -167,7 +171,7 @@ html { font-size: 62.5%; }
 body {
   background: #fff;
   color: #333;
-  font-family: Arial, helvetica, sans-serif;
+  font-family: $font-family;
   font-size: ($basefont / 10) + 0em;
   line-height: $l-h; /* à corriger si besoin est */
 }
@@ -262,7 +266,7 @@ table {
 
 /*
  * taken from http://tinytypo.tetue.net/ made by @tetue
- * tuned with the help of  http://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
+ * tuned with the help of http://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
  *
  * see http://en.wikipedia.org/wiki/International_variation_in_quotation_marks for reference
  */
@@ -535,8 +539,18 @@ input {
 }
 
 
+/* inline-block, useful for grids, and not only */
+.inbl {
+  display: inline-block;
+}
+
+/* to relativize */
+.relative {
+  position: relative;
+}
+
 /* centered block */
-.margesauto {
+.center {
   margin-left: auto;
   margin-right: auto;
 }
@@ -564,11 +578,17 @@ input {
 .w90 { width: 90%; }
 .w100 { width: 100%; }
 
+/* here you may add em widths */
+/*.w960e { width: 60em; }*/
+
 /* here you may add pixel widths */
-.w500p { width: 500px; }
+/*.w500p { width: 500px; }*/
+
+/* here you may add em max-widths */
+/*.mw960e { max-width: 60em; }*/
 
 /* here you may add pixel max-widths */
-.mw960p { max-width: 960px; }
+/*.mw960p { max-width: 960px; }*/
 
 /* margins */
 .mt0 { margin-top: 0; }
@@ -686,47 +706,32 @@ hr {
 }
 
 
-#menuaccess {
-  /* positionning of skip links */
-  
-  & a {
-  /* they should be visible not only on focus */
-    
-    
-    &:focus,
-    &:hover,
-    &:active {
-      /* anyway remember making them visible on focus */
-    }
-  }
-}
-
 
 
 /* === header === */
-#header {
+.header {
 
 }
-#logo {
+.logo {
 
 }
-#navigation {
+.navigation {
 
 }
 
 
 /* === main content === */
-#main {
+.main {
 
 }
 
 
 /* === footer === */
-#footer {
+.footer {
 
 }
 
-/* in french : Réseaux Sociaux À La Con : Stupid Sharing Buttons… often in footer */
+/* in french : Stupid Sharing Buttons… often in footer */
 .rsalc {
 
 }
@@ -769,6 +774,9 @@ textarea {
   @include border-radius(5px);
   padding: .5em;
   width: $input-defaut-size;
+  /** fix typo inputs **/
+  font-family: $font-family;
+  font-size: 1em;
 }
 
 /* to adapt to your design */
@@ -877,7 +885,7 @@ select:focus:required:valid {
   /* hide unnecessary elements */
   .notablet { display: none; }
   
-  /* linearization of floating content */
+  /* linearization of floating content/table-layout */
   .autotablet {
     float: none;
     display: block;
@@ -923,7 +931,7 @@ select:focus:required:valid {
   /* hide unnecessary elements */
   .nomobile { display: none; }
 
-  /* linearization of floating content */
+  /* linearization of floating content/table-layout */
   .automobile {
     float: none;
     display: block;
