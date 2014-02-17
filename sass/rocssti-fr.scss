@@ -775,6 +775,14 @@ textarea {
   @include border-radius(5px);
   padding: .5em;
   width: $input-defaut-size;
+  /** fix typo inputs **/
+  font-family: $font-family;
+  font-size: 1em;
+}
+
+/* pour les textes des champs */
+.label {
+  display: inline-block;
 }
 
 /* à adapter selon le design voulu */
@@ -795,9 +803,7 @@ input[type="image"] {
   background-color: transparent;
   border: 0;
   width: auto;
-  /** fix typo inputs **/
-  font-family: $font-family;
-  font-size: 1em;
+
 }
 
 /* pour annuler la taille des inputs ou autres */
