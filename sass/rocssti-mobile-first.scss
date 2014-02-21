@@ -69,6 +69,9 @@ $input-defaut-border : 1px solid #000;
 // RTL
 $rtl_option : false;
 
+// hyphens
+$hyphenation_default : true;
+
 
 // Sass functions : pas touche ;)
 
@@ -332,7 +335,9 @@ li ul {
   margin-bottom: 0;
   margin-top: 0;
 }
+
 /* Activation de la césure */
+@if $hyphenation_default == true {
 textarea,
 table,
 td,
@@ -345,6 +350,14 @@ p {
   word-wrap: break-word;
   @include vendor-prefix(hyphens, auto);
 }
+}
+@else {
+.cut {
+  word-wrap: break-word;
+  @include vendor-prefix(hyphens, auto);
+}
+}
+
 /* pour supprimer la césure si besoin */
 .nocut {
   word-wrap: normal;
