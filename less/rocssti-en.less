@@ -64,6 +64,9 @@
 // RTL
 @rtl_option : false;
 
+// hyphens
+@hyphenation_default : true;
+
 
 // LESS functions : don't touch ;)
 
@@ -316,16 +319,10 @@ li ul {
   margin-bottom: 0;
   margin-top: 0;
 }
+
 /* Thou shalt not pass (Moïse or Gandalf, don't remember) */
-textarea,
-table,
-td,
-th,
-code,
-pre,
-samp,
-div,
-p {
+& when (@hyphenation_default) {
+textarea, table, td, th, code, pre, samp, div, p {
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -333,6 +330,16 @@ p {
   -o-hyphens: auto;
   hyphens: auto;
 }
+}
+.cut when not (@hyphenation_default) {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+
 /* remove hyphenation if needed */
 .nocut {
   word-wrap: normal;
