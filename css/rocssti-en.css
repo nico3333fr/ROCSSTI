@@ -260,7 +260,8 @@ code,
 pre,
 samp,
 div,
-p {
+p,
+.cut {
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
