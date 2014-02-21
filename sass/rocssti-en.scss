@@ -68,6 +68,9 @@ $input-defaut-border : 1px solid #000;
 // RTL
 $rtl_option : false;
 
+// hyphens
+$hyphenation_default : true;
+
 
 // Sass functions : don't touch if you are not sure ;)
 
@@ -334,7 +337,9 @@ li ul {
   margin-bottom: 0;
   margin-top: 0;
 }
+
 /* Thou shalt not pass (Moïse or Gandalf, don't remember) */
+@if $hyphenation_default == true {
 textarea,
 table,
 td,
@@ -347,6 +352,14 @@ p {
   word-wrap: break-word;
   @include vendor-prefix(hyphens, auto);
 }
+}
+@else {
+.cut {
+  word-wrap: break-word;
+  @include vendor-prefix(hyphens, auto);
+}
+}
+
 /* remove hyphenation if needed */
 .nocut {
   word-wrap: normal;
