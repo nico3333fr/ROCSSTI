@@ -65,6 +65,9 @@
 // RTL
 @rtl_option : false;
 
+// hyphens
+@hyphenation_default : true;
+
 
 // LESS functions : pas touche ;)
 
@@ -313,16 +316,10 @@ li ul {
   margin-bottom: 0;
   margin-top: 0;
 }
+
 /* Activation de la césure */
-textarea,
-table,
-td,
-th,
-code,
-pre,
-samp,
-div,
-p {
+& when (@hyphenation_default) {
+textarea, table, td, th, code, pre, samp, div, p {
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -330,6 +327,16 @@ p {
   -o-hyphens: auto;
   hyphens: auto;
 }
+}
+.cut when not (@hyphenation_default) {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+
 /* pour supprimer la césure si besoin */
 .nocut {
   word-wrap: normal;
