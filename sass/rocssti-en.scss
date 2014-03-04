@@ -276,19 +276,19 @@ table {
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
-:lang(fr) > q {
+:lang(fr) q {
   quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D" "\2018" "\2019";
 }
-:lang(en) > q {
+:lang(en) q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
-:lang(es) > q {
+:lang(es) q {
   quotes: "\00AB" "\00BB" "\201C" "\201D";
 }
-:lang(it) > q {
+:lang(it) q {
   quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D";
 }
-:lang(de) > q {
+:lang(de) q {
   quotes: "\201e" "\201c" "\201a" "\2018";
 }
 q:before {
