@@ -56,6 +56,10 @@ p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   line-height: 1.5;
   margin: 1.5em 0;
 }
+/* fix display img */
+img {
+  vertical-align: middle;
+}
 ul, ol { padding-left: 2em; }
 
 /* RTL */
@@ -342,10 +346,6 @@ a:link img,
 a:visited img, 
 img {
   border-style: none;
-}
-/* fix display img */
-img {
-  vertical-align: middle;
 }
 
 /* liens avec icônes, on peut utiliser les DATA-URI */
