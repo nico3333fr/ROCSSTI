@@ -57,9 +57,8 @@ p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   margin: 1.5em 0;
 }
 /* fix display img */
-img {
-  vertical-align: middle;
-}
+img { vertical-align: middle; }
+
 ul, ol { padding-left: 2em; }
 
 /* RTL */
