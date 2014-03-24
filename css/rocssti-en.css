@@ -55,6 +55,9 @@ p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   line-height: 1.5;
   margin: 1.5em 0;
 }
+/* fix display img */
+img { vertical-align: middle; }
+
 ul, ol { padding-left: 2em; }
 
 /* RTL */
