@@ -343,6 +343,10 @@ a:visited img,
 img {
   border-style: none;
 }
+/* fix display img */
+img {
+  vertical-align: middle;
+}
 
 /* liens avec icônes, on peut utiliser les DATA-URI */
 
