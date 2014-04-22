@@ -151,12 +151,14 @@ article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, foot
 abbr, eventsource, mark, meter, time, progress, output, bb { display: inline; }
 
 /* reset minimum */
-html, body, blockquote, ul, ol, form { margin: 0; padding: 0; }
+html, body, blockquote, ul, ol, form, button { margin: 0; padding: 0; }
+button { border: 0; }
 p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   font-size: 1em;
   line-height: $l-h;
   margin: $l-h * 1em 0;
 }
+
 /* fix display img */
 img { vertical-align: middle; }
 
