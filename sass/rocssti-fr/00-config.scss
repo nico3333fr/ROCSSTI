@@ -3,7 +3,7 @@
  
 
 // Sass variables : adaptez-les à vos designs
-$basefont              : 16; // si "14" alors 1em = 14px
+$base-font             : 16; // si "14" alors 1em = 14px
 $l-h                   : 1.5;
 
 // fonts
@@ -39,7 +39,7 @@ $hyphenation-default   : true;
 
 // Sass functions : pas touche ;)
 
-@function em($px, $base: $basefont) {
+@function em($px, $base: $base-font) {
 
   @return ($px / $base) * 1em;
 
@@ -61,9 +61,9 @@ $hyphenation-default   : true;
 @function margin-em ($font-size, $base-height, $base-font){
 
   $coef: ceil(1 / ($base-height * $base-font / $font-size));
-	$other_coef: ceil($base-height * $base-font / $font-size);
-	$height: ($base-font * $base-height / $font-size) ;
-	$mar-top: ($height * $coef );
+  $other_coef: ceil($base-height * $base-font / $font-size);
+  $height: ($base-font * $base-height / $font-size) ;
+  $mar-top: ($height * $coef );
 
   @return ( ($mar-top * $other_coef)*1em 0 ( ($mar-top/2) * $other_coef) *1em 0 );
 
@@ -73,8 +73,8 @@ $hyphenation-default   : true;
 @function margin-em-other ($font-size, $base-height, $base-font){
 
   $coef: ceil(1 / ($base-height * $base-font / $font-size));
-	$height: ($base-font * $base-height / $font-size) ;
-	$mar-top: ($height * $coef );
+  $height: ($base-font * $base-height / $font-size) ;
+  $mar-top: ($height * $coef );
 
   @return ( ($mar-top)*1em 0 );
 
@@ -84,8 +84,8 @@ $hyphenation-default   : true;
 @mixin flow-hr( $value ){
 
   font-size: em($value);
-  line-height: line-height($value, $l-h, $basefont);
-  margin: margin-em($value, $l-h, $basefont) ;   
+  line-height: line-height($value, $l-h, $base-font);
+  margin: margin-em($value, $l-h, $base-font) ;   
 
 }
 
@@ -93,8 +93,8 @@ $hyphenation-default   : true;
 @mixin flow-other( $value ){
 
   font-size: em($value);
-  line-height: line-height($value, $l-h, $basefont);
-  margin: margin-em-other($value, $l-h, $basefont) ;   
+  line-height: line-height($value, $l-h, $base-font);
+  margin: margin-em-other($value, $l-h, $base-font) ;   
 
 }
 
@@ -194,10 +194,10 @@ $hyphenation-default   : true;
         // convert to string
         $text-margin: $margin + '';
         // 1.5 = 1-5
-        $property_class: str-replace($text-margin, '.', '-');
+        $property-class: str-replace($text-margin, '.', '-');
         
         // . mr 1-5 { margin-right: 1.5em ;}
-        .#{$margin-type}#{$property_class} { #{$property}: #{$value}; }
+        .#{$margin-type}#{$property-class} { #{$property}: #{$value}; }
   
   
         }
@@ -239,9 +239,9 @@ $hyphenation-default   : true;
         // convert to string
         $text-padding: $padding + '';
         // 1.5 = 1-5
-        $property_class: str-replace($text-padding, '.', '-');
+        $property-class: str-replace($text-padding, '.', '-');
         
-        .#{$padding-type}#{$property_class} { #{$property}: #{$value}; }
+        .#{$padding-type}#{$property-class} { #{$property}: #{$value}; }
   
   
         }
