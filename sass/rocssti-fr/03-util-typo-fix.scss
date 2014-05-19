@@ -77,7 +77,7 @@ li ul {
 }
 
 /* Activation de la césure */
-@if $hyphenation_default == true {
+@if $hyphenation-default == true {
 textarea,
 table,
 td,
@@ -137,7 +137,7 @@ abbr[title] {
 .alignbottom { vertical-align: bottom; }
 .alignmiddle { vertical-align: middle; }
 
-@if $rtl_option == true {
+@if $rtl-option == true {
   /* RTL */
   [dir="rtl"] .alignright  { text-align: left; }
   [dir="rtl"] .alignleft   { text-align: right; }
