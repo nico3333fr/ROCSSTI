@@ -159,8 +159,9 @@ p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   margin: $l-h * 1em 0;
 }
 
-/* fix display img */
-img { vertical-align: middle; }
+/* fix display img/iframe */
+img,
+iframe { vertical-align: middle; }
 
 ul, ol { padding-left: 2em; }
 
