@@ -128,15 +128,15 @@ $hyphenation_default : true;
 
 }
 
-@mixin vendor-prefix($name, $argument) {
-
-  -webkit-#{$name}: $argument;
-  -moz-#{$name}: $argument;
-  -ms-#{$name}: $argument;
-  -o-#{$name}: $argument;
-  #{$name}: $argument;
-
+@mixin vendor-prefix($property, $value, $prefixes: webkit moz ms o) {
+  @if $prefixes {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+  }
+  #{$property}: $value;
 }
+
 
 
 
