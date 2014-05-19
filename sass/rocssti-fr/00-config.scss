@@ -1,0 +1,235 @@
+// Sass variables : adaptez-les à vos designs
+$basefont              : 16; // si "14" alors 1em = 14px
+$l-h                   : 1.5;
+
+// fonts
+$font-family           : 'Arial, helvetica, sans-serif';
+
+// couleurs projets
+
+
+// couleurs
+$color-links           : #2573be;
+$color-hover           : #000;
+$hr                    : #000;
+$hr-height             : 1px;
+$color-alert           : #bf0000;
+
+// inputs
+$input-defaut-size     : 250px;
+$input-defaut-border   : 1px solid #000;
+
+// autres
+
+
+
+// Sass functions : pas touche ;)
+
+@function em($px, $base: $basefont) {
+
+  @return ($px / $base) * 1em;
+
+}
+
+
+// calculées via http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil 
+
+@function lineheight ($font-size, $base-height, $base-font){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+  $height: ($base-font * $base-height / $font-size) ;
+
+  @return ($height * $coef) ;
+
+}
+
+
+@function margin_em ($font-size, $base-height, $base-font){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+	$other_coef: ceil($base-height * $base-font / $font-size);
+	$height: ($base-font * $base-height / $font-size) ;
+	$mar-top: ($height * $coef );
+
+  @return ( ($mar-top * $other_coef)*1em 0 ( ($mar-top/2) * $other_coef) *1em 0 );
+
+}
+
+
+@function margin_em_other ($font-size, $base-height, $base-font){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+	$height: ($base-font * $base-height / $font-size) ;
+	$mar-top: ($height * $coef );
+
+  @return ( ($mar-top)*1em 0 );
+
+}
+
+
+@mixin flow_hr( $value ){
+
+  font-size: em($value);
+  line-height: lineheight($value, $l-h, $basefont);
+  margin: margin_em($value, $l-h, $basefont) ;   
+
+}
+
+
+@mixin flow_other( $value ){
+
+  font-size: em($value);
+  line-height: lineheight($value, $l-h, $basefont);
+  margin: margin_em_other($value, $l-h, $basefont) ;   
+
+}
+
+
+@mixin vendor-prefix($property, $value, $prefixes: webkit moz ms o) {
+
+  @if $prefixes {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+  }
+  #{$property}: $value;
+
+}
+
+
+@mixin color-opacity($color, $opacity: 0.9) {
+    color: $color; /* The Fallback */
+    color: rgba($color, $opacity);
+}
+
+@mixin background-opacity($color, $opacity: 0.9) {
+    background-color: $color; /* The Fallback */
+    background-color: rgba($color, $opacity);
+}
+
+
+// String replace function by @hugoGiraudel
+// @param $string: string to replace in
+// @param $old: string to replace
+// @param $new: string to replace $old into
+// @param $case-sensitive: case sensitiveness
+@function str-replace($string, $old, $new: '', $case-sensitive: true) {
+  // Checking for arguments accuracy
+  @if type-of($string) != string or type-of($old) != string or type-of($new) != string {
+    @warn "One of the 3 arguments is not a string.";
+    @return $string;
+  }
+  
+  // Prevent from infinite recursion
+  @if str-index($new, $old) != 0 {
+    @warn "The string to be replaced is contained in the new string. Infinite recursion avoided.";
+    @return $string;
+  }
+  
+  // Checking for case 
+  $index: if(not $case-sensitive, str-index(to-lower-case($string), to-lower-case($old)),  str-index($string, $old));
+  
+  // Doing anything only if $old has been found
+  // And if new is different from old
+  @if $index > 0 and $new != $old {
+    $new-string: quote(str-slice($string, 1, $index - 1));
+    @for $i from $index through str-length($string) {
+      @if $i < $index or $i >= $index + str-length($old) {
+        $new-string: $new-string + str-slice($string, $i, $i);
+      }
+    }
+    // Going recursive
+    @return quote(str-replace(str-insert($new-string, $new, $index), $old, $new, $case-sensitive)); 
+  }
+  @return $string;
+} 
+
+
+
+
+// Generate margins
+// example
+// $list-margin: mt, mr, mb, ml, m;
+// $list-margin-values: 0, 1, 2, 3; // specify 2.5 if needed
+
+@mixin margin-generator ($list-margin, $list-margin-values) {
+
+  @each $margin-type in $list-margin {
+     @each $margin in $list-margin-values {
+        //$temp_m : str-slice($margin-type, 0, 1);
+        $temp_t : str-slice($margin-type, 2, 3);
+        
+        $property: margin;
+        
+        @if $temp_t == t {
+           $property: margin-top;
+        } @else if $temp_t == r {
+           $property: margin-right;
+        } @else if $temp_t == b {
+           $property: margin-bottom;
+        } @else if $temp_t == l {
+           $property: margin-left;
+        }
+        
+        
+        $value : $margin + 0em;
+        @if $margin == 0 {
+           $value : $margin;
+        } 
+        
+        // convert to string
+        $text-margin: $margin + '';
+        // 1.5 = 1-5
+        $property_class: str-replace($text-margin, '.', '-');
+        
+        // . mr 1-5 { margin-right: 1.5em ;}
+        .#{$margin-type}#{$property_class} { #{$property}: #{$value}; }
+  
+  
+        }
+     }
+   
+}
+
+
+
+// Generate paddings
+// example
+// $list-padding: pt, pr, pb, pl, p;
+// $list-padding-values: 0, 1, 2, 3; // specify 2.5 if needed
+
+@mixin padding-generator ($list-padding, $list-padding-values) {
+
+  @each $padding-type in $list-padding {
+     @each $padding in $list-padding-values {
+        //$temp_p : str-slice($padding-type, 0, 1);
+        $temp_t : str-slice($padding-type, 2, 3);
+        
+        $property: padding;
+        
+        @if $temp_t == t {
+           $property: padding-top;
+        } @else if $temp_t == r {
+           $property: padding-right;
+        } @else if $temp_t == b {
+           $property: padding-bottom;
+        } @else if $temp_t == l {
+           $property: padding-left;
+        }
+        
+        $value : $padding + 0em;
+        @if $padding == 0 {
+           $value : $padding;
+        } 
+        
+        // convert to string
+        $text-padding: $padding + '';
+        // 1.5 = 1-5
+        $property_class: str-replace($text-padding, '.', '-');
+        
+        .#{$padding-type}#{$property_class} { #{$property}: #{$value}; }
+  
+  
+        }
+     }
+}
