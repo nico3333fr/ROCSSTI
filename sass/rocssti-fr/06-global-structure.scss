@@ -1,0 +1,51 @@
+/* === page === */
+#page {
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
+}
+
+/* === skip-links = liens d'évitement === */
+#skip-links {
+
+}
+/* skip-link = un lien d'évitement */
+/* idéalement mettez-les visibles pas uniquement au focus */
+.skip-link {
+
+  
+  /* sinon pensez à les rendre visibles au focus */
+  &:focus,
+  &:hover,
+  &:active {
+
+  }
+
+}
+
+
+
+
+/* === header === */
+.header {
+
+}
+.logo {
+
+}
+.navigation {
+
+}
+
+
+/* === contenu principal === */
+.main {
+
+}
+
+
+/* === footer === */
+.footer {
+
+}
+
