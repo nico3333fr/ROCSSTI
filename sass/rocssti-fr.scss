@@ -128,14 +128,13 @@ $hyphenation_default : true;
 
 }
 
-@mixin vendor-prefix($name, $argument) {
-
-  -webkit-#{$name}: $argument;
-  -moz-#{$name}: $argument;
-  -ms-#{$name}: $argument;
-  -o-#{$name}: $argument;
-  #{$name}: $argument;
-
+@mixin vendor-prefix($property, $value, $prefixes: webkit moz ms o) {
+  @if $prefixes {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+  }
+  #{$property}: $value;
 }
 
 
@@ -144,7 +143,7 @@ $hyphenation_default : true;
  *****************************************************************
  * 1 -- reset
  *****************************************************************
- */
+ */word-wrap: break-w
 
 /* spécial HTML 5 */
 article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section, video { display: block; }
