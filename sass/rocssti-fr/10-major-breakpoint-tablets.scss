@@ -1,0 +1,25 @@
+@media (max-width: 768px) {
+   
+  /* affichage des éléments */
+  .nodesktop { display: block; }
+
+  /* cachage des éléments inutiles ! */
+  .notablet { display: none; }
+  
+  /* linéarisation contenus flottants/table-layout */
+  .autotablet {
+    float: none;
+    display: block;
+    width: auto;
+  }
+
+  /**
+   * adaptation structure globale (page / skip links / header / contenu principal / footer)
+   */
+  
+  
+  /**
+   * dans le contenu (contenus spécifiques aux pages)
+   */
+
+}
