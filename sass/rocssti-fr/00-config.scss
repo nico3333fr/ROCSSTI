@@ -24,10 +24,10 @@ $input-defaut-size     : 250px;
 $input-defaut-border   : 1px solid #000;
 
 // RTL
-$rtl_option            : false;
+$rtl-option            : false;
 
 // hyphens
-$hyphenation_default   : true;
+$hyphenation-default   : true;
 
 // autres
 
@@ -44,7 +44,7 @@ $hyphenation_default   : true;
 
 // calculées via http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil 
 
-@function lineheight ($font-size, $base-height, $base-font){
+@function line-height ($font-size, $base-height, $base-font){
 
   $coef: ceil(1 / ($base-height * $base-font / $font-size));
   $height: ($base-font * $base-height / $font-size) ;
@@ -54,7 +54,7 @@ $hyphenation_default   : true;
 }
 
 
-@function margin_em ($font-size, $base-height, $base-font){
+@function margin-em ($font-size, $base-height, $base-font){
 
   $coef: ceil(1 / ($base-height * $base-font / $font-size));
 	$other_coef: ceil($base-height * $base-font / $font-size);
@@ -66,7 +66,7 @@ $hyphenation_default   : true;
 }
 
 
-@function margin_em_other ($font-size, $base-height, $base-font){
+@function margin-em-other ($font-size, $base-height, $base-font){
 
   $coef: ceil(1 / ($base-height * $base-font / $font-size));
 	$height: ($base-font * $base-height / $font-size) ;
@@ -77,20 +77,20 @@ $hyphenation_default   : true;
 }
 
 
-@mixin flow_hr( $value ){
+@mixin flow-hr( $value ){
 
   font-size: em($value);
-  line-height: lineheight($value, $l-h, $basefont);
-  margin: margin_em($value, $l-h, $basefont) ;   
+  line-height: line-height($value, $l-h, $basefont);
+  margin: margin-em($value, $l-h, $basefont) ;   
 
 }
 
 
-@mixin flow_other( $value ){
+@mixin flow-other( $value ){
 
   font-size: em($value);
-  line-height: lineheight($value, $l-h, $basefont);
-  margin: margin_em_other($value, $l-h, $basefont) ;   
+  line-height: line-height($value, $l-h, $basefont);
+  margin: margin-em-other($value, $l-h, $basefont) ;   
 
 }
 
