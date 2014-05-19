@@ -1,0 +1,144 @@
+.noborder,
+iframe { border: 0; }
+
+table {
+  table-layout: fixed;
+}
+
+/*
+ * repris de http://tinytypo.tetue.net/ de @tetue
+ * tuné avec l'aide de http://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
+ *
+ * voir http://en.wikipedia.org/wiki/International_variation_in_quotation_marks pour les références
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+:lang(fr) > q {
+  quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D" "\2018" "\2019";
+}
+:lang(en) > q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+:lang(es) > q {
+  quotes: "\00AB" "\00BB" "\201C" "\201D";
+}
+:lang(it) > q {
+  quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D";
+}
+:lang(de) > q {
+  quotes: "\201e" "\201c" "\201a" "\2018";
+}
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
+}
+
+/* éviter interlignage disgracieux */
+sup,
+sub {
+  vertical-align: 0;
+  position: relative;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
+
+/* éviter problèmes de margin */
+h1:first-child,.h1:first-child,
+h2:first-child,.h2:first-child,
+h3:first-child,.h3:first-child,
+h4:first-child,.h4:first-child,
+h5:first-child,.h5:first-child,
+h6:first-child,.h6:first-child {
+  margin-top: 0;
+}
+/* virer marge basse sur dernier enfant */
+p:last-child,
+ul:last-child,
+ol:last-child,
+dl:last-child,
+blockquote:last-child,
+pre:last-child,
+table:last-child {
+  margin-bottom: 0;
+}
+
+/* éviter marges supplémentaires sur éléments imbriqués */
+li p,
+li ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Activation de la césure */
+@if $hyphenation_default == true {
+textarea,
+table,
+td,
+th,
+code,
+pre,
+samp,
+div,
+p {
+  word-wrap: break-word;
+  @include vendor-prefix(hyphens, auto);
+}
+}
+@else {
+.cut {
+  word-wrap: break-word;
+  @include vendor-prefix(hyphens, auto);
+}
+}
+
+/* pour supprimer la césure si besoin */
+.nocut {
+  word-wrap: normal;
+  @include vendor-prefix(hyphens, none);
+}
+
+code,
+pre,
+samp {
+  white-space: pre-wrap;
+}
+code {
+  line-height: 1;
+}
+kbd {
+  border: solid 1px;
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+  padding: 0 .25em;
+}
+table {
+  margin-bottom: 1.5em;
+}
+/* Abbréviations, sigles, etc. */
+/* seuls ceux ayant un title sont signalés */
+abbr[title] {
+  border-bottom: dotted 1px;
+  cursor: help;
+/* couleur héritée du texte */
+}
+
+/* alignements de textes */
+.alignright  { text-align: right; }
+.aligncenter { text-align: center; }
+.alignleft   { text-align: left; }
+.aligntop    { vertical-align: top; }
+.alignbottom { vertical-align: bottom; }
+.alignmiddle { vertical-align: middle; }
+
+@if $rtl_option == true {
+  /* RTL */
+  [dir="rtl"] .alignright  { text-align: left; }
+  [dir="rtl"] .alignleft   { text-align: right; }
+}
