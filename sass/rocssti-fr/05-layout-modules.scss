@@ -26,7 +26,7 @@ input {
   float: right;
 }
 
-@if $rtl_option == true {
+@if $rtl-option == true {
   /* RTL */
   [dir="rtl"] .left {
     float: right;
