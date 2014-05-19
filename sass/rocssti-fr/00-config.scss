@@ -1,3 +1,7 @@
+// Compass import 
+//@import "compass/css3";
+ 
+
 // Sass variables : adaptez-les à vos designs
 $basefont              : 16; // si "14" alors 1em = 14px
 $l-h                   : 1.5;
@@ -20,10 +24,10 @@ $input-defaut-size     : 250px;
 $input-defaut-border   : 1px solid #000;
 
 // RTL
-$rtl_option : false;
+$rtl_option            : false;
 
 // hyphens
-$hyphenation_default : true;
+$hyphenation_default   : true;
 
 // autres
 
