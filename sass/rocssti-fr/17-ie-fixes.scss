@@ -35,7 +35,7 @@
   overflow: auto;
 }
 
-@if $rtl_option == true {
+@if $rtl-option == true {
   /* RTL */
   [dir="rtl"] .ie7 .col,
   [dir="rtl"] .ie7 .col-noalign,
