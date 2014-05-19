@@ -23,7 +23,7 @@ iframe { vertical-align: middle; }
 
 ul, ol { padding-left: 2em; }
 
-@if $rtl_option == true {
+@if $rtl-option == true {
   /* RTL */
   [dir="rtl"] ul, 
   [dir="rtl"] ol { 
