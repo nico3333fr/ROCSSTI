@@ -25,6 +25,10 @@ $input-defaut-border   : 1px solid #000;
 
 // RTL
 $rtl-option            : false;
+/* RTL = Right To Left => 
+ * pour adapter un site dans une langue qui se lit de droite à gauche
+ * prévu surtout pour sites multilingues avec LTR et RTL
+ */
 
 // hyphens
 $hyphenation-default   : true;
