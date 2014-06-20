@@ -562,6 +562,12 @@ input {
   display: inline-block;
 }
 
+/* grid = élément d'une inline-grid */
+.grid {
+  @extend .inbl;
+  @extend .aligntop;
+}
+
 /* pour relativiser */
 .relative {
   position: relative;
@@ -804,7 +810,7 @@ textarea {
   @include border-radius(5px);
   padding: .5em;
   width: $input-defaut-size;
-  font-family: $font-family;
+  font-family: inherit;
   font-size: 1em;
 }
 
