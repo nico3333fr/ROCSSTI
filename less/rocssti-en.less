@@ -551,9 +551,16 @@ input {
 }
 
 
+
 /* inline-block, useful for grids, and not only */
-.inbl {
+.inbl,
+.grid {
   display: inline-block;
+}
+
+/* grid = element of inline-grid */
+.grid {
+  vertical-align: top;
 }
 
 /* to relativize */
@@ -819,7 +826,7 @@ textarea {
   padding: .5em;
   width: @input-defaut-size;
   /** fix typo inputs **/
-  font-family: @font-family;
+  font-family: inherit;
   font-size: 1em;
 }
 
