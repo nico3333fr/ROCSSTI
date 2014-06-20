@@ -474,7 +474,7 @@ input {
   display: inline-block;
 }
 
-/* grid = element of inline-grids */
+/* grid = élément d'une inline-grid */
 .grid {
   vertical-align: top;
 }
