@@ -87,9 +87,15 @@ input {
 }
 
 
-/* inline-block */
-.inbl {
+/* inline-block, utile pour les grilles et pas seulement */
+.inbl,
+.grid {
   display: inline-block;
+}
+
+/* grid = élément d'une inline-grid */
+.grid {
+  vertical-align: top;
 }
 
 /* relative */
