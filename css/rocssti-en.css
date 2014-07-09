@@ -10,6 +10,11 @@
  * this CSS is provided "as is", without any warranty of any type,
  * author can't be responsible of anything you might do with RÖCSSTI
  *
+ * convention (adapt if needed)
+ *  .parent
+ *  .parent__child
+ *  .parent--modifier  
+ * 
  * RTL = Right To Left =>
  * to adapt a website in a language that is written from right to left
  * designed for multilingual websites with LTR et RTL
@@ -619,18 +624,18 @@ hr {
 }
 
 /* --- skip links --- */
-#skip-links {
+.skip {
 
 }
-/* .skip-link = 1 skip link  */
+/* .skip__link = 1 skip link  */
 /* they should be visible not only on focus */
-.skip-link {
+.skip__link {
 
 }
 /* anyway remember making them visible on focus */
-.skip-link:focus,
-.skip-link:hover,
-.skip-link:active {
+.skip__link:focus,
+.skip__link:hover,
+.skip__link:active {
 
 }
 
