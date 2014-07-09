@@ -134,12 +134,14 @@ $hyphenation_default : true;
 }
 
 @mixin vendor-prefix($property, $value, $prefixes: webkit moz ms o) {
+
   @if $prefixes {
     @each $prefix in $prefixes {
       #{'-' + $prefix + '-' + $property}: $value;
     }
   }
   #{$property}: $value;
+
 }
 
 
@@ -583,6 +585,12 @@ input {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* activation de l'accélération matérielle */
+.hardware-accelerated {
+  @include vendor-prefix(transform, translateZ(0));
+}
+
 
 
 /* largeurs de blocks */
