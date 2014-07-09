@@ -103,12 +103,17 @@ input {
   position: relative;
 }
 
-
 /* bloc centré */
 .center {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* activation de l'accélération matérielle */
+.hardware-accelerated {
+  @include vendor-prefix(transform, translateZ(0));
+}
+
 
 
 /* largeurs de blocks */
