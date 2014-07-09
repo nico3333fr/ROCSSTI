@@ -11,6 +11,11 @@
  * l'auteur ne saurait être tenu responsable de quoi que ce soit pour
  * l'utilisation de RÖCSSTI.
  *
+ * convention (à adapter si besoin)
+ *  .parent
+ *  .parent__enfant
+ *  .parent--modifieur  
+ * 
  * RTL = Right To Left =>
  * pour adapter un site dans une langue qui se lit de droite à gauche
  * prévu surtout pour sites multilingues avec LTR et RTL
@@ -713,13 +718,13 @@ hr {
 
 }
 
-/* === skip-links = liens d'évitement === */
-#skip-links {
+/* === skip links = liens d'évitement === */
+.skip {
 
 }
-/* skip-link = un lien d'évitement */
+/* skip__link = un lien d'évitement */
 /* idéalement mettez-les visibles pas uniquement au focus */
-.skip-link {
+.skip__link {
 
   
   /* sinon pensez à les rendre visibles au focus */
