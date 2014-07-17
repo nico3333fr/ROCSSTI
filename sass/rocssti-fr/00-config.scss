@@ -15,7 +15,7 @@ $font-family           : 'Arial, helvetica, sans-serif';
 // couleurs
 $color-links           : #2573be;
 $color-hover           : #000;
-$hr                    : #000;
+$color-hr              : #000;
 $hr-height             : 1px;
 $color-alert           : #bf0000;
 
@@ -31,7 +31,7 @@ $rtl-option            : false;
  */
 
 // hyphens
-$hyphenation-default   : true;
+$hyphenation           : true;
 
 // autres
 
@@ -122,40 +122,26 @@ $hyphenation-default   : true;
 }
 
 
-// String replace function by @hugoGiraudel
-// @param $string: string to replace in
-// @param $old: string to replace
-// @param $new: string to replace $old into
-// @param $case-sensitive: case sensitiveness
-@function str-replace($string, $old, $new: '', $case-sensitive: true) {
-  // Checking for arguments accuracy
-  @if type-of($string) != string or type-of($old) != string or type-of($new) != string {
-    @warn "One of the 3 arguments is not a string.";
-    @return $string;
+/**
+ * Replace `$search` with `$replace` in `$string`.
+ * Case sensitive.
+ *
+ * @param {String} $string - haystack
+ * @param {String} $search - needle
+ * @param {String} $replace ('') - replacement
+ *
+ * @return {String}
+ */
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  $slice: $string;
+  
+  @while $index {
+    $slice: if($index == 1, '', str-slice($slice, 0, $index - 1)) + $replace + str-slice($slice, $index + str-length($replace));
+    $index: str-index($slice, $search);
   }
   
-  // Prevent from infinite recursion
-  @if str-index($new, $old) != 0 {
-    @warn "The string to be replaced is contained in the new string. Infinite recursion avoided.";
-    @return $string;
-  }
-  
-  // Checking for case 
-  $index: if(not $case-sensitive, str-index(to-lower-case($string), to-lower-case($old)),  str-index($string, $old));
-  
-  // Doing anything only if $old has been found
-  // And if new is different from old
-  @if $index > 0 and $new != $old {
-    $new-string: quote(str-slice($string, 1, $index - 1));
-    @for $i from $index through str-length($string) {
-      @if $i < $index or $i >= $index + str-length($old) {
-        $new-string: $new-string + str-slice($string, $i, $i);
-      }
-    }
-    // Going recursive
-    @return quote(str-replace(str-insert($new-string, $new, $index), $old, $new, $case-sensitive)); 
-  }
-  @return $string;
+  @return $slice;
 } 
 
 
