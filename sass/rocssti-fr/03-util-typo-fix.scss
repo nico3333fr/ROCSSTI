@@ -77,7 +77,7 @@ li ul {
 }
 
 /* Activation de la césure */
-@if $hyphenation-default == true {
+@if $hyphenation == true {
 textarea,
 table,
 td,
