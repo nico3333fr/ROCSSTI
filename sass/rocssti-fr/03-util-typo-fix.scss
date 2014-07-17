@@ -82,24 +82,24 @@ li ul {
 
 /* Activation de la césure */
 @if $hyphenation == true {
-textarea,
-table,
-td,
-th,
-code,
-pre,
-samp,
-div,
-p {
-  word-wrap: break-word;
-  @include vendor-prefix(hyphens, auto);
-}
+  textarea,
+  table,
+  td,
+  th,
+  code,
+  pre,
+  samp,
+  div,
+  p {
+    word-wrap: break-word;
+    @include vendor-prefix(hyphens, auto);
+  }
 }
 @else {
-.cut {
-  word-wrap: break-word;
-  @include vendor-prefix(hyphens, auto);
-}
+  .cut {
+    word-wrap: break-word;
+    @include vendor-prefix(hyphens, auto);
+  }
 }
 
 /* pour supprimer la césure si besoin */
