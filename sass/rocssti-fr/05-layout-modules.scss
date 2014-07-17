@@ -174,7 +174,7 @@ $list-paddings-values: 0, 1, 2; // specify 2.5 if needed
 
 /* spécial hr de 1px de haut */
 hr {
-  background-color: $hr;
+  background-color: $color-hr;
   border: 0;
   color: $color-hr;
   height: $hr-height;
