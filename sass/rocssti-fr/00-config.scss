@@ -3,35 +3,35 @@
  
 
 // Sass variables : adaptez-les à vos designs
-$base-font             : 16; // si "14" alors 1em = 14px
-$l-h                   : 1.5;
+$base-font             : 16 !default; // si "14" alors 1em = 14px
+$l-h                   : 1.5 !default;
 
 // fonts
-$font-family           : 'Arial, helvetica, sans-serif';
+$font-family           : 'Arial, helvetica, sans-serif' !default;
 
 // couleurs projets
 
 
 // couleurs
-$color-links           : #2573be;
-$color-hover           : #000;
-$color-hr              : #000;
-$hr-height             : 1px;
-$color-alert           : #bf0000;
+$color-links           : #2573be !default;
+$color-hover           : #000 !default;
+$color-hr              : #000 !default;
+$hr-height             : 1px !default;
+$color-alert           : #bf0000 !default;
 
 // inputs
-$input-defaut-size     : 250px;
-$input-defaut-border   : 1px solid #000;
+$input-defaut-size     : 250px !default;
+$input-defaut-border   : 1px solid #000 !default;
 
 // RTL
-$rtl-option            : false;
+$rtl-option            : false !default;
 /* RTL = Right To Left => 
  * pour adapter un site dans une langue qui se lit de droite à gauche
  * prévu surtout pour sites multilingues avec LTR et RTL
  */
 
 // hyphens
-$hyphenation           : true;
+$hyphenation           : true !default;
 
 // autres
 
