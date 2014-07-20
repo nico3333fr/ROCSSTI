@@ -1,4 +1,4 @@
-@include respond-to(640) { 
+@include respond-to($breakpoint-small) { 
 
   /* affichage des éléments */
   .notablet { display: block; }
