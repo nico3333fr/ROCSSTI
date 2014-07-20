@@ -1,1 +1,14 @@
- 
+/* Breakpoint pour écrans > $breakpoint-big */
+@include respond-to($breakpoint-big, 'min') {
+
+  /**
+   * adaptation structure globale (page / skip links / header / contenu principal / footer)
+   */
+  
+  
+  /**
+   * dans le contenu (contenus spécifiques aux pages)
+   */
+
+}
+
