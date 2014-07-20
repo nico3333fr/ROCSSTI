@@ -233,3 +233,26 @@ $hyphenation           : true !default;
         }
      }
 }
+
+
+/**
+ * Responsive management in em 
+ *
+ */
+@mixin respond-to($breakpoint, $query-type : 'max') {
+  @if $query-type == "max" {
+     @media (max-width: em($breakpoint)) {
+      @content;
+    }
+  }
+ 
+  @else if $query-type == "min" {
+     @media (min-width: em($breakpoint)) {
+      @content;
+    }
+  }
+ 
+  @else  {
+    @warn "Type non supported.";
+  }
+}
