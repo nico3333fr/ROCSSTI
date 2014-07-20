@@ -1,4 +1,4 @@
-@media (max-width: 640px) {
+@include respond-to(640) { 
 
   /* affichage des éléments */
   .notablet { display: block; }
