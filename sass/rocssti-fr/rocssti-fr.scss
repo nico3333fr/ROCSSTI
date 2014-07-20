@@ -26,7 +26,7 @@
  * 06 -- structure (page / skip links / header / main content / footer)
  * 07 -- forms
  * 08 -- dans le contenu
- * 09 -- breakpoints mineurs entre desktop et tablettes
+ * 09 -- breakpoints big desktop et entre desktop/tablettes
  * 10 -- tablettes - breakpoint majeur
  * 11 -- breakpoints mineurs entre tablettes et mobile
  * 12 -- mobile - breakpoint majeur
@@ -124,11 +124,11 @@
 
 /*
  *****************************************************************
- * 09 -- breakpoints mineurs entre desktop et tablettes
+ * 09 -- breakpoints big desktop et entre desktop/tablettes
  *****************************************************************
  */
 
-@import "09-breakpoints-between-desktop-tablets.scss";
+@import "09-breakpoints-bigger-than-tablets.scss";
 
 
 /*
