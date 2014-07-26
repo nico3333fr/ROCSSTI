@@ -498,7 +498,7 @@ input {
   margin-right: auto;
 }
 
-/* harware-acceleration activation */
+/* hardware-acceleration activation */
 .hardware-accelerated {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
