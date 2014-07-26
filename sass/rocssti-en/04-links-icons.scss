@@ -1,0 +1,46 @@
+/* links */
+/* remember focus */
+a {
+  color: $color-links;
+  cursor: pointer;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: $color-hover;
+  }
+}
+/* avoid border on images in links + fix border image IE */
+a:link img,
+a:visited img,
+img {
+  border-style: none;
+}
+
+/* links with icons, may use DATA-URI */
+
+/* external links */
+/*a[href^="http://"],
+a[href^="https://"] {
+
+}*/
+/* if full URL of the website in an internal link, remove icon */
+/*a[href^="http://www.mydomain.com"] {
+
+}*/
+/* contact, mailto links */
+/*.mail,
+a[href^="mailto:"] {
+
+}*/
+/* if URL ends with .pdf or whatever */
+/*a[href$=".pdf"] {
+
+}*/
+
+/* facto icons */
+/*[class*=icon-30] {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}*/
