@@ -1,0 +1,15 @@
+/* Breakpoint for screens > $breakpoint-big */
+@include respond-to($breakpoint-big, 'min') {
+
+  /**
+   * global structure adaptation (page / skip links / header / main content / footer)
+   */
+  
+  
+  /**
+   * inside content (other styles for pages)
+   */
+
+}
+
+/* Other minor breakpoints > $breakpoint-medium */
