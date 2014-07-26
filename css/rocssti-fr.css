@@ -1037,8 +1037,9 @@ select:focus:required:valid {
  */
 
 /*
-.is-hidden {
-
+.is-hidden,
+[aria-hidden=true] {
+display: none;
 }
 */
 
