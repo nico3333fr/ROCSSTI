@@ -138,6 +138,7 @@ input {
 .w90  { width: 90%; }
 .w100 { width: 100%; }
 
+
 /* ici ajouter les largeurs en pixels */
 $list-width: 500;
 // ex .w500p { width: 500px; }
@@ -145,15 +146,31 @@ $list-width: 500;
 @each $width in $list-width {
   .w#{$width}p { width: #{$width}px; }
   }
+  
+/* ici ajouter les largeurs en em */
+$list-width-em: 500;
+// ex .w500e { width: 60em; }
+
+@each $width in $list-width-em {
+  $size_em : em($width);
+  .w#{$width}e { width: $size_em; }
+  }
 
 /* ici ajouter les largeurs max en pixels */
 $list-max-width: 960;
 
 @each $max-width in $list-max-width {
-  $size_em : em($max-width);
-  .mw#{$max-width}p { max-width: $size_em; }
+  .mw#{$width}p { max-width: #{$max-width}px; }
   }
- 
+
+/* ici ajouter les largeurs max en em */
+$list-max-width-em: 960;
+
+@each $max-width in $list-max-width-em {
+  $size_em : em($max-width);
+  .mw#{$max-width}e { max-width: $size_em; }
+  }
+
 
 /* margins */
 
