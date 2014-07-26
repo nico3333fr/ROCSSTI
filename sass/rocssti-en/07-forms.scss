@@ -1,0 +1,105 @@
+/* makes you want to click on */
+label,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  cursor: pointer;
+}
+
+/* avoid dummy resize */
+textarea {
+  resize: vertical;
+}
+
+label,
+button,
+input,
+select {
+  vertical-align: middle;
+}
+
+/* to adapt to your design */
+input,
+select,
+textarea {
+  border: $input-defaut-border;
+  border-radius: 5px;
+  padding: .5em;
+  width: $input-defaut-size;
+  /** fix typo inputs **/
+  font-family: inherit;
+  font-size: 1em;
+}
+
+/* for field texts */
+.label {
+  display: inline-block;
+}
+
+/* to adapt to your design */
+.button {
+  background: #fff;
+  border-radius: 5px;
+  color: #000;
+}
+
+/*
+ * avoids dimensioning for radio, checkboxes and images
+ * and a different display on IE
+ */
+input[type="radio"],
+input[type="checkbox"],
+input[type="image"] {
+  background-color: transparent;
+  border: 0;
+  width: auto;
+
+}
+
+/* to cancel input sizing or other if needed */
+.auto {
+  width: auto;
+}
+
+/* error or confirmation messages */
+.alert,
+.alert input,
+.alert textarea,
+.alert select {
+  color: $color-alert;
+  font-weight: bold;
+}
+/* .redborder is only used to debug */
+.alert input,
+.alert textarea,
+.alert select,
+.redborder {
+  border: 1px solid $color-alert;
+}
+.alert img {
+  border: 0;
+}
+.ok {
+
+}
+
+/*
+ * can be completed with HTML5 required attribute
+ * example with a color, remember not only displaying information with it
+ */
+select:required:invalid,
+input:required:invalid,
+input:focus:invalid,
+textarea:required:invalid,
+textarea:focus:invalid {
+  background: #fef6f6;
+  -moz-box-shadow: none;
+}
+
+input:focus:required:valid,
+textarea:focus:required:valid,
+select:focus:required:valid {
+  background: #efe;
+  -moz-box-shadow: none;
+}
