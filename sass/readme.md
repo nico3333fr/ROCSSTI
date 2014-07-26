@@ -4,7 +4,7 @@
 
 Here you may find english and french-speaking Sass versions of RÖCSSTI.
 
-French version of RÖCSSTI is more advanced, once several updates and refactoring will be finished, english version will follow.
+English version of RÖCSSTI has just been refactored :)
 
 
 ## Questions, remarks
