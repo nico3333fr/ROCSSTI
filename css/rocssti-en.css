@@ -487,6 +487,12 @@ input {
   display: table-cell;
 }
 
+
+/* block */
+.bl {
+  display: block;
+}
+
 /* inline-block, useful for grids, and not only */
 .inbl,
 .grid {
