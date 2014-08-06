@@ -207,7 +207,8 @@ body {
  */
 
 /* ici les webfonts */
-
+/*@font-face {
+}*/
 
 h1,
 .h1 {
@@ -457,23 +458,30 @@ img {
 /* liens avec icônes, on peut utiliser les DATA-URI */
 
 /* pour signaler liens externes */
-a[href^="http://"],
+/*a[href^="http://"],
 a[href^="https://"] {
 
-}
+}*/
 /* si URL complète sur un lien interne, virer signalement liens externes */
-a[href^="http://www.mondomaine.com"] {
+/*a[href^="http://www.mondomaine.com"] {
 
-}
+}*/
 /* contact, liens mailto */
-.mail,
+/*.mail,
 a[href^="mailto:"] {
 
-}
+}*/
 /* dont l'URL se termine par .pdf ou ce que vous voulez comme extension */
-a[href$=".pdf"] {
+/*a[href$=".pdf"] {
 
-}
+}*/
+
+/* facto icons */
+/*[class*=icon-30] {
+display: inline-block;
+width: 30px;
+height: 30px;
+}*/
 
 
 
@@ -503,6 +511,9 @@ input {
 /* contient des floats */
 .mod {
   overflow: auto;
+}
+.mod--hidden {
+  overflow: hidden;
 }
 
 /* quelques floattants */
