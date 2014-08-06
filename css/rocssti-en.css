@@ -101,9 +101,9 @@ body {
  *****************************************************************
  */ 
 
-@font-face {
+/*@font-face {
 
-}
+}*/
 
 /* calculated by http://soqr.fr/vertical-rhythm/ thanks @goetter & @eQRoeil */
 
@@ -364,23 +364,23 @@ img {
 /* links with icons, may use DATA-URI */
 
 /* external links */
-a[href^="http://"],
+/*a[href^="http://"],
 a[href^="https://"] {
 
-}
+}*/
 /* if full URL of the website in an internal link, remove icon */
-a[href^="http://www.mydomaine.com"] {
+/*a[href^="http://www.mydomaine.com"] {
 
-}
+}*/
 /* contact, mailto links */
-.mail,
+/*.mail,
 a[href^="mailto:"] {
 
-}
+}*/
 /* if URL ends with .pdf or whatever */
-a[href$=".pdf"] {
+/*a[href$=".pdf"] {
 
-}
+}*/
 
 
 
@@ -409,6 +409,9 @@ input {
 /* containing floats */
 .mod {
   overflow: auto;
+}
+.mod--hidden {
+  overflow: hidden;
 }
 
 /* some floattings */
