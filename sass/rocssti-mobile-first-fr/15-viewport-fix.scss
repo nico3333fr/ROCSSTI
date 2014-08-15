@@ -1,0 +1,33 @@
+/* fix viewport pour Win8 (snap mode) et préparer le jour
+ * où le viewport sera supporté par tous les moteurs
+ *
+ * Exemples : http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/
+ * width=device-width => width: device-width;
+ * height=device-height => height: device-height;
+ * initial-scale=2 => zoom: 2;
+ * maximum-scale=2 => max-zoom: 2;
+ * minimum-scale=0.5 => min-zoom: 0.5;
+ * user-scalable=no => user-zoom: fixed;
+ *
+ * pour le snap mode de Win8 => seul width: device-width; fonctionne pour l'instant
+ */
+  
+
+/* si quelqu'un a un mixin qui marche correctement pour ce point, je prends. */
+
+  
+@-webkit-viewport {
+  width: device-width;
+}
+@-moz-viewport {
+  width: device-width;
+}
+@-ms-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
