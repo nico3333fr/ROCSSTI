@@ -1,0 +1,59 @@
+@media print {
+  /* ajouter là-dedans les éléments qui ont besoin d'être
+   * resetés de manière très bourrine pour le print
+   */
+  body,
+  html,
+  #page,
+  .reset4print {
+    background-color: #fff;
+    background-image: none;
+    border: 0;
+    box-shadow: none;
+    color: #000;
+    float: none;
+    height: auto;
+    margin: 0;
+    max-width: 100%;
+    min-height: auto;
+    padding: 0;
+    position: static;
+    width: auto;
+  }
+
+  body {
+    padding: .5em;
+  }
+
+  /* cachage des éléments inutiles ! */
+  .noprint {
+    display: none;
+  }
+  
+  /* affichage éléments spécifiques au print */
+  .onprint {
+    display: block;
+  }
+  
+  /* éviter saut de page hasardeux */
+  blockquote, ul, ol {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, caption {
+    page-break-after: avoid;
+  }
+  
+  /* affichage des liens, sauf pour image contenue */
+  /* attention, penser à vérifier le résultat et penser
+   * à limiter cette possibilité aux liens dans le contenu */
+  /*a:after {
+    content: " (" attr(href) ") ";
+  }
+  a:after img {
+    content: "";
+  }*/
+
+  /* ici fix propriétés particulières */
+
+
+} /* end print */
