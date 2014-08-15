@@ -1,0 +1,37 @@
+@include respond-to($breakpoint-medium) { 
+   
+  /* affichage des éléments */
+  .nomobile { display: block; }
+
+  /* cachage des éléments inutiles ! */
+  .notablet { display: none; }
+  
+  /* linéarisation contenus flottants/table-layout */
+  .autotablet {
+    float: none;
+    display: block;
+    width: auto;
+  }
+  /* surcharge éventuelle si utilisation .automobile & .autotablet */
+  /*.w33  { width: 33.333%; }
+  .w66  { width: 66.666%; }*/
+
+  /*
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  */
+
+  /**
+   * adaptation structure globale (page / skip links / header / contenu principal / footer)
+   */
+  
+  
+  /**
+   * dans le contenu (contenus spécifiques aux pages)
+   */
+
+}
