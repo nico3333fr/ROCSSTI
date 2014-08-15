@@ -1,0 +1,226 @@
+/* éviter les dépassements */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input {
+  height: auto;
+  max-width: 100%;
+}
+/* pas de reset sur embed, object et video, certains players n'aiment pas */
+
+/* utile pour gérer les floattants */
+/* contient des floats */
+.mod {
+  overflow: auto;
+}
+.mod--hidden {
+  overflow: hidden;
+}
+
+/* quelques floattants */
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+@if $rtl-option == true {
+  /* RTL */
+  [dir="rtl"] .left {
+    float: right;
+  }
+  [dir="rtl"] .right {
+    float: left;
+  }
+
+  [dir="rtl"] .clearleft {
+    clear: right;
+  }
+  [dir="rtl"] .clearright {
+    clear: left;
+  }
+}
+
+
+/* clearer les floats */
+.clear {
+  clear: both;
+}
+.clearleft {
+  clear: left;
+}
+.clearright {
+  clear: right;
+}
+.clearhidden {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* gouttière */
+.gut {
+  height: 1px;
+}
+
+/* gestion du table-design en CSS */
+.row {
+  display: table;
+  table-layout: fixed;
+}
+.col {
+  display: table-cell;
+  vertical-align: top;
+}
+.col-noalign {
+  display: table-cell;
+}
+
+
+/* block */
+.bl {
+  display: block;
+}
+
+/* inline-block, utile pour les grilles et pas seulement */
+.inbl {
+  display: inline-block;
+}
+
+/* grid = élément d'une inline-grid */
+.grid {
+  @extend .inbl;
+  @extend .aligntop;
+}
+
+/* relative */
+.relative {
+  position: relative;
+}
+
+/* bloc centré */
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* activation de l'accélération matérielle */
+.hardware-accelerated {
+  @include vendor-prefix(transform, translateZ(0));
+}
+
+
+
+/* largeurs de blocks */
+.w1   { width: 1%; }
+.w2   { width: 2%; }
+.w3   { width: 3%; }
+.w5   { width: 5%; }
+.w10  { width: 10%; }
+.w20  { width: 20%; }
+.w25  { width: 25%; }
+.w30  { width: 30%; }
+.w33  { width: 33.333%; }
+.w40  { width: 40%; }
+.w45  { width: 45%; }
+.w49  { width: 49%; }
+.w50  { width: 50%; }
+.w60  { width: 60%; }
+.w66  { width: 66.666%; }
+.w70  { width: 70%; }
+.w75  { width: 75%; }
+.w80  { width: 80%; }
+.w90  { width: 90%; }
+.w100 { width: 100%; }
+
+
+/* ici ajouter les largeurs en pixels */
+$list-width: 500;
+// ex .w500p { width: 500px; }
+
+@each $width in $list-width {
+  .w#{$width}p { width: #{$width}px; }
+  }
+  
+/* ici ajouter les largeurs en em */
+$list-width-em: 500;
+// ex .w500e { width: 60em; }
+
+@each $width in $list-width-em {
+  $size_em : em($width);
+  .w#{$width}e { width: $size_em; }
+  }
+
+/* ici ajouter les largeurs max en pixels */
+$list-max-width: 960;
+
+@each $max-width in $list-max-width {
+  .mw#{$max-width}p { max-width: #{$max-width}px; }
+  }
+
+/* ici ajouter les largeurs max en em */
+$list-max-width-em: 960;
+
+@each $max-width in $list-max-width-em {
+  $size_em : em($max-width);
+  .mw#{$max-width}e { max-width: $size_em; }
+  }
+
+
+/* margins */
+
+$list-margins: mt, mr, mb, ml, m;
+$list-margins-values: 0, 0.5, 1, 2, 3; // specify 2.5 if needed
+
+@include margin-generator($list-margins, $list-margins-values);
+
+
+/* paddings */
+
+$list-paddings: pt, pr, pb, pl, p;
+$list-paddings-values: 0, 1, 2; // specify 2.5 if needed
+
+@include padding-generator($list-paddings, $list-paddings-values);
+
+
+
+/* spécial hr de 1px de haut */
+hr {
+  background-color: $color-hr;
+  border: 0;
+  color: $color-hr;
+  height: $hr-height;
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+/* pour cacher du texte de manière accessible… toussââââ */
+.invisible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.hidden    { display: none; } /* caché partout */
+.nodesktop { display: none; } /* caché sur desktop */
+.noprint   {} /* caché sur print */
+.notablet  {} /* caché sur tablettes */
+.nomobile  {} /* caché sur mobile */
