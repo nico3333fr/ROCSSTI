@@ -2,9 +2,9 @@
 
 # RÖCSSTI: Sass version
 
-Here you may find english and french-speaking Sass versions of RÖCSSTI.
+Here you may find english and french-speaking Sass versions of RÖCSSTI, plus a mobile-first (french speaking, but easy to understand).
 
-English version of RÖCSSTI has just been refactored :)
+English version and mobile-first versions of RÖCSSTI have just been refactored :)
 
 
 ## Questions, remarks
