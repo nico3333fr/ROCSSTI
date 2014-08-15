@@ -1,0 +1,264 @@
+// Compass import 
+//@import "compass/css3";
+ 
+
+// Sass variables : adaptez-les à vos designs
+$base-font             : 16 !default; // si "14" alors 1em = 14px
+$l-h                   : 1.5 !default;
+
+// fonts
+$font-family           : Arial, helvetica, sans-serif !default;
+
+// couleurs projets
+// $abbréviation-projet - color
+
+
+// couleurs
+$color-links           : #2573be !default;
+$color-hover           : #000 !default;
+$color-hr              : #000 !default;
+$hr-height             : 1px !default;
+$color-alert           : #bf0000 !default;
+
+// inputs
+$input-defaut-size     : 250px !default;
+$input-defaut-border   : 1px solid #000 !default;
+
+// breakpoints principaux
+$breakpoint-big        : 960 !default;
+$breakpoint-medium     : 767 !default;
+$breakpoint-small      : 640 !default;
+
+// RTL
+$rtl-option            : false !default;
+/* RTL = Right To Left => 
+ * pour adapter un site dans une langue qui se lit de droite à gauche
+ * prévu surtout pour sites multilingues avec LTR et RTL
+ */
+
+// hyphens
+$hyphenation           : false !default;
+
+// autres
+
+
+
+// Sass functions : pas touche ;)
+
+@function em($px, $base: $base-font) {
+
+  @return ($px / $base) * 1em;
+
+}
+
+
+// calculées via http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil 
+
+@function line-height ($font-size, $base-height, $base-font){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+  $height: ($base-font * $base-height / $font-size) ;
+
+  @return ($height * $coef) ;
+
+}
+
+
+@function margin-em ($font-size, $base-height, $base-font){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+  $other_coef: ceil($base-height * $base-font / $font-size);
+  $height: ($base-font * $base-height / $font-size) ;
+  $mar-top: ($height * $coef );
+
+  @return ( ($mar-top * $other_coef)*1em 0 ( ($mar-top/2) * $other_coef) *1em 0 );
+
+}
+
+
+@function margin-em-other ($font-size, $base-height, $base-font){
+
+  $coef: ceil(1 / ($base-height * $base-font / $font-size));
+  $height: ($base-font * $base-height / $font-size) ;
+  $mar-top: ($height * $coef );
+
+  @return ( ($mar-top)*1em 0 );
+
+}
+
+
+@mixin flow-hr( $value ){
+
+  font-size: em($value);
+  line-height: line-height($value, $l-h, $base-font);
+  margin: margin-em($value, $l-h, $base-font) ;   
+
+}
+
+
+@mixin flow-other( $value ){
+
+  font-size: em($value);
+  line-height: line-height($value, $l-h, $base-font);
+  margin: margin-em-other($value, $l-h, $base-font) ;   
+
+}
+
+
+@mixin vendor-prefix($property, $value, $prefixes: webkit moz ms o) {
+
+  @if $prefixes {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+  }
+  #{$property}: $value;
+
+}
+
+
+@mixin color-opacity($color, $opacity: 0.9) {
+    color: $color; /* The Fallback */
+    color: rgba($color, $opacity);
+}
+
+@mixin background-opacity($color, $opacity: 0.9) {
+    background-color: $color; /* The Fallback */
+    background-color: rgba($color, $opacity);
+}
+
+
+/**
+ * Replace `$search` with `$replace` in `$string`.
+ * Case sensitive.
+ *
+ * @param {String} $string - haystack
+ * @param {String} $search - needle
+ * @param {String} $replace ('') - replacement
+ *
+ * @return {String}
+ */
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  $slice: $string;
+  
+  @while $index {
+    $slice: if($index == 1, '', str-slice($slice, 0, $index - 1)) + $replace + str-slice($slice, $index + str-length($replace));
+    $index: str-index($slice, $search);
+  }
+  
+  @return $slice;
+} 
+
+
+
+
+// Generate margins
+// example
+// $list-margin: mt, mr, mb, ml, m;
+// $list-margin-values: 0, 1, 2, 3; // specify 2.5 if needed
+
+@mixin margin-generator ($list-margin, $list-margin-values) {
+
+  @each $margin-type in $list-margin {
+     @each $margin in $list-margin-values {
+        //$temp_m : str-slice($margin-type, 0, 1);
+        $temp_t : str-slice($margin-type, 2, 3);
+        
+        $property: margin;
+        
+        @if $temp_t == t {
+           $property: margin-top;
+        } @else if $temp_t == r {
+           $property: margin-right;
+        } @else if $temp_t == b {
+           $property: margin-bottom;
+        } @else if $temp_t == l {
+           $property: margin-left;
+        }
+        
+        
+        $value : $margin + 0em;
+        @if $margin == 0 {
+           $value : $margin;
+        } 
+        
+        // convert to string
+        $text-margin: $margin + '';
+        // 1.5 = 1-5
+        $property-class: str-replace($text-margin, '.', '-');
+        
+        // . mr 1-5 { margin-right: 1.5em ;}
+        .#{$margin-type}#{$property-class} { #{$property}: #{$value}; }
+  
+  
+        }
+     }
+   
+}
+
+
+
+// Generate paddings
+// example
+// $list-padding: pt, pr, pb, pl, p;
+// $list-padding-values: 0, 1, 2, 3; // specify 2.5 if needed
+
+@mixin padding-generator ($list-padding, $list-padding-values) {
+
+  @each $padding-type in $list-padding {
+     @each $padding in $list-padding-values {
+        //$temp_p : str-slice($padding-type, 0, 1);
+        $temp_t : str-slice($padding-type, 2, 3);
+        
+        $property: padding;
+        
+        @if $temp_t == t {
+           $property: padding-top;
+        } @else if $temp_t == r {
+           $property: padding-right;
+        } @else if $temp_t == b {
+           $property: padding-bottom;
+        } @else if $temp_t == l {
+           $property: padding-left;
+        }
+        
+        $value : $padding + 0em;
+        @if $padding == 0 {
+           $value : $padding;
+        } 
+        
+        // convert to string
+        $text-padding: $padding + '';
+        // 1.5 = 1-5
+        $property-class: str-replace($text-padding, '.', '-');
+        
+        .#{$padding-type}#{$property-class} { #{$property}: #{$value}; }
+  
+  
+        }
+     }
+}
+
+
+/**
+ * Responsive management in em 
+ *
+ */
+@mixin respond-to($breakpoint, $query-type : 'min') {
+  @if $query-type == "max" {
+     @media (max-width: em($breakpoint)) {
+      @content;
+    }
+  }
+ 
+  @else if $query-type == "min" {
+     @media (min-width: em($breakpoint)) {
+      @content;
+    }
+  }
+ 
+  @else  {
+    @warn "Type non supported.";
+  }
+}
