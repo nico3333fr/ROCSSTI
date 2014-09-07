@@ -407,7 +407,8 @@ blockquote,
 code,
 pre,
 textarea,
-input {
+input,
+svg {
   height: auto;
   max-width: 100%;
 }
