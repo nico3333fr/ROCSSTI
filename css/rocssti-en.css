@@ -585,7 +585,7 @@ svg {
 .m1  { margin: 1em; }
 .m2  { margin: 2em; }
 
-/* RTL = attention, utiliser avec précaution */
+/* RTL = warning, use with caution */
 [dir="rtl"] .mr0 { margin-left: 0; }
 [dir="rtl"] .mr1 { margin-right: inherit; margin-left: 1em; }
 [dir="rtl"] .mr2 { margin-right: inherit; margin-left: 2em; }
@@ -610,7 +610,7 @@ svg {
 .p1  { padding: 1em; }
 .p2  { padding: 2em; }
 
-/* RTL = attention, utiliser avec précaution */
+/* RTL = warning, use with caution */
 [dir="rtl"] .pr0 { padding-left: 0; }
 [dir="rtl"] .pr1 { padding-right: 0; padding-left: 1em; }
 [dir="rtl"] .pr2 { padding-right: 0; padding-left: 2em; }
