@@ -20,7 +20,7 @@ To sum up, having a strong CSS base, used for and built from professional realis
 
 Information: to my knowledge, **RÖCSSTI has been used for about 53 websites**, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
 
-## Naming conventions
+## Coding conventions
 
 - Indent: 2 spaces for properties
 - No use of `!important`, that's bad!
