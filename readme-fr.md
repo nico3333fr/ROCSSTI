@@ -43,4 +43,4 @@ h1,
 - Pour toute valeur nulle, pas d'unité quand c'est autorisé, exemple : `margin: 0;`
 - Nommage des propriétés CSS par ordre alphabétique, quand c'est possible.
 
-http://rocssti.nicolas-hoffmann.net/
+http://rocssti.net/
