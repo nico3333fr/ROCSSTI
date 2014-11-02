@@ -43,4 +43,4 @@ h1,
 - No unit for null values, when it is allowed, e.g. `margin: 0;`
 - CSS Properties are displayed in alphabetical order, when it is possible.
 
-http://rocssti.nicolas-hoffmann.net/
+http://rocssti.net/
