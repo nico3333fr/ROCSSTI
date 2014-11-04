@@ -93,7 +93,7 @@ html {
 body {
   background: #fff;
   color: #333;
-  font-family: Arial, helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 1.4em; /* taille de base équiv à 14px */
   line-height: 1.5; /* à corriger si besoin est */
 }
