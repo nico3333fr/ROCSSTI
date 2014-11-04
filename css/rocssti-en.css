@@ -50,8 +50,9 @@
  */
 
 /* for HTML 5 */
-article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section, video { display: block; }
-abbr, eventsource, mark, meter, time, progress, output, bb { display: inline; }
+article, aside, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section { display: block; }
+audio, canvas, progress, video { display: inline-block; }
+abbr, eventsource, mark, meter, time, output, bb { display: inline; }
 
 /* to comment/fallback if you care about IE<8 */
 html { box-sizing: border-box; }
