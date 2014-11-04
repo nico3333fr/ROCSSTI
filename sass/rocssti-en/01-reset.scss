@@ -8,7 +8,7 @@
 article, aside, audio, canvas, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section, video { display: block; }
 abbr, eventsource, mark, meter, time, progress, output, bb { display: inline; }
 
-
+/* to comment/fallback if you care about IE<8 */
 html { box-sizing: border-box; }
 *, *:before, *:after {
   box-sizing: inherit;
