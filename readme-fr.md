@@ -1,4 +1,4 @@
-<img src="http://rocssti.nicolas-hoffmann.net/Rocssti_logo.png" alt="RÖCSSTI" />
+<img src="http://rocssti.net/layout/images/rocssti_logo.png" alt="RÖCSSTI" />
 
 # RÖCSSTI : le micro-framework CSS pour démarrer vos CSS avec la patate !
 
