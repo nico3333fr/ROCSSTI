@@ -2,7 +2,7 @@
 
 # RÖCSSTI: to start CSS easily!
 
-RÖCSSTI – pronounce "Roshti" – is my CSS starting base.
+RÖCSSTI – pronounce "Roshti" – is my CSS micro-framework.
 
 The name – absolutely ridiculous – is a friendly reference to KNACSS, a great CSS micro-framework CSS made by Raphaël Goetter, from which RÖCSSTI uses some elements, arranged by myself to answer to my work needs.
 
@@ -18,7 +18,7 @@ To sum up, having a strong CSS base, used for and built from professional realis
 
 **RÖCSSTI has also LESS ans Sass versions**, see in "less" ans "Sass" folders. **All versions are maintained in french and english**.
 
-Information: to my knowledge, **RÖCSSTI has been used for about 53 websites**, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
+Information: to my knowledge, **RÖCSSTI has been used for about 60 websites**, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
 
 ## Coding conventions
 
