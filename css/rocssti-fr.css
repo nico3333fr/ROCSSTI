@@ -275,7 +275,7 @@ li ul {
   margin-top: 0;
 }
 /* Vous ne passerez PAS (Gandalf) */
-textarea,
+/*textarea,
 table,
 td,
 th,
@@ -283,7 +283,7 @@ code,
 pre,
 samp,
 div,
-p,
+p,*/
 .cut {
   word-wrap: break-word;
   -webkit-hyphens: auto;
