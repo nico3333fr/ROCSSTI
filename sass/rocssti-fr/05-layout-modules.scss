@@ -1,3 +1,7 @@
+/*
+ * Layout
+ */
+
 /* éviter les dépassements */
 img,
 table,
@@ -222,6 +226,11 @@ hr {
 
 .hidden    { display: none; } /* caché partout */
 .nodesktop { display: none; } /* caché sur desktop */
-.noprint   {} /* caché sur print */
-.notablet  {} /* caché sur tablettes */
-.nomobile  {} /* caché sur mobile */
+/*.noprint   {} /* caché sur print */
+/*.notablet  {} /* caché sur tablettes */
+/*.nomobile  {} /* caché sur mobile */
+
+
+/*
+ * Modules
+ */
