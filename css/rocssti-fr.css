@@ -405,6 +405,11 @@ height: 30px;
  *****************************************************************
  */
 
+/*
+  Layout
+ */
+
+
 /* ça dépend, ça dépasse */
 img,
 table,
@@ -642,9 +647,15 @@ hr {
 
 .hidden    { display: none; } /* caché partout */
 .nodesktop { display: none; } /* caché sur desktop */
-.noprint   {} /* caché sur print */
-.notablet  {} /* caché sur tablettes */
-.nomobile  {} /* caché sur mobile */
+/*.noprint   {} /* caché sur print */
+/*.notablet  {} /* caché sur tablettes */
+/*.nomobile  {} /* caché sur mobile */
+
+
+/*
+  Modules
+ */
+
 
 
 
@@ -700,11 +711,6 @@ hr {
 
 /* === footer === */
 .footer {
-
-}
-
-/* Réseaux Sociaux À La Con : trucs inutiles de partage… souvent dans footer */
-.rsalc {
 
 }
 
@@ -800,15 +806,15 @@ input[type="image"] {
 .alert img {
   border: 0;
 }
-.ok {
+/*.ok {
 
-}
+}*/
 
 /* 
  * peut être complété par les attributs HTML5 required
  * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi
  */
-select:required:invalid,
+/*select:required:invalid,
 input:required:invalid,
 input:focus:invalid,
 textarea:required:invalid,
@@ -822,7 +828,7 @@ textarea:focus:required:valid,
 select:focus:required:valid {
   background: #efe;
   -moz-box-shadow: none;
-}
+}*/
 
 
 
@@ -947,7 +953,8 @@ select:focus:required:valid {
  */
 
 @media print {
-  /* ajouter là-dedans les éléments qui ont besoin d'être
+  /* 
+   * ajouter là-dedans les éléments qui ont besoin d'être
    * resetés de manière très bourrine pour le print
    */
   body,
