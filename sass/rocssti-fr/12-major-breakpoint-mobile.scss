@@ -1,5 +1,9 @@
 @include respond-to($breakpoint-small) { 
 
+  /**
+   * layout/modules
+   */
+
   /* affichage des éléments */
   .notablet { display: block; }
 
