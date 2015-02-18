@@ -406,8 +406,8 @@ height: 30px;
  *****************************************************************
  */
 
-/*
- * Layout
+/**
+ * layout
  */
 
 /* it depends, it exceeds (french joke) */
@@ -652,8 +652,8 @@ hr {
 /*.nomobile  {} /* hidden on mobile */
 
 
-/*
- * Modules
+/**
+ * modules
  */
 
 
@@ -861,6 +861,10 @@ select:focus:required:valid {
 
 @media (max-width: 48em) { /* equiv 768px */
    
+  /**
+   * layout/modules
+   */
+
   /* display elements */
   .nodesktop { display: block; }
 
@@ -908,6 +912,10 @@ select:focus:required:valid {
 
 @media (max-width: 40em) { /* equiv 640px */
 
+  /**
+   * layout/modules
+   */
+
   /* display elements */
   .notablet { display: block; }
 
@@ -953,7 +961,7 @@ select:focus:required:valid {
 
 @media print {
 
-  /*
+  /**
    * add in this all elements which need to be hardly reseted for print
    */
   body,
