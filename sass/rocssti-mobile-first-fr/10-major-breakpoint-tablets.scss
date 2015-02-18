@@ -1,5 +1,9 @@
 @include respond-to($breakpoint-medium) { 
    
+  /**
+   * layout/modules
+   */
+
   /* affichage des éléments */
   .nomobile { display: block; }
 
