@@ -1,5 +1,9 @@
 @include respond-to($breakpoint-medium) { 
    
+  /**
+   * layout/modules
+   */
+
   /* display elements */
   .nodesktop { display: block; }
 
