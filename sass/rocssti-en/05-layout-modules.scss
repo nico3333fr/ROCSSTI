@@ -1,3 +1,7 @@
+/*
+ * Layout
+ */
+
 /* it depends, it exceeds (french joke) */
 img,
 table,
@@ -224,6 +228,11 @@ hr {
 
 .hidden    { display: none; } /* hidden everywhere */
 .nodesktop { display: none; } /* hidden on desktop */
-.noprint   {} /* hidden on print */
-.notablet  {} /* hidden on tablets */
-.nomobile  {} /* hidden on mobile */
+/*.noprint   {} /* hidden on print */
+/*.notablet  {} /* hidden on tablets */
+/*.nomobile  {} /* hidden on mobile */
+
+
+/*
+ * Modules
+ */
