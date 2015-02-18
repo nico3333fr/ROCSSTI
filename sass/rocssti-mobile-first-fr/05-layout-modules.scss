@@ -1,5 +1,5 @@
-/*
- * Layout
+/**
+ * layout
  */
 
 /* éviter les dépassements */
@@ -225,12 +225,12 @@ hr {
 }
 
 .hidden    { display: none; } /* caché partout */
-.nodesktop { display: none; } /* caché sur desktop */
+/*.nodesktop {} /* caché sur desktop */
 /*.noprint   {} /* caché sur print */
 /*.notablet  {} /* caché sur tablettes */
-/*.nomobile  {} /* caché sur mobile */
+.nomobile  { display: none; } /* caché sur mobile */
 
 
-/*
- * Modules
+/**
+ * modules
  */
