@@ -80,15 +80,15 @@ input[type="image"] {
 .alert img {
   border: 0;
 }
-.ok {
+/*.ok {
 
-}
+}*/
 
 /*
  * peut être complété par les attributs HTML5 required
  * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi
  */
-select:required:invalid,
+/*select:required:invalid,
 input:required:invalid,
 input:focus:invalid,
 textarea:required:invalid,
@@ -102,4 +102,4 @@ textarea:focus:required:valid,
 select:focus:required:valid {
   background: #efe;
   -moz-box-shadow: none;
-}
+}*/
