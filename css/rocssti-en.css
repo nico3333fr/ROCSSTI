@@ -75,6 +75,11 @@ iframe { vertical-align: middle; }
 
 ul, ol { padding-left: 2em; }
 
+.unstyled {
+  padding-left: 0;
+  list-style-type: none;
+}
+
 /* RTL */
 [dir="rtl"] ul,
 [dir="rtl"] ol {
