@@ -89,6 +89,9 @@ svg {
   display: table;
   table-layout: fixed;
 }
+.line {
+  display: table-row;
+}
 .col {
   display: table-cell;
   vertical-align: top;
