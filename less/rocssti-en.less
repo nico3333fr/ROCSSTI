@@ -405,9 +405,6 @@ abbr[title] {
 .alignright  { text-align: right; }
 .aligncenter { text-align: center; }
 .alignleft   { text-align: left; }
-.aligntop    { vertical-align: top; }
-.alignbottom { vertical-align: bottom; }
-.alignmiddle { vertical-align: middle; }
 
 [dir="rtl"] {
   & .alignright when (@rtl_option) {
@@ -588,6 +585,10 @@ svg {
   display: table-cell;
 }
 
+/* alignments */
+.aligntop    { vertical-align: top; }
+.alignbottom { vertical-align: bottom; }
+.alignmiddle { vertical-align: middle; }
 
 /* block */
 .bl {
