@@ -137,9 +137,6 @@ abbr[title] {
 .alignright  { text-align: right; }
 .aligncenter { text-align: center; }
 .alignleft   { text-align: left; }
-.aligntop    { vertical-align: top; }
-.alignbottom { vertical-align: bottom; }
-.alignmiddle { vertical-align: middle; }
 
 @if $rtl-option == true {
   /* RTL */
