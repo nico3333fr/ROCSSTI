@@ -1,0 +1,148 @@
+.noborder,
+iframe { border: 0; }
+
+table {
+  table-layout: fixed;
+}
+
+/*
+ * taken from http://tinytypo.tetue.net/ made by @tetue
+ * tuned with the help of http://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
+ *
+ * see http://en.wikipedia.org/wiki/International_variation_in_quotation_marks for reference
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+:lang(fr) > q {
+  quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D" "\2018" "\2019";
+}
+:lang(en) > q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+:lang(es) > q {
+  quotes: "\00AB" "\00BB" "\201C" "\201D";
+}
+:lang(it) > q {
+  quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D";
+}
+:lang(de) > q {
+  quotes: "\201e" "\201c" "\201a" "\2018";
+}
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
+}
+
+/* avoid ugly line-height */
+sup,
+sub {
+  vertical-align: 0;
+  position: relative;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
+
+/* avoid margin problems */
+h1:first-child,.h1:first-child,
+h2:first-child,.h2:first-child,
+h3:first-child,.h3:first-child,
+h4:first-child,.h4:first-child,
+h5:first-child,.h5:first-child,
+h6:first-child,.h6:first-child {
+  margin-top: 0;
+}
+/* remove bottom margin on last child */
+p:last-child,
+ul:last-child,
+ol:last-child,
+dl:last-child,
+blockquote:last-child,
+pre:last-child,
+table:last-child {
+  margin-bottom: 0;
+}
+
+/* avoid margin on nested elements */
+li p,
+li ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Thou shalt not pass (Moïse or Gandalf, don't remember) */
+& when (@hyphenation_default) {
+textarea, table, td, th, code, pre, samp, div, p {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+}
+.cut when not (@hyphenation_default) {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+
+/* remove hyphenation if needed */
+.nocut {
+  word-wrap: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  hyphens: none;
+}
+
+code,
+pre,
+samp {
+  white-space: pre-wrap;
+}
+code {
+  line-height: 1;
+}
+kbd {
+  border: solid 1px;
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+  padding: 0 .25em;
+}
+table {
+  margin-bottom: 1.5em;
+}
+/* important, abbr are good */
+/* only those with a title are shown */
+abbr[title] {
+  border-bottom: dotted 1px; 
+  cursor: help;
+  /* color inherited from text */
+} 
+
+/* text aligns */
+.alignright  { text-align: right; }
+.aligncenter { text-align: center; }
+.alignleft   { text-align: left; }
+
+[dir="rtl"] {
+  & .alignright when (@rtl_option) {
+    /* RTL */
+    text-align: left;
+  }
+  & .alignleft when (@rtl_option) {
+    /* RTL */
+    text-align: right;
+  }
+}
