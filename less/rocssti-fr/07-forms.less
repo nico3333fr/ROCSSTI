@@ -1,0 +1,106 @@
+/* donne envie de cliquer sur un bouton */
+label,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  cursor: pointer;
+}
+
+/* évite un resize qui déborde */
+textarea {
+  resize: vertical;
+}
+
+label,
+button,
+input,
+select {
+  vertical-align: middle;
+}
+
+/* à adapter selon le design voulu */
+input,
+select,
+textarea {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: .5em;
+  width: @input-defaut-size;
+  /** fix typo inputs **/
+  font-family: inherit;
+  font-size: 1em;
+}
+
+/* pour les textes des champs */
+.label {
+  display: inline-block;
+}
+
+/* à adapter selon le design voulu */
+.button {
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 1px #ddd; 
+  box-shadow: 1px 1px 1px #ddd; 
+  color: #000;
+}
+
+/* 
+ * évite dimensionnement des radios, checkboxes et images
+ * et un affichage différent sous IE 
+ */
+input[type="radio"],
+input[type="checkbox"],
+input[type="image"] {
+  background-color: transparent;
+  border: 0;
+  width: auto;
+}
+
+/* pour annuler la taille des inputs ou autres */
+.auto {
+  width: auto;
+}
+
+/* messages d'erreur ou de confirmation */
+.alert,
+.alert input,
+.alert textarea,
+.alert select {
+  color: @color-alert;
+  font-weight: bold;
+}
+/* .redborder sert à débugger uniquement */
+.alert input,
+.alert textarea,
+.alert select,
+.redborder {
+  border: 1px solid @color-alert;
+}
+.alert img {
+  border: 0;
+}
+/*.ok {
+
+}*/
+
+/* 
+ * peut être complété par les attributs HTML5 required
+ * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi
+ */
+/*select:required:invalid,
+input:required:invalid,
+input:focus:invalid,
+textarea:required:invalid,
+textarea:focus:invalid {
+  background: #fef6f6;
+  -moz-box-shadow: none;
+}
+
+input:focus:required:valid,
+textarea:focus:required:valid,
+select:focus:required:valid {
+  background: #efe;
+  -moz-box-shadow: none;
+}*/
