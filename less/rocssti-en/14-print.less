@@ -1,0 +1,60 @@
+@media print {
+
+  /**
+   * add in this all elements which need to be hardly reseted for print
+   */
+  body,
+  html,
+  #page,
+  .reset4print {
+    background-color: #fff;
+    background-image: none;
+    border: 0;
+    box-shadow: none;
+    color: #000;
+    float: none;
+    height: auto;
+    margin: 0;
+    max-width: 100%;
+    min-height: auto;
+    padding: 0;
+    position: static;
+    width: auto;
+  }
+
+  body {
+    padding: .5em;
+  }
+
+  /* hide unnecessary elements */
+  .noprint {
+    display: none;
+  }
+  
+  /* display specific elements for print */
+  .onprint {
+    display: block;
+  }
+  
+  /* avoid problematic page break */
+  blockquote, ul, ol {
+    page-break-inside: avoid;
+  }
+  h1, h2, h3, caption {
+    page-break-after: avoid;
+  }
+  
+  /* display links, except for those containing images */
+  /* warning, remember checking the result & think to limitate
+   * this option only for inside content links */
+  /*a:after {
+    content: " (" attr(href) ") ";
+  }
+  a:after img {
+    content: "";
+  }*/
+
+  /* fix particular properties */
+
+
+} /* end print */
