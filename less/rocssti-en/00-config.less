@@ -1,0 +1,67 @@
+// LESS values : adapt them to your designs
+@basefont : 14; // if "14" then 1em = 14px
+@l-h : 1.5; // equiv line-height 1.5
+
+// fonts
+@font-family : 'Arial, sans-serif';
+
+// colors
+@color-links : #2573be;
+@color-hover : #000;
+@hr : #000;
+@hr-height : 1px;
+@color-alert : #bf0000;
+
+// widths
+@input-defaut-size : 250px;
+
+// RTL
+@rtl_option : false;
+
+// hyphens
+@hyphenation_default : false;
+
+
+// LESS functions : don't touch ;)
+
+.pxtoem (@fontsize) {font-size: (@fontsize / @basefont) + 0em;}
+
+.line (@fontsize) {line-height: @l-h *2 / (@fontsize / @basefont) + 0em}
+
+.grid (@number) {width: (100%-(@gutter*(@number - 1))) / @number;}
+
+/* based on http://soqr.fr/vertical-rhythm/ thanks @goetter & @eQRoeil */
+
+
+// rounding value is for number of digits after comma => 10000 => 1.6667 ; 100000 => 1.13374
+.flow_hx(@font-size, @base-font: @basefont, @base-height: @l-h, @rounding-value: 10000) {
+
+  @coef: ceil(1 / (@base-height * @base-font / @font-size));
+  @other_coef: ceil(@base-height * @base-font / @font-size);
+  @size: (@font-size / @base-font) + 0em;
+  @height: (@base-font * @base-height / @font-size);
+  @mar-top: (@height * @coef );
+
+font-size: round(@size * @rounding-value) / @rounding-value;
+line-height: round(@height * @coef * @rounding-value) / @rounding-value;
+margin: ( round(@mar-top*@rounding-value)/@rounding-value * @other_coef + 0em) 0 (round(@mar-top*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0;
+
+}
+
+
+// for smaller, bigger, etc. classes
+.flow_other(@font-size, @base-font: @basefont, @base-height: @l-h, @rounding-value: 10000) {
+
+
+  @coef: ceil(1 / (@base-height * @base-font / @font-size));
+  @other_coef: ceil(@base-height * @base-font / @font-size);
+  @size: (@font-size / @base-font) + 0em;
+  @height: (@base-font * @base-height / @font-size);
+  @mar-top: (@height * @coef );
+
+font-size: round(@size * @rounding-value) / @rounding-value;
+line-height: round(@height * @coef * @rounding-value) / @rounding-value;
+margin: ( round(@mar-top*@rounding-value)/@rounding-value + 0em) 0;
+
+
+}
