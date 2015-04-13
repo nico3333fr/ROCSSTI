@@ -1,0 +1,58 @@
+/* spécial HTML 5 */
+article, aside, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section { display: block; }
+audio, canvas, progress, video { display: inline-block; }
+abbr, eventsource, mark, meter, time, output, bb { display: inline; }
+
+/* à commenter/fallback si vous vous souciez d'IE<8 */
+html { box-sizing: border-box; }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* reset minimum */
+html, body, blockquote, ul, ol, form, button { margin: 0; padding: 0; }
+button { border: 0; }
+p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
+  font-size: 1em;
+  line-height: @l-h;
+  margin: (@l-h + 0em) 0;
+}
+
+/* fix display img/iframe */
+img,
+iframe { vertical-align: middle; }
+
+ul, ol { padding-left: 2em; }
+
+.unstyled {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+[dir="rtl"] {
+  & ol when (@rtl_option) {
+    /* RTL */
+    padding-left: 0;
+    padding-right: 2em;
+  }
+  & ul when (@rtl_option) {
+    /* RTL */
+    padding-left: 0;
+    padding-right: 2em;
+  }
+}
+
+/* la base correspond à 10px */
+html { 
+  font-size: 62.5%;
+  /* IE9-IE11 math fixing. Voir http://bit.ly/1g4X0bX */
+  /* Merci à @guardian, @victorbritopro, @eQRoeil & Knacss */
+  font-size: calc(1em * 0.625);
+}
+body {
+  background: #fff;
+  color: #333;
+  font-family: @font-family;
+  font-size: (@basefont / 10) + 0em; 
+  line-height: @l-h;
+}
