@@ -1,0 +1,297 @@
+/**
+ * layout
+ */
+
+/* it depends, it exceeds (french joke) */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+svg {
+  height: auto;
+  max-width: 100%;
+}
+/* no reset on embed, object & video, some players don't like */
+
+/* useful to manage floats */
+/* containing floats */
+.mod { 
+  overflow: auto;
+}
+.mod--hidden {
+  overflow: hidden;
+}
+
+/* some floattings */
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+/* clear floats */
+.clear {
+  clear: both;
+}
+.clearleft {
+  clear: left;
+}
+.clearright {
+  clear: right;
+}
+.clearhidden {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+[dir="rtl"] {
+  & .left when (@rtl_option) {
+    /* RTL */
+    float: right;
+  }
+  & .right when (@rtl_option) {
+    /* RTL */
+    float: left;
+  }
+  
+  & .clearleft when (@rtl_option) {
+    /* RTL */
+    clear: right;
+  }
+  & .clearright when (@rtl_option) {
+    /* RTL */
+    clear: left;
+  }
+}
+
+/* gut : "spacing" empty div */
+.gut {
+  height: 1px;
+}
+
+/* table-design in CSS */
+.row {
+  display: table;
+  table-layout: fixed;
+}
+.line {
+  display: table-row;
+}
+.col {
+  display: table-cell;
+  vertical-align: top;
+}
+.col-noalign {
+  display: table-cell;
+}
+
+/* alignments */
+.aligntop    { vertical-align: top; }
+.alignbottom { vertical-align: bottom; }
+.alignmiddle { vertical-align: middle; }
+
+/* block */
+.bl {
+  display: block;
+}
+
+/* inline-block, useful for grids, and not only */
+.inbl,
+.grid {
+  display: inline-block;
+}
+
+/* grid = element of inline-grid */
+.grid {
+  vertical-align: top;
+}
+
+/* to relativize */
+.relative {
+  position: relative;
+}
+
+/* centered block */
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* hardware-acceleration activation */
+.hardware-accelerated {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+
+
+/* block widths */
+.w1   { width: 1%; }
+.w2   { width: 2%; }
+.w3   { width: 3%; }
+.w5   { width: 5%; }
+.w10  { width: 10%; }
+.w20  { width: 20%; }
+.w25  { width: 25%; }
+.w30  { width: 30%; }
+.w33  { width: 33.333%; }
+.w40  { width: 40%; }
+.w45  { width: 45%; }
+.w49  { width: 49%; }
+.w50  { width: 50%; }
+.w60  { width: 60%; }
+.w66  { width: 66.666%; }
+.w70  { width: 70%; }
+.w75  { width: 75%; }
+.w80  { width: 80%; }
+.w90  { width: 90%; }
+.w100 { width: 100%; }
+
+/* here you may add em widths */
+/*.w960e { width: 60em; }*/
+
+/* here you may add pixel widths */
+/*.w500p { width: 500px; }*/
+
+/* here you may add em max-widths */
+/*.mw960e { max-width: 60em; }*/
+
+/* here you may add pixel max-widths */
+/*.mw960p { max-width: 960px; }*/
+
+/* margins */
+.mt0 { margin-top: 0; }
+.mt1 { margin-top: 1em; }
+.mt2 { margin-top: 2em; }
+.mr0 { margin-right: 0; }
+.mr1 { margin-right: 1em; }
+.mr2 { margin-right: 2em; }
+.mb0 { margin-bottom: 0; }
+.mb1 { margin-bottom: 1em; }
+.mb2 { margin-bottom: 2em; }
+.ml0 { margin-left: 0; }
+.ml1 { margin-left: 1em; }
+.ml2 { margin-left: 2em; }
+.m0  { margin: 0; }
+.m1  { margin: 1em; }
+.m2  { margin: 2em; }
+
+[dir="rtl"] {
+  & .mr0 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-left: 0;
+  }
+  & .mr1 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-right: inherit; margin-left: 1em;
+  }
+  & .mr2 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-right: inherit; margin-left: 2em;
+  }
+  & .ml0 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-right: 0;
+  }
+  & .ml1 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-left: inherit; margin-right: 1em;
+  }
+  & .ml2 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    margin-left: inherit; margin-right: 2em;
+  }
+}
+
+/* paddings */
+.pt0 { padding-top: 0; }
+.pt1 { padding-top: 1em; }
+.pt2 { padding-top: 2em; }
+.pr0 { padding-right: 0; }
+.pr1 { padding-right: 1em; }
+.pr2 { padding-right: 2em; }
+.pb0 { padding-bottom: 0; }
+.pb1 { padding-bottom: 1em; }
+.pb2 { padding-bottom: 2em; }
+.pl0 { padding-left: 0; }
+.pl1 { padding-left: 1em; }
+.pl2 { padding-left: 2em; }
+.p0  { padding: 0; }
+.p1  { padding: 1em; }
+.p2  { padding: 2em; }
+
+[dir="rtl"] {
+  & .pr0 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-left: 0;
+  }
+  & .pr1 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-right: inherit; padding-left: 1em;
+  }
+  & .pr2 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-right: inherit; padding-left: 2em;
+  }
+  & .pl0 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-right: 0;
+  }
+  & .pl1 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-left: inherit; padding-right: 1em;
+  }
+  & .pl2 when (@rtl_option) {
+    /* RTL = warning, use with caution */
+    padding-left: inherit; padding-right: 2em;
+  }
+}
+
+/* for 1px-high hr */
+hr {
+  background-color: @hr;
+  border: 0;
+  color: @hr;
+  height: @hr-height;
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+/* to hide text with accessibility… a11y */
+.invisible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.hidden    { display: none; } /* hidden everywhere */
+.nodesktop { display: none; } /* hidden on desktop */
+/*.noprint   {} /* hidden on print */
+/*.notablet  {} /* hidden on tablets */
+/*.nomobile  {} /* hidden on mobile */
+
+/**
+ * modules
+ */
