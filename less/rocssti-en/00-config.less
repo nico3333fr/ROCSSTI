@@ -1,25 +1,35 @@
 // LESS values : adapt them to your designs
-@basefont : 14; // if "14" then 1em = 14px
-@l-h : 1.5; // equiv line-height 1.5
+@basefont              : 14; // if "14" then 1em = 14px
+@l-h                   : 1.5; // equiv line-height 1.5
 
 // fonts
-@font-family : 'Arial, sans-serif';
+@font-family           : 'Arial, sans-serif';
+
+// project colors
+// @abbreviation-project - color
 
 // colors
-@color-links : #2573be;
-@color-hover : #000;
-@hr : #000;
-@hr-height : 1px;
-@color-alert : #bf0000;
+@color-links           : #2573be;
+@color-hover           : #000;
+@hr                    : #000;
+@hr-height             : 1px;
+@color-alert           : #bf0000;
 
 // widths
-@input-defaut-size : 250px;
+@input-defaut-size     : 250px;
 
 // RTL
-@rtl_option : false;
+@rtl_option            : false;
 
 // hyphens
-@hyphenation_default : false;
+@hyphenation_default   : false;
+
+// vertical rythm
+// possible values! 'double_top_single_bottom',  'single_top', 'single_bottom'
+@vertical-rythm        : 'single_bottom'; 
+
+// others
+
 
 
 // LESS functions : don't touch ;)
@@ -34,23 +44,49 @@
 
 
 // rounding value is for number of digits after comma => 10000 => 1.6667 ; 100000 => 1.13374
-.flow_hx(@font-size, @base-font: @basefont, @base-height: @l-h, @rounding-value: 10000) {
+.flow_hx(@font-size, @base-font: @basefont, @base-height: @l-h, @rounding-value: 100000) when (@vertical-rythm = 'double_top_single_bottom') {
 
   @coef: ceil(1 / (@base-height * @base-font / @font-size));
   @other_coef: ceil(@base-height * @base-font / @font-size);
   @size: (@font-size / @base-font) + 0em;
   @height: (@base-font * @base-height / @font-size);
-  @mar-top: (@height * @coef );
+  @margin: (@height * @coef );
 
 font-size: round(@size * @rounding-value) / @rounding-value;
 line-height: round(@height * @coef * @rounding-value) / @rounding-value;
-margin: ( round(@mar-top*@rounding-value)/@rounding-value * @other_coef + 0em) 0 (round(@mar-top*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0;
+margin: ( round(@margin*@rounding-value)/@rounding-value * @other_coef + 0em) 0 (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0;
+
+}
+.flow_hx(@font-size, @base-font: @basefont, @base-height: @l-h, @rounding-value: 100000) when (@vertical-rythm = 'single_top') {
+
+  @coef: ceil(1 / (@base-height * @base-font / @font-size));
+  @other_coef: ceil(@base-height * @base-font / @font-size);
+  @size: (@font-size / @base-font) + 0em;
+  @height: (@base-font * @base-height / @font-size);
+  @margin: (@height * @coef );
+
+font-size: round(@size * @rounding-value) / @rounding-value;
+line-height: round(@height * @coef * @rounding-value) / @rounding-value;
+margin: (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0 0 0;
+
+}
+.flow_hx(@font-size, @base-font: @basefont, @base-height: @l-h, @rounding-value: 100000) when (@vertical-rythm = 'single_bottom') {
+
+  @coef: ceil(1 / (@base-height * @base-font / @font-size));
+  @other_coef: ceil(@base-height * @base-font / @font-size);
+  @size: (@font-size / @base-font) + 0em;
+  @height: (@base-font * @base-height / @font-size);
+  @margin: (@height * @coef );
+
+font-size: round(@size * @rounding-value) / @rounding-value;
+line-height: round(@height * @coef * @rounding-value) / @rounding-value;
+margin: 0 0 (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0;
 
 }
 
 
 // for smaller, bigger, etc. classes
-.flow_other(@font-size, @base-font: @basefont, @base-height: @l-h, @rounding-value: 10000) {
+.flow_other(@font-size, @base-font: @basefont, @base-height: @l-h, @rounding-value: 100000) {
 
 
   @coef: ceil(1 / (@base-height * @base-font / @font-size));
