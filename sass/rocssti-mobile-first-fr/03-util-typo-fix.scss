@@ -50,27 +50,29 @@ sub {
 }
 
 /* éviter problèmes de margin */
-h1,.h1,
-h2,.h2,
-h3,.h3,
-h4,.h4,
-h5,.h5,
-h6,.h6{
-  &:first-child {
-    margin-top: 0;
+@if $vertical-rythm == 'single_top' or $vertical-rythm == 'double_top_single_bottom' {
+  h1,.h1,
+  h2,.h2,
+  h3,.h3,
+  h4,.h4,
+  h5,.h5,
+  h6,.h6{
+    &:first-child {
+      margin-top: 0;
+    }
   }
-}
-/* virer marge basse sur dernier enfant */
-p,
-ul,
-ol,
-dl,
-blockquote,
-pre,
-table {
-  &:last-child {
-    margin-bottom: 0;
-  } 
+  /* virer marge basse sur dernier enfant */
+  p,
+  ul,
+  ol,
+  dl,
+  blockquote,
+  pre,
+  table {
+    &:last-child {
+      margin-bottom: 0;
+    } 
+  }
 }
 
 /* éviter marges supplémentaires sur éléments imbriqués */
