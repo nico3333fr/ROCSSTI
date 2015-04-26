@@ -50,23 +50,25 @@ sub {
 }
 
 /* éviter problèmes de margin */
-h1:first-child,.h1:first-child,
-h2:first-child,.h2:first-child,
-h3:first-child,.h3:first-child,
-h4:first-child,.h4:first-child,
-h5:first-child,.h5:first-child,
-h6:first-child,.h6:first-child {
-  margin-top: 0;
-}
-/* virer marge basse sur dernier enfant */
-p:last-child,
-ul:last-child,
-ol:last-child,
-dl:last-child,
-blockquote:last-child,
-pre:last-child,
-table:last-child {
-  margin-bottom: 0;
+& when (@vertical-rythm = 'single_top'), (@vertical-rythm = 'double_top_single_bottom') {
+  h1:first-child,.h1:first-child,
+  h2:first-child,.h2:first-child,
+  h3:first-child,.h3:first-child,
+  h4:first-child,.h4:first-child,
+  h5:first-child,.h5:first-child,
+  h6:first-child,.h6:first-child {
+    margin-top: 0;
+  }
+  /* virer marge basse sur dernier enfant */
+  p:last-child,
+  ul:last-child,
+  ol:last-child,
+  dl:last-child,
+  blockquote:last-child,
+  pre:last-child,
+  table:last-child {
+    margin-bottom: 0;
+  }
 }
 
 /* éviter marges supplémentaires sur éléments imbriqués */
