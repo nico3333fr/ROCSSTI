@@ -122,44 +122,44 @@ body {
 h1,
 .h1 {
   display: block;
-  font-size:  1.8571em; /* equiv 26px */
-  line-height: 1.6154;
-  margin: 1.6154em 0 .8077em 0;
+  font-size: 1.85714em; /* equiv 26px */
+  line-height: 1.61538;
+  margin: 0 0 .80769em 0;
 }
 h2,
 .h2 {
   display: block;
-  font-size: 1.7143em; /* equiv 24px */
+  font-size: 1.71429em; /* equiv 24px */
   line-height: 1.75;
-  margin: 1.75em 0 .875em 0;
+  margin: 0 0 .875em 0;
 }
 h3,
 .h3 {
   display: block;
-  font-size: 1.5714em; /* equiv 22px */
-  line-height: 1.909;
-  margin: 1.909em 0 .9545em 0;
+  font-size: 1.57143em;  /* equiv 22px */
+  line-height: 1.90909;
+  margin: 0 0 .95455em 0;
 }
 h4,
 .h4 {
   display: block;
-  font-size: 1.4286em; /* equiv 20px */
+  font-size: 1.42857em; /* equiv 20px */
   line-height: 1.05;
-  margin: 2.1em 0 1.05em 0;
+  margin: 0 0 1.05em 0;
 }
 h5,
 .h5 {
   display: block;
-  font-size: 1.2857em; /* equiv 18px */
-  line-height: 1.1667;
-  margin: 2.3334em 0 1.1667em 0;
+  font-size: 1.28571em;  /* equiv 18px */
+  line-height: 1.16667;
+  margin: 0 0 1.16667em 0;
 }
 h6,
 .h6 {
   display: block;
-  font-size: 1.1429em; /* equiv 16px */
+  font-size: 1.14286em;  /* equiv 16px */
   line-height: 1.3125;
-  margin: 2.625em 0 1.3125em 0;
+  margin: 0 0 1.3125em 0;
 }
 
 .uppercase {
@@ -168,27 +168,27 @@ h6,
 
 /*  other useful classes */
 .smaller {
-  font-size: .7143em; /* equiv 10px */
+  font-size: .71429em; /* equiv 10px */
   line-height: 2.1;
   margin: 2.1em 0;
 }
 .small {
-  font-size: .8571em; /* equiv 12px */
+  font-size: .85714em; /* equiv 12px */
   line-height: 1.75;
   margin: 1.75em 0;
 }
 .big {
-  font-size: 1.1429em; /* equiv 16px */
+  font-size: 1.14286em; /* equiv 16px */
   line-height: 1.3125;
   margin: 1.3125em 0;
 }
 .bigger {
-  font-size: 1.2857em; /* equiv 18px */
-  line-height: 1.1667;
-  margin: 1.1667em 0;
+  font-size: 1.28571em; /* equiv 18px */
+  line-height: 1.16667;
+  margin: 1.16667em 0;
 }
 .biggest {
-  font-size: 1.4286em; /* equiv 20px */
+  font-size: 1.42857em; /* equiv 20px */
   line-height: 1.05;
   margin: 1.05em 0;
 }
