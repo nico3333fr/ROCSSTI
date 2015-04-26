@@ -39,7 +39,12 @@ $rtl-option            : false !default;
 // hyphens
 $hyphenation           : false !default;
 
+// rythme vertical 
+// valeurs possibles : 'double_top_single_bottom',  'single_top', 'single_bottom'
+$vertical-rythm        : 'single_bottom';
+
 // autres
+
 
 
 
@@ -54,7 +59,7 @@ $hyphenation           : false !default;
 
 // calculées via http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil 
 
-@function line-height ($font-size, $base-height, $base-font){
+@function line-height ($font-size, $base-height, $base-font, $type-vr){
 
   $coef: ceil(1 / ($base-height * $base-font / $font-size));
   $height: ($base-font * $base-height / $font-size) ;
@@ -64,43 +69,50 @@ $hyphenation           : false !default;
 }
 
 
-@function margin-em ($font-size, $base-height, $base-font){
+@function margin-em ($font-size, $base-height, $base-font, $type-vr){
 
   $coef: ceil(1 / ($base-height * $base-font / $font-size));
   $other_coef: ceil($base-height * $base-font / $font-size);
   $height: ($base-font * $base-height / $font-size) ;
-  $mar-top: ($height * $coef );
-
-  @return ( ($mar-top * $other_coef)*1em 0 ( ($mar-top/2) * $other_coef) *1em 0 );
-
+  $margin: ($height * $coef );
+    
+  @if $type-vr == 'double_top_single_bottom' {
+     @return ( ($margin * $other_coef)*1em 0 ( ($margin/2) * $other_coef) *1em 0 );
+  }
+  @else if $type-vr == 'single_bottom' {
+     @return ( 0 0 ( ($margin/2) * $other_coef) *1em 0 );
+  }
+  @else if $type-vr == 'single_top' {
+     @return ( ( ($margin/2) * $other_coef) *1em 0 0 0 );
+  }
 }
 
 
-@function margin-em-other ($font-size, $base-height, $base-font){
+@function margin-em-other ($font-size, $base-height, $base-font, $type-vr){
 
   $coef: ceil(1 / ($base-height * $base-font / $font-size));
   $height: ($base-font * $base-height / $font-size) ;
-  $mar-top: ($height * $coef );
+  $margin: ($height * $coef );
 
-  @return ( ($mar-top)*1em 0 );
-
-}
-
-
-@mixin flow-hr( $value ){
-
-  font-size: em($value);
-  line-height: line-height($value, $l-h, $base-font);
-  margin: margin-em($value, $l-h, $base-font) ;   
+  @return ( ($margin)*1em 0 );
 
 }
 
 
-@mixin flow-other( $value ){
+@mixin flow-hr( $value, $type-vr: $vertical-rythm ){
 
   font-size: em($value);
-  line-height: line-height($value, $l-h, $base-font);
-  margin: margin-em-other($value, $l-h, $base-font) ;   
+  line-height: line-height($value, $l-h, $base-font, $type-vr);
+  margin: margin-em($value, $l-h, $base-font, $type-vr) ;   
+
+}
+
+
+@mixin flow-other( $value, $type-vr: $vertical-rythm ){
+
+  font-size: em($value);
+  line-height: line-height($value, $l-h, $base-font, $type-vr);
+  margin: margin-em-other($value, $l-h, $base-font, $type-vr) ;   
 
 }
 
