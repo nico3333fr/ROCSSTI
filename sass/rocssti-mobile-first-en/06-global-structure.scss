@@ -1,0 +1,49 @@
+/* === page === */
+#page {
+  margin: 0 auto;
+  position: relative;
+}
+
+/* === skip links === */
+.skip {
+
+}
+/* .skip__link = 1 skip link */
+/* they should be visible not only on focus */
+.skip__link {
+
+
+  /* anyway remember making them visible on focus */
+  &:focus,
+  &:hover,
+  &:active {
+
+  }
+
+}
+
+
+
+
+/* === header === */
+.header {
+
+}
+.logo {
+
+}
+.navigation {
+
+}
+
+
+/* === main content === */
+.main {
+
+}
+
+
+/* === footer === */
+.footer {
+
+}
