@@ -270,6 +270,6 @@ $vertical-rythm        : 'single_bottom';
   }
  
   @else  {
-    @warn "Type non supported.";
+    @warn "Type non supporté.";
   }
 }
