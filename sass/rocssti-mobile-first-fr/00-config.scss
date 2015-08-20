@@ -164,16 +164,16 @@ $vertical-rythm        : 'single_bottom';
 
 
 
-// Generate margins
-// example
+// Génère margins helpers
+// exemple
 // $list-margin: mt, mr, mb, ml, m;
-// $list-margin-values: 0, 1, 2, 3; // specify 2.5 if needed
+// $list-margin-values: 0, 1, 2, 3; // spécifier 2.5 si besoin
 
 @mixin margin-generator ($list-margin, $list-margin-values) {
 
   @each $margin-type in $list-margin {
      @each $margin in $list-margin-values {
-        //$temp_m : str-slice($margin-type, 0, 1);
+
         $temp_t : str-slice($margin-type, 2, 3);
         
         $property: margin;
@@ -194,7 +194,7 @@ $vertical-rythm        : 'single_bottom';
            $value : $margin;
         } 
         
-        // convert to string
+        // convertir en string
         $text-margin: $margin + '';
         // 1.5 = 1-5
         $property-class: str-replace($text-margin, '.', '-');
@@ -210,16 +210,16 @@ $vertical-rythm        : 'single_bottom';
 
 
 
-// Generate paddings
-// example
+// Génère padding helpers
+// exemple
 // $list-padding: pt, pr, pb, pl, p;
-// $list-padding-values: 0, 1, 2, 3; // specify 2.5 if needed
+// $list-padding-values: 0, 1, 2, 3; // spécifier 2.5 si besoin
 
 @mixin padding-generator ($list-padding, $list-padding-values) {
 
   @each $padding-type in $list-padding {
      @each $padding in $list-padding-values {
-        //$temp_p : str-slice($padding-type, 0, 1);
+
         $temp_t : str-slice($padding-type, 2, 3);
         
         $property: padding;
@@ -239,7 +239,7 @@ $vertical-rythm        : 'single_bottom';
            $value : $padding;
         } 
         
-        // convert to string
+        // convertir en string
         $text-padding: $padding + '';
         // 1.5 = 1-5
         $property-class: str-replace($text-padding, '.', '-');
@@ -253,7 +253,7 @@ $vertical-rythm        : 'single_bottom';
 
 
 /**
- * Responsive management in em 
+ * Responsive: gestion en em 
  *
  */
 @mixin respond-to($breakpoint, $query-type : 'min') {
