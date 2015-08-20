@@ -1,0 +1,41 @@
+@include respond-to($breakpoint-medium) {
+
+  /**
+   * layout/modules
+   */
+
+  /* display elements */
+  .nomobile { display: block; }
+
+  /* hide unnecessary elements */
+  .notablet { display: none; }
+
+  /* linearization of floating content/table-layout */
+  .autotablet {
+    float: none;
+    display: block;
+    width: auto;
+  }
+  /* surcharge needed if use of .automobile & .autotablet */
+  /*.w33  { width: 33.333%; }
+  .w66  { width: 66.666%; }*/
+
+  /*
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  */
+
+  /**
+   * global structure adaptation (page / skip links / header / main content / footer)
+   */
+
+
+   /**
+    * inside content (other styles for pages)
+    */
+
+}
