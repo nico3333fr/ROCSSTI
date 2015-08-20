@@ -1,0 +1,37 @@
+@include respond-to($breakpoint-big) {
+
+  /**
+   * layout/modules
+   */
+
+  /* display elements */
+  .notablet { display: block; }
+
+  /* hide unnecessary elements */
+  .nodesktop { display: none; }
+
+  /* surcharge needed if use of .automobile & .autotablet */
+  /*.w33  { width: 33.333%; }
+  .w66  { width: 66.666%; }*/
+
+  /*
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  */
+
+
+  /**
+   * global structure adaptation (page / skip links / header / main content / footer)
+   */
+
+
+
+  /**
+    * inside content (other styles for pages)
+    */
+
+}
