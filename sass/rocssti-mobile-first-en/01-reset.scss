@@ -1,0 +1,55 @@
+/* for HTML 5 */
+article, aside, datagrid, datalist, details, dialog, figure, footer, header, main, menu, nav, section { display: block; }
+audio, canvas, progress, video { display: inline-block; }
+abbr, eventsource, mark, meter, time, output, bb { display: inline; }
+
+/* to comment/fallback if you care about IE<8 */
+html { box-sizing: border-box; }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* reset minimum */
+html, body, blockquote, ul, ol, form, button { margin: 0; padding: 0; }
+button { border: 0; }
+p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
+  font-size: 1em;
+  line-height: $l-h;
+  margin: $l-h * 1em 0;
+}
+
+/* fix display img/iframe */
+img,
+iframe { vertical-align: middle; }
+
+ul, ol { padding-left: 2em; }
+
+.unstyled {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+@if $rtl-option == true {
+  /* RTL */
+  [dir="rtl"] ul,
+  [dir="rtl"] ol {
+    padding-left: 0;
+    padding-right: 2em;
+  }
+}
+
+
+/* base font size at 10px */
+html {
+  font-size: 62.5%;
+  /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+  /* Thanks to @guardian, @victorbritopro, @eQRoeil & Knacss */
+  font-size: calc(1em * 0.625);
+}
+body {
+  background: #fff;
+  color: #333;
+  font-family: $font-family;
+  font-size: ($base-font / 10) + 0em;
+  line-height: $l-h; /* to adapt if needed */
+}
