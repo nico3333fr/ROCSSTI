@@ -87,6 +87,9 @@ ul, ol { padding-left: 2em; }
   padding-left: 0; 
   padding-right: 2em;
 }
+[dir="rtl"] .unstyled {
+  padding-right: 0;
+}
 
 
 /* la base correspond à 10px */
