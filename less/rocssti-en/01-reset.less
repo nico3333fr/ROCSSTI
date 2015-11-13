@@ -40,6 +40,10 @@ ul, ol { padding-left: 2em; }
   padding-left: 0;
   padding-right: 2em;
   }
+  & .unstyled when (@rtl_option) {
+    /* RTL */
+    padding-right: 0;
+  }
 }
 
 
