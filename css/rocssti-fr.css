@@ -7,9 +7,9 @@
  *
  * ROCSSTI est sous licence CC-BY : http://creativecommons.org/licenses/by/3.0/fr/
  * 
- * cette CSS est fournie telle quelle, sans aucune garantie d'aucun type, 
- * l'auteur ne saurait être tenu responsable de quoi que ce soit pour 
- * l'utilisation de RÖCSSTI.
+ * cette CSS est fournie telle quelle, sans aucune garantie d’aucun type, 
+ * l’auteur ne saurait être tenu responsable de quoi que ce soit pour 
+ * l’utilisation de RÖCSSTI.
  *
  * convention (à adapter si besoin)
  *  .parent
@@ -37,7 +37,7 @@
  * 13 -- breakpoints mineurs tout petit mobile
  * 14 -- print
  * 15 -- fix viewport 
- * 16 -- règles d'état
+ * 16 -- règles d’état
  * 17 -- bonus : Fixes IE
  */
 
@@ -55,7 +55,7 @@ article, aside, datagrid, datalist, details, dialog, figure, footer, header, mai
 audio, canvas, progress, video { display: inline-block; }
 abbr, eventsource, mark, meter, time, output, bb { display: inline; }
 
-/* à commenter/fallback si vous vous souciez d'IE<8 */
+/* à commenter/fallback si vous vous souciez d’IE<8 */
 html { box-sizing: border-box; }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -211,7 +211,7 @@ table {
 
 /*
  * repris de http://tinytypo.tetue.net/ de @tetue
- * tuné avec l'aide de http://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
+ * tuné avec l’aide de http://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
  *
  * voir http://en.wikipedia.org/wiki/International_variation_in_quotation_marks pour les références
  */
@@ -304,7 +304,7 @@ kbd {
 table {
   margin-bottom: 1.5em;
 }
-/* j'y tiens, les abbr c'est bon pour la planète */
+/* j’y tiens, les abbr c’est bon pour la planète */
 /* seuls ceux ayant un title sont signalés */
 abbr[title] {
   border-bottom: dotted 1px; 
@@ -366,7 +366,7 @@ a[href^="https://"] {
 a[href^="mailto:"] {
 
 }*/
-/* dont l'URL se termine par .pdf ou ce que vous voulez comme extension */
+/* dont l’URL se termine par .pdf ou ce que vous voulez comme extension */
 /*a[href$=".pdf"] {
 
 }*/
@@ -503,7 +503,7 @@ svg {
   display: inline-block;
 }
 
-/* grid = élément d'une inline-grid */
+/* grid = élément d’une inline-grid */
 .grid {
   vertical-align: top;
 }
@@ -519,7 +519,7 @@ svg {
   margin-right: auto;
 }
 
-/* activation de l'accélération matérielle */
+/* activation de l’accélération matérielle */
 .hardware-accelerated {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -663,11 +663,11 @@ hr {
   position: relative;
 }
 
-/* === skip links = liens d'évitement === */
+/* === skip links = liens d’évitement === */
 .skip {
 
 }
-/* skip__link = un lien d'évitement  */
+/* skip__link = un lien d’évitement  */
 /* idéalement mettez-les visibles pas uniquement au focus */
 .skip__link {
 
@@ -778,7 +778,7 @@ input[type="image"] {
   width: auto;
 }
 
-/* messages d'erreur ou de confirmation */
+/* messages d’erreur ou de confirmation */
 .alert,
 .alert input,
 .alert textarea,
@@ -802,7 +802,7 @@ input[type="image"] {
 
 /* 
  * peut être complété par les attributs HTML5 required
- * exemple avec une couleur, penser à ne pas uniquement transmettre l'info ainsi
+ * exemple avec une couleur, penser à ne pas uniquement transmettre l’info ainsi
  */
 /*select:required:invalid,
 input:required:invalid,
@@ -952,7 +952,7 @@ select:focus:required:valid {
 
 @media print {
   /** 
-   * ajouter là-dedans les éléments qui ont besoin d'être
+   * ajouter là-dedans les éléments qui ont besoin d’être
    * resetés de manière très bourrine pour le print
    */
   body,
@@ -1031,7 +1031,7 @@ select:focus:required:valid {
  * minimum-scale=0.5    => min-zoom: 0.5;
  * user-scalable=no     => user-zoom: fixed;
  * 
- * pour le snap mode de Win8 => seul width: device-width; fonctionne pour l'instant  
+ * pour le snap mode de Win8 => seul width: device-width; fonctionne pour l’instant  
  */
 
 @-webkit-viewport {
@@ -1055,12 +1055,12 @@ select:focus:required:valid {
 
 /*
  *****************************************************************
- * 16 -- règles d'état
+ * 16 -- règles d’état
  *****************************************************************
  */
 
 /*
- * Règles d'état = mises en bas pour être prioritaires
+ * Règles d’état = mises en bas pour être prioritaires
  *
  */
 
@@ -1081,10 +1081,10 @@ select:focus:required:valid {
  */
 
 /*  
- * basé sur les classes conditionnelles sur l'élément HTML
+ * basé sur les classes conditionnelles sur l’élément HTML
  *  
  * à utiliser seulement si peu de corrections et 
- * pas d'impact sur les perfs sur les autres navigateurs
+ * pas d’impact sur les perfs sur les autres navigateurs
  *       
  */
 
