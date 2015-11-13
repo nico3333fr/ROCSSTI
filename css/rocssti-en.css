@@ -8,7 +8,7 @@
  * ROCSSTI is under CC-BY licence : http://creativecommons.org/licenses/by/3.0/
  *
  * this CSS is provided "as is", without any warranty of any type,
- * author can't be responsible of anything you might do with RÖCSSTI
+ * author can’t be responsible of anything you might do with RÖCSSTI
  *
  * convention (adapt if needed)
  *  .parent
@@ -259,7 +259,7 @@ li ul {
   margin-bottom: 0;
   margin-top: 0;
 }
-/* Thou shalt not pass (Moïse or Gandalf, don't remember) */
+/* Thou shalt not pass (Moïse or Gandalf, don’t remember) */
 /*textarea,
 table,
 td,
@@ -406,7 +406,7 @@ svg {
   height: auto;
   max-width: 100%;
 }
-/* no reset on embed, object & video, some players don't like */
+/* no reset on embed, object & video, some players don’t like */
 
 /* useful to manage floats */
 /* containing floats */
