@@ -37,7 +37,7 @@
  * 14 -- print
  * 15 -- fix viewport
  * 16 -- state classes
- * 17 -- bonus : Fixes IE
+ * 17 -- bonus: Fixes IE
  */
 
 
@@ -377,9 +377,9 @@ a[href^="mailto:"] {
 
 /* facto icons */
 /*[class*=icon-30] {
-display: inline-block;
-width: 30px;
-height: 30px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
 }*/
 
 
@@ -467,7 +467,7 @@ svg {
   clear: left;
 }
 
-/* gut : "spacing" empty div */
+/* gut: "spacing" empty div */
 .gut {
   height: 1px;
 }
@@ -659,7 +659,7 @@ hr {
  */
 
 /* === page === */
-#page {
+.page {
   margin: 0 auto;
   position: relative;
 }
@@ -763,9 +763,9 @@ textarea {
 }
 
 /*
-* avoids dimensioning for radio, checkboxes and images
-* and a different display on IE
-*/
+ * avoids dimensioning for radio, checkboxes and images
+ * and a different display on IE
+ */
 input[type="radio"],
 input[type="checkbox"],
 input[type="image"] {
@@ -802,8 +802,8 @@ input[type="image"] {
 }*/
 
 /* can be completed with HTML5 required attribute
-* example with a color, remember not only displaying information with it
-*/
+ * example with a color, remember not only displaying information with it
+ */
 /*select:required:invalid,
 input:required:invalid,
 input:focus:invalid,
@@ -1025,7 +1025,7 @@ select:focus:required:valid {
 /* fix viewport for Win8 (snap mode) and preparing day
  * when viewport will be supported by all render engines
  *
- * Examples : http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/
+ * Examples: http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/
  * width=device-width => width: device-width;
  * height=device-height => height: device-height;
  * initial-scale=2 => zoom: 2;
