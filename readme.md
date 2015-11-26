@@ -20,6 +20,10 @@ To sum up, having a strong CSS base, used for and built from professional realis
 
 Information: to my knowledge, **RÖCSSTI has been used for about 80 websites**, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
 
+## Röcssti builder
+
+If you don’t want or have the possibility to use versions with pre-processors, you may use this tool : http://rocssti.net/en/builder-css
+
 ## Coding conventions
 
 - Indent: 2 spaces for properties
