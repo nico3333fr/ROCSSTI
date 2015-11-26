@@ -20,6 +20,10 @@ Bref, avoir un socle robuste et éprouvé par des réalisations en milieu profes
 
 Si vous doutez du côté pratique, cette base CSS sera enrichie au fil des projets réels que je réaliserai avec. Pour information, à ma connaissance, **80 réalisations dans des styles très différents ont déjà été faites avec RÖCSSTI**, cela va de sites relativement simples à des sites plus complexes en responsive. Le gain de temps au démarrage du projet ainsi que la réutilisabilité du code sont réelles et perceptibles.
 
+## Röcssti builder
+
+Si vous n’avez pas l’envie ou la possibilité d’utiliser les versions avec pré-processeur, vous pouvez utiliser cet outil : http://rocssti.net/en/builder-css
+
 ## Conventions de nommage
 
 - Indentation : 2 espaces pour les propriétés
