@@ -738,6 +738,14 @@ select {
   vertical-align: middle;
 }
 
+/** fix typo inputs **/
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 1em;
+}
 /* à adapter selon le design voulu */
 input,
 select,
@@ -746,9 +754,6 @@ textarea {
   border-radius: 5px;
   padding: .5em;
   width: 250px;
-  /** fix typo inputs **/
-  font-family: inherit;
-  font-size: 1em;
 }
 
 /* pour les textes des champs */
