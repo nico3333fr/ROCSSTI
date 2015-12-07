@@ -736,17 +736,22 @@ select {
   vertical-align: middle;
 }
 
-/* to adapt to your design */
+/** fix typo inputs **/
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 1em;
+}
+/* à adapter selon le design voulu */
 input,
 select,
 textarea {
   border: 1px solid #000;
   border-radius: 5px;
-  width: 250px;
   padding: .5em;
-  /** fix typo inputs **/
-  font-family: inherit;
-  font-size: 1em;
+  width: 250px;
 }
 
 /* for field texts */
