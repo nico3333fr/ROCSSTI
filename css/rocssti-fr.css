@@ -966,7 +966,7 @@ select:focus:required:valid {
    */
   body,
   html,
-  #page,
+  .page,
   .reset4print {
     background-color: #fff;
     background-image: none;
