@@ -1,4 +1,4 @@
-<img src="http://rocssti.net/layout/images/rocssti_logo.png" alt="RÖCSSTI" />
+<img src="https://rocssti.net/layout/images/rocssti_logo.png" alt="RÖCSSTI" />
 
 # RÖCSSTI: to start CSS easily!
 
@@ -22,7 +22,7 @@ Information: to my knowledge, **RÖCSSTI has been used for about 80 websites**, 
 
 ## Röcssti builder
 
-If you don’t want or have the possibility to use versions with pre-processors, you may use this tool : http://rocssti.net/en/builder-css
+If you don’t want or have the possibility to use versions with pre-processors, you may use this tool: https://rocssti.net/en/builder-css
 
 ## Coding conventions
 
@@ -47,4 +47,4 @@ h1,
 - No unit for null values, when it is allowed, e.g. `margin: 0;`
 - CSS Properties are displayed in alphabetical order, when it is possible.
 
-http://rocssti.net/
+View the doc and some examples: https://rocssti.net/
