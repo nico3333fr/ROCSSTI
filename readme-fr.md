@@ -1,4 +1,4 @@
-<img src="http://rocssti.net/layout/images/rocssti_logo.png" alt="RÖCSSTI" />
+<img src="https://rocssti.net/layout/images/rocssti_logo.png" alt="RÖCSSTI" />
 
 # RÖCSSTI : le micro-framework CSS pour démarrer vos CSS avec la patate !
 
@@ -22,7 +22,7 @@ Si vous doutez du côté pratique, cette base CSS sera enrichie au fil des proje
 
 ## Röcssti builder
 
-Si vous n’avez pas l’envie ou la possibilité d’utiliser les versions avec pré-processeur, vous pouvez utiliser cet outil : http://rocssti.net/en/builder-css
+Si vous n’avez pas l’envie ou la possibilité d’utiliser les versions avec pré-processeur, vous pouvez utiliser cet outil : https://rocssti.net/en/builder-css
 
 ## Conventions de nommage
 
@@ -47,4 +47,4 @@ h1,
 - Pour toute valeur nulle, pas d'unité quand c'est autorisé, exemple : `margin: 0;`
 - Nommage des propriétés CSS par ordre alphabétique, quand c'est possible.
 
-http://rocssti.net/
+Voir la doc et des exemples : https://rocssti.net/
