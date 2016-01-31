@@ -22,7 +22,8 @@ svg {
 .mod {
   overflow: auto;
 }
-.mod--hidden {
+.mod--hidden,
+.no-scroll { 
   overflow: hidden;
 }
 
