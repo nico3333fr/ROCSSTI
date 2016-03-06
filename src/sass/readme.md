@@ -1,4 +1,4 @@
-<img src="http://rocssti.net/layout/images/rocssti_logo.png" alt="RÖCSSTI" />
+<img src="https://rocssti.net/layout/images/rocssti_logo.png" alt="RÖCSSTI" />
 
 # RÖCSSTI: Sass versions
 
