@@ -741,9 +741,9 @@ select {
 input,
 select,
 textarea,
+optgroup,
 button {
-  font-family: inherit;
-  font-size: 1em;
+  font: inherit;
 }
 /* to adapt to your design */
 input,
