@@ -24,6 +24,10 @@ Information: to my knowledge, **RÖCSSTI has been used for about 80 websites**, 
 
 If you don’t want or have the possibility to use versions with pre-processors, you may use this tool: https://rocssti.net/en/builder-css
 
+## Röcssti is on NPM
+
+You can do ```npm install rocssti``` to get all the files.
+
 ## Coding conventions
 
 - Indent: 2 spaces for properties
