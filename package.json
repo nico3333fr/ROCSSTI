@@ -20,13 +20,13 @@
   "bugs": {
     "url": "https://github.com/nico3333fr/ROCSSTI/issues"
   },
-  "repositories": [
+  "repository": [
     {
       "type": "git",
       "url": "https://github.com/nico3333fr/ROCSSTI.git"
     }
   ],
-  "licenses": [
+  "license": [
     {
       "name": "MIT",
       "url": "https://github.com/nico3333fr/ROCSSTI/blob/master/LICENSE"
