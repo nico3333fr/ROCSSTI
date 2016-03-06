@@ -24,6 +24,10 @@ Si vous doutez du côté pratique, cette base CSS sera enrichie au fil des proje
 
 Si vous n’avez pas l’envie ou la possibilité d’utiliser les versions avec pré-processeur, vous pouvez utiliser cet outil : https://rocssti.net/en/builder-css
 
+## Röcssti est dispo sur NPM
+
+Vous pouvez faire ```npm install rocssti``` à la ligne de commande.
+
 ## Conventions de nommage
 
 - Indentation : 2 espaces pour les propriétés
