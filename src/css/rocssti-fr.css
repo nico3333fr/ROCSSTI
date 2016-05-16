@@ -209,10 +209,6 @@ h6,
 .noborder,
 iframe { border: 0; }
 
-table {
-  table-layout: fixed;
-}
-
 /*
  * repris de http://tinytypo.tetue.net/ de @tetue
  * tuné avec l’aide de http://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
@@ -307,6 +303,7 @@ kbd {
 }
 table {
   margin-bottom: 1.5em;
+  table-layout: fixed;
 }
 /* j’y tiens, les abbr c’est bon pour la planète */
 /* seuls ceux ayant un title sont signalés */
@@ -352,6 +349,10 @@ a:link img,
 a:visited img, 
 img {
   border-style: none;
+}
+
+.nodecoration {
+  text-decoration: none;
 }
 
 /* liens avec icônes, on peut utiliser les DATA-URI */
