@@ -1,10 +1,6 @@
 .noborder,
 iframe { border: 0; }
 
-table {
-  table-layout: fixed;
-}
-
 /*
  * taken from http://tinytypo.tetue.net/ made by @tetue
  * tuned with the help of http://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
@@ -126,6 +122,7 @@ kbd {
 }
 table {
   margin-bottom: 1.5em;
+  table-layout: fixed;
 }
 /* important, abbr are good */
 /* only those with a title are shown */
