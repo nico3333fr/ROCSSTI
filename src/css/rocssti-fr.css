@@ -952,6 +952,41 @@ select:focus:required:valid {
  * 13 -- breakpoints mineurs tout petit mobile
  *****************************************************************
  */
+/*
+ *****************************************************************
+ * 13 -- breakpoints mineurs tout petit mobile
+ *****************************************************************
+ */
+
+@media (max-width: 20em) { /* equiv 320px */
+
+  /**
+   * layout/modules
+   */
+
+  /* affichage des éléments */
+  /*.nomobile { display: block; }*/
+
+  /* cachage des éléments inutiles ! */
+  .notinymobile { display: none; }
+
+  /* linéarisation contenus flottants/table-layout */
+  .autotinymobile {
+    float: none;
+    display: block;
+    width: auto;
+  }
+
+  /**
+   * adaptation structure globale (page / skip links / header / contenu principal / footer)
+   */
+  
+  
+  /**
+   * dans le contenu (contenus spécifiques aux pages)
+   */
+
+}
 
 
 
