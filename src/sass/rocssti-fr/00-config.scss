@@ -1,9 +1,12 @@
-// Compass import 
+// Compass import (si nécessaire)
 //@import "compass/css3";
  
 
 // Sass variables : adaptez-les à vos designs
+
+// la taille du texte courant
 $base-font             : 16 !default; // si "14" alors 1em = 14px
+// line-height par défaut
 $l-h                   : 1.5 !default;
 
 // fonts
@@ -43,8 +46,19 @@ $rtl-option            : false !default;
 $hyphenation           : false !default;
 
 // rythme vertical 
-// valeurs possibles : 'double_top_single_bottom',  'single_top', 'single_bottom'
+// valeurs possibles   : 'double_top_single_bottom',  'single_top', 'single_bottom'
 $vertical-rythm        : 'single_bottom' !default;
+
+// unité pour la typo
+// valeurs possibles   : 'use_em',  'use_rem', 'use_rem_with_em_fallback'
+$typo-unit             : 'use_em' !default;
+
+// applique le 62.5% sur html et influe sur le calcul des rems
+$root-equiv-10-px      : true !default;
+
+// postulat de base : la typo par défaut est à 16 pixels dans le browser
+// normalement, vous ne devriez JAMAIS updater cette valeur, mais… sait-on jamais…
+$root-default-font-size: 16 !default;
 
 // autres
 
@@ -56,6 +70,17 @@ $vertical-rythm        : 'single_bottom' !default;
 @function em($px, $base: $base-font) {
 
   @return ($px / $base) * 1em;
+
+}
+
+@function rem($px, $reset-applied: $root-equiv-10-px, $user-default-font-size: $root-default-font-size) {
+
+  @if ( $reset-applied == true ) {
+      @return ($px / 10) * 1rem;
+  }
+  @else {
+         @return ($px / $user-default-font-size) * 1rem;
+		}
 
 }
 
@@ -102,18 +127,36 @@ $vertical-rythm        : 'single_bottom' !default;
 }
 
 
-@mixin flow-hr( $value, $type-vr: $vertical-rythm ){
+@mixin flow-hr( $value, $type-vr: $vertical-rythm, $type-unit: $typo-unit ){
 
-  font-size: em($value);
+  @if $type-unit == 'use_em' {
+     font-size: em($value);
+  }
+  @else if $type-unit == 'use_rem' {
+     font-size: rem($value);
+  }
+  @else if $type-unit == 'use_rem_with_em_fallback' {
+     font-size: em($value);
+     font-size: rem($value);
+  }
   line-height: line-height($value, $l-h, $base-font, $type-vr);
   margin: margin-em($value, $l-h, $base-font, $type-vr) ;   
 
 }
 
 
-@mixin flow-other( $value, $type-vr: $vertical-rythm ){
+@mixin flow-other( $value, $type-vr: $vertical-rythm, $type-unit: $typo-unit ){
 
-  font-size: em($value);
+  @if $type-unit == 'use_em' {
+     font-size: em($value);
+  }
+  @else if $type-unit == 'use_rem' {
+     font-size: rem($value);
+  }
+  @else if $type-unit == 'use_rem_with_em_fallback' {
+     font-size: em($value);
+     font-size: rem($value);
+  }
   line-height: line-height($value, $l-h, $base-font, $type-vr);
   margin: margin-em-other($value, $l-h, $base-font, $type-vr) ;   
 
