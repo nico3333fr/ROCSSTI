@@ -48,7 +48,7 @@ ul, ol { padding-left: 2em; }
 
 
 /* base font size at 10px */
-html { 
+html when (@root-equiv-10-px) { 
   font-size: 62.5%;
   /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
   /* Thanks to @guardian, @victorbritopro, @eQRoeil & Knacss */
@@ -58,6 +58,17 @@ body {
   background: @color-bg-body;
   color: @color-body;
   font-family: @font-family;
-  font-size: (@basefont / 10) + 0em; 
+  & when not (@typo-unit = 'use_rem') { // em
+    font-size: (@basefont / 10) + 0em; 
+  }
+  & when not (@typo-unit = 'use_em') { // rem
+    & when (@root-equiv-10-px) {
+      font-size: (@basefont / 10) + 0rem;
+      }
+    & when not (@root-equiv-10-px) {
+      font-size: (@basefont / @root-default-font-size) + 0rem;
+      }
+  }
+  
   line-height: @l-h;
 }
