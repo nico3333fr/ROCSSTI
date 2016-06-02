@@ -1,9 +1,12 @@
-// Compass import 
+// Compass import, if necessary
 //@import "compass/css3";
  
 
 // Sass variables: adapt them to your designs
+
+// base size for text
 $base-font             : 16 !default; // if "14" then 1em = 14px
+// default line-height
 $l-h                   : 1.5 !default;
 
 // fonts
@@ -46,6 +49,17 @@ $hyphenation           : false !default;
 // possible values: 'double_top_single_bottom',  'single_top', 'single_bottom'
 $vertical-rythm        : 'single_bottom' !default;
 
+// units for typo
+// possible values     : 'use_em',  'use_rem', 'use_rem_with_em_fallback'
+$typo-unit             : 'use_em' !default;
+
+// applies 62.5% on html (to make 10px default font size), simplifies rem calculation
+$root-equiv-10-px      : true !default;
+
+// basic premise: default user setting for font size is at 16 pixels in the browser
+// you should NEVER update this value, however… who can predict the future…
+$root-default-font-size: 16 !default;
+
 // others
 
 
@@ -55,6 +69,17 @@ $vertical-rythm        : 'single_bottom' !default;
 @function em($px, $base: $base-font) {
 
   @return ($px / $base) * 1em;
+
+}
+
+@function rem($px, $reset-applied: $root-equiv-10-px, $user-default-font-size: $root-default-font-size) {
+
+  @if ( $reset-applied == true ) {
+      @return ($px / 10) * 1rem;
+  }
+  @else {
+         @return ($px / $user-default-font-size) * 1rem;
+		}
 
 }
 
@@ -101,18 +126,36 @@ $vertical-rythm        : 'single_bottom' !default;
 }
 
 
-@mixin flow-hr( $value, $type-vr: $vertical-rythm ){
+@mixin flow-hr( $value, $type-vr: $vertical-rythm, $type-unit: $typo-unit ){
 
-  font-size: em($value);
+  @if $type-unit == 'use_em' {
+     font-size: em($value);
+  }
+  @else if $type-unit == 'use_rem' {
+     font-size: rem($value);
+  }
+  @else if $type-unit == 'use_rem_with_em_fallback' {
+     font-size: em($value);
+     font-size: rem($value);
+  }
   line-height: line-height($value, $l-h, $base-font, $type-vr);
   margin: margin-em($value, $l-h, $base-font, $type-vr) ;   
 
 }
 
 
-@mixin flow-other( $value, $type-vr: $vertical-rythm ){
+@mixin flow-other( $value, $type-vr: $vertical-rythm, $type-unit: $typo-unit ){
 
-  font-size: em($value);
+  @if $type-unit == 'use_em' {
+     font-size: em($value);
+  }
+  @else if $type-unit == 'use_rem' {
+     font-size: rem($value);
+  }
+  @else if $type-unit == 'use_rem_with_em_fallback' {
+     font-size: em($value);
+     font-size: rem($value);
+  }
   line-height: line-height($value, $l-h, $base-font, $type-vr);
   margin: margin-em-other($value, $l-h, $base-font, $type-vr) ;   
 
