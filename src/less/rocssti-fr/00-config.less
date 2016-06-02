@@ -1,5 +1,8 @@
 // LESS values : adaptez-les à vos designs
-@basefont              : 14;  // si "14" alors 1em = 14px
+
+// la taille du texte courant
+@basefont              : 16;  // si "14" alors 1em = 14px
+// line-height par défaut
 @l-h                   : 1.5; // equiv line-height 1.5
 
 // fonts
@@ -31,6 +34,17 @@
 // valeurs possibles : 'double_top_single_bottom',  'single_top', 'single_bottom'
 @vertical-rythm        : 'single_bottom'; 
 
+// unité pour la typo
+// valeurs possibles   : 'use_em',  'use_rem', 'use_rem_with_em_fallback'
+@typo-unit             : 'use_em';
+
+// applique le 62.5% sur html et influe sur le calcul des rems
+@root-equiv-10-px      : true;
+
+// postulat de base : la typo par défaut est à 16 pixels dans le browser
+// normalement, vous ne devriez JAMAIS updater cette valeur, mais… sait-on jamais…
+@root-default-font-size: 16;
+
 // autres
 
 
@@ -38,6 +52,15 @@
 // LESS functions : pas touche ;)
 
 .pxtoem (@fontsize) {font-size: (@fontsize / @basefont) + 0em;}
+
+.pxtorem (@fontsize) {
+  & when (@root-equiv-10-px) {
+    font-size: (@fontsize / 10) + 0rem; 
+  }
+  & when (@root-equiv-10-px = false) {
+    font-size: (@fontsize / @root-default-font-size) + 0rem; 
+  }
+}
 
 .line (@fontsize) {line-height: @l-h *2 / (@fontsize / @basefont) + 0em}
 
@@ -55,7 +78,17 @@
   @height: (@base-font * @base-height / @font-size);
   @margin: (@height * @coef );
 
-font-size: round(@size * @rounding-value) / @rounding-value;
+  & when not (@typo-unit = 'use_rem') { // em
+    font-size: round(@size * @rounding-value) / @rounding-value;
+  }
+  & when not (@typo-unit = 'use_em') { // rem
+    & when (@root-equiv-10-px) {
+      font-size: (@font-size / 10) + 0rem;
+      }
+    & when not (@root-equiv-10-px) {
+      font-size: (@font-size / @root-default-font-size) + 0rem;
+      }
+  }
 line-height: round(@height * @coef * @rounding-value) / @rounding-value;
 margin: ( round(@margin*@rounding-value)/@rounding-value * @other_coef + 0em) 0 (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0;
 
@@ -68,7 +101,18 @@ margin: ( round(@margin*@rounding-value)/@rounding-value * @other_coef + 0em) 0 
   @height: (@base-font * @base-height / @font-size);
   @margin: (@height * @coef );
 
-font-size: round(@size * @rounding-value) / @rounding-value;
+  & when not (@typo-unit = 'use_rem') { // em
+    font-size: round(@size * @rounding-value) / @rounding-value;
+  }
+  & when not (@typo-unit = 'use_em') { // rem
+    & when (@root-equiv-10-px) {
+      font-size: (@font-size / 10) + 0rem;
+      }
+    & when not (@root-equiv-10-px) {
+      font-size: (@font-size / @root-default-font-size) + 0rem;
+      }
+  }
+
 line-height: round(@height * @coef * @rounding-value) / @rounding-value;
 margin: (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0 0 0;
 
@@ -81,7 +125,17 @@ margin: (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0
   @height: (@base-font * @base-height / @font-size);
   @margin: (@height * @coef );
 
-font-size: round(@size * @rounding-value) / @rounding-value;
+  & when not (@typo-unit = 'use_rem') { // em
+    font-size: round(@size * @rounding-value) / @rounding-value;
+  }
+  & when not (@typo-unit = 'use_em') { // rem
+    & when (@root-equiv-10-px) {
+      font-size: (@font-size / 10) + 0rem;
+      }
+    & when not (@root-equiv-10-px) {
+      font-size: (@font-size / @root-default-font-size) + 0rem;
+      }
+  }
 line-height: round(@height * @coef * @rounding-value) / @rounding-value;
 margin: 0 0 (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0;
 
@@ -97,7 +151,17 @@ margin: 0 0 (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0e
   @height: (@base-font * @base-height / @font-size);
   @mar-top: (@height * @coef );
 
-font-size: round(@size * @rounding-value) / @rounding-value;
+  & when not (@typo-unit = 'use_rem') { // em
+    font-size: round(@size * @rounding-value) / @rounding-value;
+  }
+  & when not (@typo-unit = 'use_em') { // rem
+    & when (@root-equiv-10-px) {
+      font-size: (@font-size / 10) + 0rem;
+      }
+    & when not (@root-equiv-10-px) {
+      font-size: (@font-size / @root-default-font-size) + 0rem;
+      }
+  }
 line-height: round(@height * @coef * @rounding-value) / @rounding-value;
 margin: ( round(@mar-top*@rounding-value)/@rounding-value + 0em) 0;
 
