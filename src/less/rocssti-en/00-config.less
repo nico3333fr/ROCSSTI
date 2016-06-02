@@ -30,6 +30,17 @@
 // possible values! 'double_top_single_bottom',  'single_top', 'single_bottom'
 @vertical-rythm        : 'single_bottom'; 
 
+// units for typo
+// possible values     : 'use_em',  'use_rem', 'use_rem_with_em_fallback'
+@typo-unit             : 'use_em';
+
+// applies 62.5% on html (to make 10px default font size), simplifies rem calculation
+@root-equiv-10-px      : true;
+
+// basic premise: default user setting for font size is at 16 pixels in the browser
+// you should NEVER update this value, however… who can predict the future…
+@root-default-font-size: 16;
+
 // others
 
 
@@ -37,6 +48,15 @@
 // LESS functions : don't touch ;)
 
 .pxtoem (@fontsize) {font-size: (@fontsize / @basefont) + 0em;}
+
+.pxtorem (@fontsize) {
+  & when (@root-equiv-10-px) {
+    font-size: (@fontsize / 10) + 0rem; 
+  }
+  & when (@root-equiv-10-px = false) {
+    font-size: (@fontsize / @root-default-font-size) + 0rem; 
+  }
+}
 
 .line (@fontsize) {line-height: @l-h *2 / (@fontsize / @basefont) + 0em}
 
@@ -54,7 +74,17 @@
   @height: (@base-font * @base-height / @font-size);
   @margin: (@height * @coef );
 
-font-size: round(@size * @rounding-value) / @rounding-value;
+  & when not (@typo-unit = 'use_rem') { // em
+    font-size: round(@size * @rounding-value) / @rounding-value;
+  }
+  & when not (@typo-unit = 'use_em') { // rem
+    & when (@root-equiv-10-px) {
+      font-size: (@font-size / 10) + 0rem;
+      }
+    & when not (@root-equiv-10-px) {
+      font-size: (@font-size / @root-default-font-size) + 0rem;
+      }
+  }
 line-height: round(@height * @coef * @rounding-value) / @rounding-value;
 margin: ( round(@margin*@rounding-value)/@rounding-value * @other_coef + 0em) 0 (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0;
 
@@ -67,7 +97,17 @@ margin: ( round(@margin*@rounding-value)/@rounding-value * @other_coef + 0em) 0 
   @height: (@base-font * @base-height / @font-size);
   @margin: (@height * @coef );
 
-font-size: round(@size * @rounding-value) / @rounding-value;
+  & when not (@typo-unit = 'use_rem') { // em
+    font-size: round(@size * @rounding-value) / @rounding-value;
+  }
+  & when not (@typo-unit = 'use_em') { // rem
+    & when (@root-equiv-10-px) {
+      font-size: (@font-size / 10) + 0rem;
+      }
+    & when not (@root-equiv-10-px) {
+      font-size: (@font-size / @root-default-font-size) + 0rem;
+      }
+  }
 line-height: round(@height * @coef * @rounding-value) / @rounding-value;
 margin: (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0 0 0;
 
@@ -80,7 +120,17 @@ margin: (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0
   @height: (@base-font * @base-height / @font-size);
   @margin: (@height * @coef );
 
-font-size: round(@size * @rounding-value) / @rounding-value;
+  & when not (@typo-unit = 'use_rem') { // em
+    font-size: round(@size * @rounding-value) / @rounding-value;
+  }
+  & when not (@typo-unit = 'use_em') { // rem
+    & when (@root-equiv-10-px) {
+      font-size: (@font-size / 10) + 0rem;
+      }
+    & when not (@root-equiv-10-px) {
+      font-size: (@font-size / @root-default-font-size) + 0rem;
+      }
+  }
 line-height: round(@height * @coef * @rounding-value) / @rounding-value;
 margin: 0 0 (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0em) 0;
 
@@ -97,7 +147,17 @@ margin: 0 0 (round(@margin*@rounding-value)/@rounding-value/2 * @other_coef + 0e
   @height: (@base-font * @base-height / @font-size);
   @mar-top: (@height * @coef );
 
-font-size: round(@size * @rounding-value) / @rounding-value;
+  & when not (@typo-unit = 'use_rem') { // em
+    font-size: round(@size * @rounding-value) / @rounding-value;
+  }
+  & when not (@typo-unit = 'use_em') { // rem
+    & when (@root-equiv-10-px) {
+      font-size: (@font-size / 10) + 0rem;
+      }
+    & when not (@root-equiv-10-px) {
+      font-size: (@font-size / @root-default-font-size) + 0rem;
+      }
+  }
 line-height: round(@height * @coef * @rounding-value) / @rounding-value;
 margin: ( round(@mar-top*@rounding-value)/@rounding-value + 0em) 0;
 
