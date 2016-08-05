@@ -36,10 +36,9 @@ $breakpoint-small      : 640 !default;
 
 // RTL
 $rtl-option            : false !default;
-/* RTL = Right To Left =>
- * to adapt a website in a language that is written from right to left
- * designed for multilingual websites with LTR et RTL
- */
+// RTL = Right To Left =>
+// to adapt a website in a language that is written from right to left
+// designed for multilingual websites with LTR et RTL
 
 // hyphens
 $hyphenation           : false !default;
@@ -185,16 +184,16 @@ $root-default-font-size: 16 !default;
 }
 
 
-/**
- * Replace `$search` with `$replace` in `$string`.
- * Case sensitive.
- *
- * @param {String} $string - haystack
- * @param {String} $search - needle
- * @param {String} $replace ('') - replacement
- *
- * @return {String}
- */
+//
+// Replace `$search` with `$replace` in `$string`.
+// Case sensitive.
+//
+// @param {String} $string - haystack
+// @param {String} $search - needle
+// @param {String} $replace ('') - replacement
+//
+// @return {String}
+//
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
   $slice: $string;
@@ -298,10 +297,10 @@ $root-default-font-size: 16 !default;
 }
 
 
-/**
- * Responsive management in em
- *
- */
+//
+// Responsive management in em
+//
+
 @mixin respond-to($breakpoint, $query-type : 'min') {
   @if $query-type == "max" {
      @media (max-width: em($breakpoint)) {
@@ -316,6 +315,6 @@ $root-default-font-size: 16 !default;
   }
 
   @else  {
-    @warn "Type non supported.";
+    @warn "Unsupported type.";
   }
 }
