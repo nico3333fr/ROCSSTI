@@ -46,7 +46,7 @@ ul, ol { padding-left: 2em; }
   /* base font size at 10px */
   html { 
     font-size: 62.5%;
-    /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+    /* IE9-IE11 math fixing. See https://connect.microsoft.com/IE/feedback/details/816709/ */
     /* Thanks to @guardian, @victorbritopro, @eQRoeil & Knacss */
     font-size: calc(1em * 0.625);
   }
