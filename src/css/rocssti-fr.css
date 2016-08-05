@@ -96,7 +96,7 @@ ul, ol { padding-left: 2em; }
 /* la base correspond à 10px */
 html { 
   font-size: 62.5%;
-  /* IE9-IE11 math fixing. Voir http://bit.ly/1g4X0bX */
+  /* IE9-IE11 math fixing. Voir https://connect.microsoft.com/IE/feedback/details/816709/ */
   /* Merci à @guardian, @victorbritopro, @eQRoeil & Knacss */
   font-size: calc(1em * 0.625);
 }
@@ -121,7 +121,8 @@ body {
 
 }*/
 
-/* calculées via http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil */
+/* calculées via https://rocssti.net/builder-css
+ * basé sur http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil */
 
 h1,
 .h1 {
