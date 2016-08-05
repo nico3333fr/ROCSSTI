@@ -85,7 +85,8 @@ $root-default-font-size: 16 !default;
 }
 
 
-// calculées via http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil 
+// calculées via https://rocssti.net/builder-css
+// basé sur http://soqr.fr/vertical-rhythm/ merci @goetter & @eQRoeil
 
 @function line-height ($font-size, $base-height, $base-font, $type-vr){
 
