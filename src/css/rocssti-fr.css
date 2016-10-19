@@ -437,6 +437,7 @@ svg {
 .clear {
   clear: both;
 }
+/*
 .clearleft {
   clear: left;
 }
@@ -456,6 +457,7 @@ svg {
   clear: both;
   visibility: hidden;
 }
+*/
 
 /* RTL */
 [dir="rtl"] .left {
@@ -465,12 +467,12 @@ svg {
   float: left;
 }
 
-[dir="rtl"] .clearleft {
+/*[dir="rtl"] .clearleft {
   clear: right;
 }
 [dir="rtl"] .clearright {
   clear: left;
-}
+}*/
 
 
 /* gouttière */
