@@ -57,24 +57,30 @@ svg {
 .clear {
   clear: both;
 }
-.clearleft {
-  clear: left;
+@if $use-clearleft_right == true {
+  .clearleft {
+    clear: left;
+  }
+  .clearright {
+    clear: right;
+  }
 }
-.clearright {
-  clear: right;
+@if $use-clearhidden == true {
+  .clearhidden {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+  }
 }
-.clearhidden {
-  clear: both;
-  margin: 0;
-  padding: 0;
-  visibility: hidden;
-}
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+@if $use-clearfix == true {
+  .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
 }
 
 /* gouttière */
