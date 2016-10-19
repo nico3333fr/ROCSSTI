@@ -64,6 +64,15 @@ svg {
   .clearright {
     clear: right;
   }
+  @if $rtl-option == true {
+    /* RTL */
+    [dir="rtl"] .clearleft {
+      clear: right;
+    }
+    [dir="rtl"] .clearright {
+      clear: left;
+    }
+  }
 }
 @if $use-clearhidden == true {
   .clearhidden {
