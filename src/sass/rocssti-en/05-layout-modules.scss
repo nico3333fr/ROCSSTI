@@ -50,34 +50,39 @@ svg {
 .clear {
   clear: both;
 }
-.clearleft {
-  clear: left;
-}
-.clearright {
-  clear: right;
-}
-@if $rtl-option == true {
-  /* RTL */
-  [dir="rtl"] .clearleft {
-    clear: right;
-  }
-  [dir="rtl"] .clearright {
+@if $use-clearleft_right == true {
+  .clearleft {
     clear: left;
   }
+  .clearright {
+    clear: right;
+  }
+  @if $rtl-option == true {
+    /* RTL */
+    [dir="rtl"] .clearleft {
+      clear: right;
+    }
+    [dir="rtl"] .clearright {
+      clear: left;
+    }
+  }
 }
-
-.clearhidden {
-  clear: both;
-  margin: 0;
-  padding: 0;
-  visibility: hidden;
+@if $use-clearhidden == true {
+  .clearhidden {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+  }
 }
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+@if $use-clearfix == true {
+  .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
 }
 
 /* gut: "spacing" empty div */
