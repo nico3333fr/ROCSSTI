@@ -43,6 +43,11 @@ $rtl-option            : false !default;
 // hyphens
 $hyphenation           : false !default;
 
+// clear floats
+$use-clearleft_right   : false !default;
+$use-clearhidden       : false !default;
+$use-clearfix          : false !default;
+
 // vertical rythm
 // valeurs possibles : 'double_top_single_bottom',  'single_top', 'single_bottom'
 $vertical-rythm        : 'single_bottom' !default;
