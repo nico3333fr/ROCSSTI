@@ -40,19 +40,19 @@ svg {
 .clear {
   clear: both;
 }
-.clearleft {
+.clearleft when (@use_clearleft_right) {
   clear: left;
 }
-.clearright {
+.clearright when (@use_clearleft_right) {
   clear: right;
 }
-.clearhidden {
+.clearhidden when (@use_clearhidden) {
   clear: both;
   margin: 0;
   padding: 0;
   visibility: hidden;
 }
-.clearfix:after {
+.clearfix:after when (@use_clearfix) {
   content: ".";
   display: block;
   height: 0;
@@ -60,21 +60,21 @@ svg {
   visibility: hidden;
 }
 
-[dir="rtl"] {
-  & .left when (@rtl_option) {
+[dir="rtl"] when (@rtl_option) {
+  & .left {
     /* RTL */
     float: right;
   }
-  & .right when (@rtl_option) {
+  & .right {
     /* RTL */
     float: left;
   }
   
-  & .clearleft when (@rtl_option) {
+  & .clearleft when (@use_clearleft_right) {
     /* RTL */
     clear: right;
   }
-  & .clearright when (@rtl_option) {
+  & .clearright when (@use_clearleft_right) {
     /* RTL */
     clear: left;
   }
