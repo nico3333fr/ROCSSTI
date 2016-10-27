@@ -18,7 +18,7 @@ To sum up, having a strong CSS base, used for and built from professional realis
 
 **RÖCSSTI has also LESS ans Sass versions**, see in "less" ans "Sass" folders. **All versions are maintained in french and english**.
 
-Information: to my knowledge, **RÖCSSTI has been used for about 90 websites**, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
+Information: to my knowledge, **RÖCSSTI has been used for about 100 websites**, starting from simple ones to more complex responsive ones. The time gained at the beginning of the projects and the reusability of classes are perceptible.
 
 ## Röcssti builder
 
