@@ -250,6 +250,7 @@ hr {
   position: absolute;
   width: 1px;
 }
+.nonvisible { visibility: hidden; }
 
 .hidden    { display: none; } /* caché partout */
 .nodesktop { display: none; } /* caché sur desktop */
