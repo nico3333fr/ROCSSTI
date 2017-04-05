@@ -208,7 +208,8 @@ h6,
  */
 
 .noborder,
-iframe { border: 0; }
+iframe,
+dialog { border: 0; }
 
 /*
  * repris de http://tinytypo.tetue.net/ de @tetue
