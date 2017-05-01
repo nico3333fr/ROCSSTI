@@ -1621,6 +1621,10 @@ select:focus:required:valid {
     padding: 0;
     position: static;
     width: auto;
+    opacity: 1;
+    visibility: visible;
+    max-height: none;
+    display: block;
   }
 
   body {
