@@ -71,6 +71,14 @@ p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   margin: 1.5em 0;
 }
 
+/* reset buttons, bien les styler ensuite dans les forms */
+input, select, textarea, optgroup, button {
+  background: transparent;
+  border: 0;
+  font: inherit;
+  /* -webkit-appearance: none; */
+}
+
 /* fix display img/iframe */
 img,
 iframe { vertical-align: middle; }
@@ -650,7 +658,7 @@ hr {
 }
 .nonvisible { visibility: hidden; }
 
-.hidden    { display: none; } /* caché partout */
+.hidden, [hidden] { display: none; } /* caché partout */
 .nodesktop { display: none; } /* caché sur desktop */
 /*.noprint   {} /* caché sur print */
 /*.notablet  {} /* caché sur tablettes */
@@ -751,20 +759,11 @@ select {
   vertical-align: middle;
 }
 
-/** fix typo inputs **/
-input,
-select,
-textarea,
-optgroup,
-button {
-  font: inherit;
-}
 /* à adapter selon le design voulu */
 input,
 select,
 textarea {
   border: 1px solid #000;
-  border-radius: 5px;
   padding: .5em;
   width: 250px;
 }
@@ -777,9 +776,6 @@ textarea {
 /* à adapter selon le design voulu */
 .button {
   background: #fff;
-  border-radius: 5px;
-  -webkit-box-shadow: 1px 1px 1px #ddd; 
-  box-shadow: 1px 1px 1px #ddd; 
   color: #000;
 }
 

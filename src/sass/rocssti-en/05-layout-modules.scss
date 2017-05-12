@@ -244,7 +244,7 @@ hr {
 }
 .nonvisible { visibility: hidden; }
 
-.hidden    { display: none; } /* hidden everywhere */
+.hidden, [hidden]  { display: none; } /* hidden everywhere */
 .nodesktop { display: none; } /* hidden on desktop */
 /*.noprint   {} /* hidden on print */
 /*.notablet  {} /* hidden on tablets */

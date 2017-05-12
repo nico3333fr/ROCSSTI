@@ -18,6 +18,16 @@ p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   margin: $l-h * 1em 0;
 }
 
+@if $use-reset-button == true {
+  /* reset buttons, bien les styler ensuite dans les forms */
+  input, select, textarea, optgroup, button {
+    background: transparent;
+    border: 0;
+    font: inherit;
+    /* -webkit-appearance: none; */
+  }
+}
+
 /* fix display img/iframe */
 img,
 iframe { vertical-align: middle; }

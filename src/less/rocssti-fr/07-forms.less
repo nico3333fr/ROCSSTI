@@ -22,11 +22,7 @@ select {
 }
 
 /** fix typo inputs **/
-input,
-select,
-textarea,
-optgroup,
-button {
+@{input_reset} when not (@use_reset_button) {
   font: inherit;
 }
 /* à adapter selon le design voulu */
@@ -34,7 +30,6 @@ input,
 select,
 textarea {
   border: 1px solid #000;
-  border-radius: 5px;
   padding: .5em;
   width: @input-defaut-size;
 }
@@ -47,9 +42,6 @@ textarea {
 /* à adapter selon le design voulu */
 .button {
   background: #fff;
-  border-radius: 5px;
-  -webkit-box-shadow: 1px 1px 1px #ddd; 
-  box-shadow: 1px 1px 1px #ddd; 
   color: #000;
 }
 

@@ -3,7 +3,7 @@ article, aside, datagrid, datalist, details, dialog, figure, footer, header, mai
 audio, canvas, progress, video { display: inline-block; }
 abbr, eventsource, mark, meter, time, output, bb { display: inline; }
 
-/* à commenter/fallback si vous vous souciez d'IE<8 */
+/* à commenter/fallback si vous vous souciez d’IE<8 */
 html { box-sizing: border-box; }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -16,6 +16,14 @@ p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   font-size: 1em;
   line-height: @l-h;
   margin: (@l-h + 0em) 0;
+}
+
+/* reset buttons, bien les styler ensuite dans les forms */
+@{input_reset} when (@use_reset_button) {
+  background: transparent;
+  border: 0;
+  font: inherit;
+  /* -webkit-appearance: none; */
 }
 
 /* fix display img/iframe */

@@ -253,7 +253,20 @@ p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   margin: 1.5em 0;
 }
 
-/* fix display img/iframe */
+';
+
+if ($reset_inputs == true) {
+$rocssti .= '/* reset buttons, remember to style them in forms */
+input, select, textarea, optgroup, button {
+  background: transparent;
+  border: 0;
+  font: inherit;
+  /* -webkit-appearance: none; */
+}
+';
+}
+
+$rocssti .= '/* fix display img/iframe */
 img,
 iframe { vertical-align: middle; }
 
@@ -1247,7 +1260,7 @@ hr {
 }
 .nonvisible { visibility: hidden; }
 
-.hidden    { display: none; } /* hidden everywhere */
+.hidden, [hidden]  { display: none; } /* hidden everywhere */
 .nodesktop { display: none; } /* hidden on desktop */
 /*.noprint   {} /* hidden on print */
 /*.notablet  {} /* hidden on tablets */
@@ -1346,7 +1359,9 @@ input,
 select {
   vertical-align: middle;
 }
-
+';
+if ($reset_inputs == false) {
+$rocssti .= ' 
 /** fix typo inputs **/
 input,
 select,
@@ -1355,13 +1370,15 @@ optgroup,
 button {
   font: inherit;
 }
+';
+}
 
+$rocssti .= '
 /* to adapt to your design */
 input,
 select,
 textarea {
   border: '.$sizeborder_input.'px solid '.$color_input_border.';
-  border-radius: 5px;
   padding: .5em;
   width: '.$sizewidth_input.'px;
 }
@@ -1374,9 +1391,6 @@ textarea {
 /* to adapt to your design */
 .button {
   background: #fff;
-  border-radius: 5px;
-  -webkit-box-shadow: 1px 1px 1px #ddd;
-  box-shadow: 1px 1px 1px #ddd;
   color: #000;
 }
 

@@ -253,7 +253,20 @@ p, ul, ol, dl, blockquote, pre, td, th, label, textarea {
   margin: 1.5em 0;
 }
 
-/* fix display img/iframe */
+';
+
+if ($reset_inputs == true) {
+$rocssti .= '/* reset buttons, bien les styler ensuite dans les forms */
+input, select, textarea, optgroup, button {
+  background: transparent;
+  border: 0;
+  font: inherit;
+  /* -webkit-appearance: none; */
+}
+';
+}
+
+$rocssti .= '/* fix display img/iframe */
 img,
 iframe { vertical-align: middle; }
 
@@ -1247,7 +1260,7 @@ hr {
 }
 .nonvisible { visibility: hidden; }
 
-.hidden    { display: none; } /* caché partout */
+.hidden, [hidden]  { display: none; } /* caché partout */
 .nodesktop { display: none; } /* caché sur desktop */
 /*.noprint   {} /* caché sur print */
 /*.notablet  {} /* caché sur tablettes */
@@ -1347,7 +1360,9 @@ input,
 select {
   vertical-align: middle;
 }
-
+';
+if ($reset_inputs == false) {
+$rocssti .= ' 
 /** fix typo inputs **/
 input,
 select,
@@ -1356,17 +1371,21 @@ optgroup,
 button {
   font: inherit;
 }
+';
+}
 
+$rocssti .= '
 /* à adapter selon le design voulu */
 input,
 select,
 textarea {
   border: '.$sizeborder_input.'px solid '.$color_input_border.';
-  border-radius: 5px;
   padding: .5em;
   width: '.$sizewidth_input.'px;
 }
+';
 
+$rocssti .= '
 /* pour les textes des champs */
 .label {
   display: inline-block;
@@ -1375,9 +1394,6 @@ textarea {
 /* à adapter selon le design voulu */
 .button {
   background: #fff;
-  border-radius: 5px;
-  -webkit-box-shadow: 1px 1px 1px #ddd; 
-  box-shadow: 1px 1px 1px #ddd; 
   color: #000;
 }
 

@@ -21,20 +21,21 @@ select {
   vertical-align: middle;
 }
 
-/** fix typo inputs **/
-input,
-select,
-textarea,
-optgroup,
-button {
-  font: inherit;
+@if $use-reset-button == false {
+  /** fix typo inputs **/
+  input,
+  select,
+  textarea,
+  optgroup,
+  button {
+    font: inherit;
+  }
 }
 /* to adapt to your design */
 input,
 select,
 textarea {
   border: $input-defaut-border;
-  border-radius: 5px;
   padding: .5em;
   width: $input-defaut-size;
 }
@@ -47,7 +48,6 @@ textarea {
 /* to adapt to your design */
 .button {
   background: #fff;
-  border-radius: 5px;
   color: #000;
 }
 
