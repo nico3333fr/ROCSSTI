@@ -1390,8 +1390,8 @@ textarea {
 
 /* to adapt to your design */
 .button {
-  background: #fff;
-  color: #000;
+  background: '.$color_bg_button.';
+  color: '.$color_txt_button.';
 }
 
 /*
