@@ -75,34 +75,44 @@ li ul {
   margin-top: 0;
 }
 
-/* Thou shalt not pass (Moïse or Gandalf, don't remember) */
+/* Thou shalt not pass (Moïse or Gandalf, don’t remember) */
 & when (@hyphenation_default) {
-textarea, table, td, th, code, pre, samp, div, p {
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
-}
+  textarea, table, td, th, code, pre, samp, div, p {
+    word-wrap: break-word;
+  }
+  @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+    textarea, table, td, th, code, pre, samp, div, p {
+      word-wrap: normal;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      }
+  }
 }
 .cut when not (@hyphenation_default) {
   word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
+}
+& when not (@hyphenation_default) {
+  @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+    .cut {
+      word-wrap: normal;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      }
+  }
 }
 
 /* remove hyphenation if needed */
 .nocut {
   word-wrap: normal;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  -o-hyphens: none;
-  hyphens: none;
+}
+@supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+  .nocut {
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
 }
 
 code,

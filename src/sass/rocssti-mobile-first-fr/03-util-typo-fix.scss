@@ -91,20 +91,42 @@ li ul {
   div,
   p {
     word-wrap: break-word;
-    @include vendor-prefix(hyphens, auto);
+  }
+  @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+    textarea,
+    table,
+    td,
+    th,
+    code,
+    pre,
+    samp,
+    div,
+    p {
+      word-wrap: normal;
+      @include vendor-prefix(hyphens, auto, webkit ms);
+    }
   }
 }
 @else {
   .cut {
     word-wrap: break-word;
-    @include vendor-prefix(hyphens, auto);
+  }
+  @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+    .cut {
+      word-wrap: normal;
+      @include vendor-prefix(hyphens, auto, webkit ms);
+    }
   }
 }
 
 /* pour supprimer la césure si besoin */
 .nocut {
   word-wrap: normal;
-  @include vendor-prefix(hyphens, none);
+}
+@supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+  .nocut {
+    @include vendor-prefix(hyphens, none, webkit ms);
+  }
 }
 
 code,

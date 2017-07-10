@@ -831,20 +831,34 @@ div,
 p,' . ( $hyphens == false ? '*/' : '' ) . '
 .cut {
   word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
+}
+@supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+  ' . ( $hyphens == false ? '/*' : '' ) . 'textarea,
+  table,
+  td,
+  th,
+  code,
+  pre,
+  samp,
+  div,
+  p,' . ( $hyphens == false ? '*/' : '' ) . '
+  .cut {
+    word-wrap: normal;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
 }
 /* remove hyphenation if needed */
 .nocut {
   word-wrap: normal;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  -o-hyphens: none;
-  hyphens: none;
+}
+@supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
+  .nocut {
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
 }
 
 code,
