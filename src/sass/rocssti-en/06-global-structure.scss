@@ -1,4 +1,6 @@
 /* === page === */
+@include body-before ('desktop', true);
+
 .page {
   margin: 0 auto;
   position: relative;

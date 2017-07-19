@@ -16,26 +16,26 @@
     display: block;
     width: auto;
   }
-  /* surcharge needed if use of .automobile & .autotablet */
-  /*.w33  { width: 33.333%; }
-  .w66  { width: 66.666%; }*/
+  
+  /* margins */
+  $list-margins-tablet: mt, mr, mb, ml, m;
+  $list-margins-tablet-values: 0, 1, 2; // specify 2.5 if needed
 
-  /*
-  .left {
-    float: left;
-  }
-  .right {
-    float: right;
-  }
-  */
+  @include margin-generator($list-margins-tablet, $list-margins-tablet-values, "ontablet-");
+  
+  /* paddings */
+  $list-paddings-tablet: pt, pr, pb, pl, p;
+  $list-paddings-tablet-values: 0, 1, 2; // specify 2.5 if needed
+
+  @include padding-generator($list-paddings-tablet, $list-paddings-tablet-values, "ontablet-");
 
   /**
    * global structure adaptation (page / skip links / header / main content / footer)
    */
+  @include body-before ('tablet');
 
-
-   /**
-    * inside content (other styles for pages)
-    */
+  /**
+   * inside content (other styles for pages)
+   */
 
 }

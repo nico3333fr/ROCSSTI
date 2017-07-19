@@ -16,10 +16,23 @@
     display: block;
     width: auto;
   }
+  
+  /* margins */
+  $list-margins-tablet: mt, mr, mb, ml, m;
+  $list-margins-tablet-values: 0, 1, 2; // spécifier 2.5 si besoin
+
+  @include margin-generator($list-margins-tablet, $list-margins-tablet-values, "ontablet-");
+  
+  /* paddings */
+  $list-paddings-tablet: pt, pr, pb, pl, p;
+  $list-paddings-tablet-values: 0, 1, 2; // spécifier 2.5 si besoin
+
+  @include padding-generator($list-paddings-tablet, $list-paddings-tablet-values, "ontablet-");
 
   /**
    * adaptation structure globale (page / skip links / header / contenu principal / footer)
    */
+  @include body-before ('tablet');
   
   
   /**

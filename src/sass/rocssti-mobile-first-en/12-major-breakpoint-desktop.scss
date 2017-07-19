@@ -9,29 +9,28 @@
 
   /* hide unnecessary elements */
   .nodesktop { display: none; }
+  
+  /* margins */
+  $list-margins-desktop: mt, mr, mb, ml, m;
+  $list-margins-desktop-values: 0, 1, 2; // specify 2.5 if needed
 
-  /* surcharge needed if use of .automobile & .autotablet */
-  /*.w33  { width: 33.333%; }
-  .w66  { width: 66.666%; }*/
+  @include margin-generator($list-margins-desktop, $list-margins-desktop-values, "ondesktop-");
+  
+  /* paddings */
+  $list-paddings-desktop: pt, pr, pb, pl, p;
+  $list-paddings-desktop-values: 0, 1, 2; // specify 2.5 if needed
 
-  /*
-  .left {
-    float: left;
-  }
-  .right {
-    float: right;
-  }
-  */
+  @include padding-generator($list-paddings-desktop, $list-paddings-desktop-values, "ondesktop-");
 
 
   /**
    * global structure adaptation (page / skip links / header / main content / footer)
    */
-
+  @include body-before ('desktop');
 
 
   /**
-    * inside content (other styles for pages)
-    */
+   * inside content (other styles for pages)
+   */
 
 }

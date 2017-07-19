@@ -1,4 +1,6 @@
 /* === page === */
+@include body-before ('mobile', true);
+  
 .page {
   margin: 0 auto;
   position: relative;

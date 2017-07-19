@@ -16,11 +16,23 @@
     display: block;
     width: auto;
   }
+  
+  /* margins */
+  //$list-margins-tinymobile: mt, mr, mb, ml, m;
+  //$list-margins-tinymobile-values: 0, 1, 2; // spécifier 2.5 si besoin
+
+  //@include margin-generator($list-margins-tinymobile, $list-margins-tinymobile-values, "ontinymobile-");
+  
+  /* paddings */
+  //$list-paddings-tinymobile: pt, pr, pb, pl, p;
+  //$list-paddings-tinymobile-values: 0, 1, 2; // spécifier 2.5 si besoin
+
+  //@include padding-generator($list-paddings-tinymobile, $list-paddings-tinymobile-values, "ontinymobile-");  
 
   /**
    * adaptation structure globale (page / skip links / header / contenu principal / footer)
    */
-  
+  @include body-before ('tinymobile');
   
   /**
    * dans le contenu (contenus spécifiques aux pages)

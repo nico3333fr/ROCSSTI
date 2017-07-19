@@ -16,11 +16,23 @@
     display: block;
     width: auto;
   }
+  
+  /* margins */
+  $list-margins-mobile: mt, mr, mb, ml, m;
+  $list-margins-mobile-values: 0, 1, 2; // spécifier 2.5 si besoin
+
+  @include margin-generator($list-margins-mobile, $list-margins-mobile-values, "onmobile-");
+  
+  /* paddings */
+  $list-paddings-mobile: pt, pr, pb, pl, p;
+  $list-paddings-mobile-values: 0, 1, 2; // spécifier 2.5 si besoin
+
+  @include padding-generator($list-paddings-mobile, $list-paddings-mobile-values, "onmobile-");
 
   /**
    * adaptation structure globale (page / skip links / header / contenu principal / footer)
    */
-  
+  @include body-before ('mobile');
   
   /**
    * dans le contenu (contenus spécifiques aux pages)

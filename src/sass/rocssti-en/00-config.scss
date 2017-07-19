@@ -218,7 +218,7 @@ $use-reset-button      : true !default;
 // $list-margin: mt, mr, mb, ml, m;
 // $list-margin-values: 0, 1, 2, 3; // specify 2.5 if needed
 
-@mixin margin-generator ($list-margin, $list-margin-values) {
+@mixin margin-generator ($list-margin, $list-margin-values, $prefix: "") {
 
   @each $margin-type in $list-margin {
      @each $margin in $list-margin-values {
@@ -249,7 +249,7 @@ $use-reset-button      : true !default;
         $property-class: str-replace($text-margin, '.', '-');
         
         // . mr 1-5 { margin-right: 1.5em ;}
-        .#{$margin-type}#{$property-class} { #{$property}: #{$value}; }
+        .#{$prefix}#{$margin-type}#{$property-class} { #{$property}: #{$value}; }
   
   
         }
@@ -264,7 +264,7 @@ $use-reset-button      : true !default;
 // $list-padding: pt, pr, pb, pl, p;
 // $list-padding-values: 0, 1, 2, 3; // specify 2.5 if needed
 
-@mixin padding-generator ($list-padding, $list-padding-values) {
+@mixin padding-generator ($list-padding, $list-padding-values, $prefix: "") {
 
   @each $padding-type in $list-padding {
      @each $padding in $list-padding-values {
@@ -293,7 +293,7 @@ $use-reset-button      : true !default;
         // 1.5 = 1-5
         $property-class: str-replace($text-padding, '.', '-');
         
-        .#{$padding-type}#{$property-class} { #{$property}: #{$value}; }
+        .#{$prefix}#{$padding-type}#{$property-class} { #{$property}: #{$value}; }
   
   
         }
@@ -305,7 +305,7 @@ $use-reset-button      : true !default;
 // Responsive management in em 
 //
 
-@mixin respond-to($breakpoint, $query-type : 'max') {
+@mixin respond-to ($breakpoint, $query-type : 'max') {
   @if $query-type == "max" {
      @media (max-width: em($breakpoint)) {
       @content;
@@ -321,4 +321,23 @@ $use-reset-button      : true !default;
   @else  {
     @warn "Type non supported.";
   }
+}
+
+
+// 
+// body::before: to get current breakpoint in JS
+//
+@mixin body-before ($value-content, $display-none : false) {
+  @if $value-content != "" {
+    body::before {
+      content: '#{$value-content}';
+      @if $display-none == true {
+        display: none;
+      }
+    }
+  }
+  @else  {
+    @warn "$value-content not specified";
+  }
+
 }

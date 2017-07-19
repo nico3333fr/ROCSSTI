@@ -1297,6 +1297,11 @@ hr {
  */
 
 /* === page === */
+body::before {
+  content: \'desktop\';
+  display: none;
+}
+
 .page {
   margin: 0 auto;
   position: relative;
@@ -1519,11 +1524,47 @@ select:focus:required:valid {
     display: block;
     width: auto;
   }
+  
+  /* margins */
+  .ontablet-mt0 { margin-top: 0; }
+  .ontablet-mt1 { margin-top: 1em; }
+  .ontablet-mt2 { margin-top: 2em; }
+  .ontablet-mr0 { margin-right: 0; }
+  .ontablet-mr1 { margin-right: 1em; }
+  .ontablet-mr2 { margin-right: 2em; }
+  .ontablet-mb0 { margin-bottom: 0; }
+  .ontablet-mb1 { margin-bottom: 1em; }
+  .ontablet-mb2 { margin-bottom: 2em; }
+  .ontablet-ml0 { margin-left: 0; }
+  .ontablet-ml1 { margin-left: 1em; }
+  .ontablet-ml2 { margin-left: 2em; }
+  .ontablet-m0  { margin: 0; }
+  .ontablet-m1  { margin: 1em; }
+  .ontablet-m2  { margin: 2em; }
+
+  /* paddings */
+  .ontablet-pt0 { padding-top: 0; }
+  .ontablet-pt1 { padding-top: 1em; }
+  .ontablet-pt2 { padding-top: 2em; }
+  .ontablet-pr0 { padding-right: 0; }
+  .ontablet-pr1 { padding-right: 1em; }
+  .ontablet-pr2 { padding-right: 2em; }
+  .ontablet-pb0 { padding-bottom: 0; }
+  .ontablet-pb1 { padding-bottom: 1em; }
+  .ontablet-pb2 { padding-bottom: 2em; }
+  .ontablet-pl0 { padding-left: 0; }
+  .ontablet-pl1 { padding-left: 1em; }
+  .ontablet-pl2 { padding-left: 2em; }
+  .ontablet-p0  { padding: 0; }
+  .ontablet-p1  { padding: 1em; }
+  .ontablet-p2  { padding: 2em; }
 
   /**
    * adaptation structure globale (page / skip links / header / contenu principal / footer)
    */
-  
+  body::before {
+    content: \'tablet\';
+  }
   
   /**
    * dans le contenu (contenus spécifiques aux pages)
@@ -1569,11 +1610,47 @@ select:focus:required:valid {
     display: block;
     width: auto;
   }
+  
+  /* margins */
+  .onmobile-mt0 { margin-top: 0; }
+  .onmobile-mt1 { margin-top: 1em; }
+  .onmobile-mt2 { margin-top: 2em; }
+  .onmobile-mr0 { margin-right: 0; }
+  .onmobile-mr1 { margin-right: 1em; }
+  .onmobile-mr2 { margin-right: 2em; }
+  .onmobile-mb0 { margin-bottom: 0; }
+  .onmobile-mb1 { margin-bottom: 1em; }
+  .onmobile-mb2 { margin-bottom: 2em; }
+  .onmobile-ml0 { margin-left: 0; }
+  .onmobile-ml1 { margin-left: 1em; }
+  .onmobile-ml2 { margin-left: 2em; }
+  .onmobile-m0  { margin: 0; }
+  .onmobile-m1  { margin: 1em; }
+  .onmobile-m2  { margin: 2em; }
+
+  /* paddings */
+  .onmobile-pt0 { padding-top: 0; }
+  .onmobile-pt1 { padding-top: 1em; }
+  .onmobile-pt2 { padding-top: 2em; }
+  .onmobile-pr0 { padding-right: 0; }
+  .onmobile-pr1 { padding-right: 1em; }
+  .onmobile-pr2 { padding-right: 2em; }
+  .onmobile-pb0 { padding-bottom: 0; }
+  .onmobile-pb1 { padding-bottom: 1em; }
+  .onmobile-pb2 { padding-bottom: 2em; }
+  .onmobile-pl0 { padding-left: 0; }
+  .onmobile-pl1 { padding-left: 1em; }
+  .onmobile-pl2 { padding-left: 2em; }
+  .onmobile-p0  { padding: 0; }
+  .onmobile-p1  { padding: 1em; }
+  .onmobile-p2  { padding: 2em; }
 
   /**
    * adaptation structure globale (page / skip links / header / contenu principal / footer)
    */
-  
+  body::before {
+    content: \'mobile\';
+  }
   
   /**
    * dans le contenu (contenus spécifiques aux pages)
@@ -1612,7 +1689,9 @@ select:focus:required:valid {
   /**
    * adaptation structure globale (page / skip links / header / contenu principal / footer)
    */
-  
+  body::before {
+    content: \'tinymobile\';
+  }
   
   /**
    * dans le contenu (contenus spécifiques aux pages)
