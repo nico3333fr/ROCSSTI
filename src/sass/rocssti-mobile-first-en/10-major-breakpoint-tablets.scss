@@ -28,6 +28,13 @@
   $list-paddings-tablet-values: 0, 1, 2; // specify 2.5 if needed
 
   @include padding-generator($list-paddings-tablet, $list-paddings-tablet-values, "ontablet-");
+  
+  /* text aligns */
+  .ontablet- {
+    &alignleft   { text-align: left; }
+    &aligncenter { text-align: center; }
+    &alignright  { text-align: right; }
+  }
 
   /**
    * global structure adaptation (page / skip links / header / main content / footer)

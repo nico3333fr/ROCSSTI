@@ -28,6 +28,13 @@
   $list-paddings-mobile-values: 0, 1, 2; // specify 2.5 if needed
 
   @include padding-generator($list-paddings-mobile, $list-paddings-mobile-values, "onmobile-");
+  
+  /* text aligns */
+  .onmobile- {
+    &alignleft   { text-align: left; }
+    &aligncenter { text-align: center; }
+    &alignright  { text-align: right; }
+  }
 
   /**
    * global structure adaptation (page / skip links / header / main content / footer)

@@ -22,6 +22,12 @@
 
   @include padding-generator($list-paddings-desktop, $list-paddings-desktop-values, "ondesktop-");
 
+  /* alignements de textes */
+  .ondesktop- {
+    &alignleft   { text-align: left; }
+    &aligncenter { text-align: center; }
+    &alignright  { text-align: right; }
+  }
 
   /**
    * adaptation structure globale (page / skip links / header / contenu principal / footer)
