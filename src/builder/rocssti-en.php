@@ -170,6 +170,97 @@ function rocssti_quote () {
 }
 
 
+function margin_generator ( $list_margin, $list_margin_values, $prefix = '', $spacer = '' ) {
+
+   $output = '';
+   foreach ($list_margin as $margin_type) {
+   	  
+      foreach ($list_margin_values as $margin ) {
+      
+          $temp_t = substr($margin_type, 1, 1);
+          
+          $property = 'margin';
+          if ( $temp_t == 't' ) {
+             $property = 'margin-top';
+          }elseif ( $temp_t == 'r' ) {
+             $property = 'margin-right';
+          }elseif ( $temp_t == 'b' ) {
+             $property = 'margin-bottom';
+          }elseif ( $temp_t == 'l' ) {
+             $property = 'margin-left';
+          }
+          
+          $value = $margin.('em');
+          if ( substr($margin, 0, 2) == '0.' ) {
+             $value = substr($value, 1, strlen($value)-1 ); 
+          }
+          if ( $margin == '0' ) {
+             $value = $margin;
+          }
+          
+          $text_margin = $margin;
+          // 1.5 = 1-5
+          $property_class = str_replace('.', '-', $text_margin);
+          
+          // . mr 1-5 { margin-right: 1.5em ;}
+          $output.= $spacer.'.'.$prefix.$margin_type.$property_class.' { '.$property.': '. $value.'; }'."\n";
+
+      }
+    
+   }
+
+   return $output;
+
+}
+
+
+
+function padding_generator ( $list_padding, $list_padding_values, $prefix = '', $spacer = '' ) {
+
+   $output = '';
+   foreach ($list_padding as $padding_type) {
+   	  
+      foreach ($list_padding_values as $padding ) {
+      
+          $temp_t = substr($padding_type, 1, 1);
+          
+          $property = 'padding';
+          if ( $temp_t == 't' ) {
+             $property = 'padding-top';
+          }elseif ( $temp_t == 'r' ) {
+             $property = 'padding-right';
+          }elseif ( $temp_t == 'b' ) {
+             $property = 'padding-bottom';
+          }elseif ( $temp_t == 'l' ) {
+             $property = 'padding-left';
+          }
+          
+          $value = $padding.('em');
+          if ( substr($padding, 0, 2) == '0.' ) {
+             $value = substr($value, 1, strlen($value)-1 ); 
+          }
+          if ( $padding == '0' ) {
+             $value = $padding;
+          }
+          
+          $text_padding = $padding;
+          // 1.5 = 1-5
+          $property_class = str_replace('.', '-', $text_padding);
+          
+          // . pr 1-5 { margin-right: 1.5em ;}
+          $output.= $spacer.'.'.$prefix.$padding_type.$property_class.' { '.$property.': '. $value.'; }'."\n";
+
+      }
+    
+   }
+
+   return $output;
+
+}
+
+
+
+
 
 
 
@@ -1190,23 +1281,9 @@ $rocssti .= '
 /*.mw960p { max-width: 960px; }*/
 
 /* margins */
-.mt0 { margin-top: 0; }
-.mt1 { margin-top: 1em; }
-.mt2 { margin-top: 2em; }
-.mr0 { margin-right: 0; }
-.mr1 { margin-right: 1em; }
-.mr2 { margin-right: 2em; }
-.mb0 { margin-bottom: 0; }
-.mb1 { margin-bottom: 1em; }
-.mb2 { margin-bottom: 2em; }
-.ml0 { margin-left: 0; }
-.ml1 { margin-left: 1em; }
-.ml2 { margin-left: 2em; }
-.m0  { margin: 0; }
-.m1  { margin: 1em; }
-.m2  { margin: 2em; }
-
 ';
+$rocssti .= margin_generator ( $listmargins, $listmargins_values ).'';
+
 if ($rtl == true) {
 $rocssti .= '
 /* RTL = warning, use with caution */
@@ -1219,25 +1296,10 @@ $rocssti .= '
 ';
 }
 $rocssti .= '
-
 /* paddings */
-.pt0 { padding-top: 0; }
-.pt1 { padding-top: 1em; }
-.pt2 { padding-top: 2em; }
-.pr0 { padding-right: 0; }
-.pr1 { padding-right: 1em; }
-.pr2 { padding-right: 2em; }
-.pb0 { padding-bottom: 0; }
-.pb1 { padding-bottom: 1em; }
-.pb2 { padding-bottom: 2em; }
-.pl0 { padding-left: 0; }
-.pl1 { padding-left: 1em; }
-.pl2 { padding-left: 2em; }
-.p0  { padding: 0; }
-.p1  { padding: 1em; }
-.p2  { padding: 2em; }
-
 ';
+$rocssti .= padding_generator ( $listpaddings, $listpaddings_values ).'';
+
 if ($rtl == true) {
 $rocssti .= '
 /* RTL = warning, use with caution */
@@ -1522,40 +1584,14 @@ select:focus:required:valid {
   }
   
   /* margins */
-  .ontablet-mt0 { margin-top: 0; }
-  .ontablet-mt1 { margin-top: 1em; }
-  .ontablet-mt2 { margin-top: 2em; }
-  .ontablet-mr0 { margin-right: 0; }
-  .ontablet-mr1 { margin-right: 1em; }
-  .ontablet-mr2 { margin-right: 2em; }
-  .ontablet-mb0 { margin-bottom: 0; }
-  .ontablet-mb1 { margin-bottom: 1em; }
-  .ontablet-mb2 { margin-bottom: 2em; }
-  .ontablet-ml0 { margin-left: 0; }
-  .ontablet-ml1 { margin-left: 1em; }
-  .ontablet-ml2 { margin-left: 2em; }
-  .ontablet-m0  { margin: 0; }
-  .ontablet-m1  { margin: 1em; }
-  .ontablet-m2  { margin: 2em; }
-
-  /* paddings */
-  .ontablet-pt0 { padding-top: 0; }
-  .ontablet-pt1 { padding-top: 1em; }
-  .ontablet-pt2 { padding-top: 2em; }
-  .ontablet-pr0 { padding-right: 0; }
-  .ontablet-pr1 { padding-right: 1em; }
-  .ontablet-pr2 { padding-right: 2em; }
-  .ontablet-pb0 { padding-bottom: 0; }
-  .ontablet-pb1 { padding-bottom: 1em; }
-  .ontablet-pb2 { padding-bottom: 2em; }
-  .ontablet-pl0 { padding-left: 0; }
-  .ontablet-pl1 { padding-left: 1em; }
-  .ontablet-pl2 { padding-left: 2em; }
-  .ontablet-p0  { padding: 0; }
-  .ontablet-p1  { padding: 1em; }
-  .ontablet-p2  { padding: 2em; }
-  
 ';
+$rocssti .= margin_generator ( $listmargins_tablet, $listmargins_tablet_values, 'ontablet-', '  ' ).'';
+$rocssti .= '
+  /* paddings */
+';
+$rocssti .= padding_generator ( $listpaddings_tablet, $listpaddings_tablet_values, 'ontablet-', '  ' ).'
+';
+
 if ($helpers_text_tablet == true) {
 $rocssti .= '  /* text aligns */
   .ontablet-alignleft   { text-align: left; }
@@ -1618,40 +1654,14 @@ $rocssti .= '
   }
   
   /* margins */
-  .onmobile-mt0 { margin-top: 0; }
-  .onmobile-mt1 { margin-top: 1em; }
-  .onmobile-mt2 { margin-top: 2em; }
-  .onmobile-mr0 { margin-right: 0; }
-  .onmobile-mr1 { margin-right: 1em; }
-  .onmobile-mr2 { margin-right: 2em; }
-  .onmobile-mb0 { margin-bottom: 0; }
-  .onmobile-mb1 { margin-bottom: 1em; }
-  .onmobile-mb2 { margin-bottom: 2em; }
-  .onmobile-ml0 { margin-left: 0; }
-  .onmobile-ml1 { margin-left: 1em; }
-  .onmobile-ml2 { margin-left: 2em; }
-  .onmobile-m0  { margin: 0; }
-  .onmobile-m1  { margin: 1em; }
-  .onmobile-m2  { margin: 2em; }
-
-  /* paddings */
-  .onmobile-pt0 { padding-top: 0; }
-  .onmobile-pt1 { padding-top: 1em; }
-  .onmobile-pt2 { padding-top: 2em; }
-  .onmobile-pr0 { padding-right: 0; }
-  .onmobile-pr1 { padding-right: 1em; }
-  .onmobile-pr2 { padding-right: 2em; }
-  .onmobile-pb0 { padding-bottom: 0; }
-  .onmobile-pb1 { padding-bottom: 1em; }
-  .onmobile-pb2 { padding-bottom: 2em; }
-  .onmobile-pl0 { padding-left: 0; }
-  .onmobile-pl1 { padding-left: 1em; }
-  .onmobile-pl2 { padding-left: 2em; }
-  .onmobile-p0  { padding: 0; }
-  .onmobile-p1  { padding: 1em; }
-  .onmobile-p2  { padding: 2em; }
-  
 ';
+$rocssti .= margin_generator ( $listmargins_mobile, $listmargins_mobile_values, 'onmobile-', '  ' ).'';
+$rocssti .= '
+  /* paddings */
+';
+$rocssti .= padding_generator ( $listpaddings_mobile, $listpaddings_mobile_values, 'onmobile-', '  ' ).'
+';
+
 if ($helpers_text_mobile == true) {
 $rocssti .= '  /* text aligns */
   .onmobile-alignleft   { text-align: left; }
