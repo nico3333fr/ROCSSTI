@@ -1427,6 +1427,12 @@ input[type="button"],
 input[type="reset"] {
   cursor: pointer;
 }
+button[disabled],
+input[type="submit"][disabled],
+input[type="button"][disabled],
+input[type="reset"][disabled] {
+  cursor: default;
+}
 
 /* évite un resize potentiellement foireux */
 textarea {
