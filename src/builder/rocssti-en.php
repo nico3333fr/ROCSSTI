@@ -170,12 +170,18 @@ function rocssti_quote () {
 }
 
 
-function margin_generator ( $list_margin, $list_margin_values, $prefix = '', $spacer = '' ) {
+function margin_generator ( $list_margin, $list_margin_values, $prefix = '', $spacer = '', $direction = '', $generate_all = true ) {
 
    $output = '';
    foreach ($list_margin as $margin_type) {
    	  
       foreach ($list_margin_values as $margin ) {
+      
+          $direction_selector = '';
+          if ( $direction == 'ltr' ) {
+            $direction_selector = '[dir="ltr"] ';
+          }
+          elseif ( $direction == 'rtl' ) { $direction_selector = '[dir="rtl"] '; }
       
           $temp_t = substr($margin_type, 1, 1);
           
@@ -184,10 +190,16 @@ function margin_generator ( $list_margin, $list_margin_values, $prefix = '', $sp
              $property = 'margin-top';
           }elseif ( $temp_t == 'r' ) {
              $property = 'margin-right';
+             if ($direction == 'rtl'){
+                $property = 'margin-left';
+             }
           }elseif ( $temp_t == 'b' ) {
              $property = 'margin-bottom';
           }elseif ( $temp_t == 'l' ) {
              $property = 'margin-left';
+             if ($direction == 'rtl'){
+                $property = 'margin-right';
+             }
           }
           
           $value = $margin.('em');
@@ -203,7 +215,14 @@ function margin_generator ( $list_margin, $list_margin_values, $prefix = '', $sp
           $property_class = str_replace('.', '-', $text_margin);
           
           // . mr 1-5 { margin-right: 1.5em ;}
-          $output.= $spacer.'.'.$prefix.$margin_type.$property_class.' { '.$property.': '. $value.'; }'."\n";
+          if ( $generate_all ){
+             $output.= $spacer.( ($property == 'margin-right' || $property == 'margin-left') ? $direction_selector : '').'.'.$prefix.$margin_type.$property_class.' { '.$property.': '. $value.'; }'."\n";
+          }
+          else {
+                if ($property == 'margin-right' || $property == 'margin-left') {
+                   $output.= $spacer.$direction_selector.'.'.$prefix.$margin_type.$property_class.' { '.$property.': '. $value.'; }'."\n";
+                   } 
+               }
 
       }
     
@@ -215,12 +234,19 @@ function margin_generator ( $list_margin, $list_margin_values, $prefix = '', $sp
 
 
 
-function padding_generator ( $list_padding, $list_padding_values, $prefix = '', $spacer = '' ) {
+
+function padding_generator ( $list_padding, $list_padding_values, $prefix = '', $spacer = '', $direction = '', $generate_all = true ) {
 
    $output = '';
    foreach ($list_padding as $padding_type) {
    	  
       foreach ($list_padding_values as $padding ) {
+      
+          $direction_selector = '';
+          if ( $direction == 'ltr' ) {
+            $direction_selector = '[dir="ltr"] ';
+          }
+          elseif ( $direction == 'rtl' ) { $direction_selector = '[dir="rtl"] '; }
       
           $temp_t = substr($padding_type, 1, 1);
           
@@ -229,10 +255,16 @@ function padding_generator ( $list_padding, $list_padding_values, $prefix = '', 
              $property = 'padding-top';
           }elseif ( $temp_t == 'r' ) {
              $property = 'padding-right';
+             if ($direction == 'rtl'){
+                $property = 'padding-left';
+             }
           }elseif ( $temp_t == 'b' ) {
              $property = 'padding-bottom';
           }elseif ( $temp_t == 'l' ) {
              $property = 'padding-left';
+             if ($direction == 'rtl'){
+                $property = 'padding-right';
+             }
           }
           
           $value = $padding.('em');
@@ -248,7 +280,15 @@ function padding_generator ( $list_padding, $list_padding_values, $prefix = '', 
           $property_class = str_replace('.', '-', $text_padding);
           
           // . pr 1-5 { margin-right: 1.5em ;}
-          $output.= $spacer.'.'.$prefix.$padding_type.$property_class.' { '.$property.': '. $value.'; }'."\n";
+          if ( $generate_all ){
+             $output.= $spacer.( ($property == 'padding-right' || $property == 'padding-left') ? $direction_selector : '').'.'.$prefix.$padding_type.$property_class.' { '.$property.': '. $value.'; }'."\n";
+          }
+          else {
+                if ($property == 'padding-right' || $property == 'padding-left') {
+                   $output.= $spacer.$direction_selector.'.'.$prefix.$padding_type.$property_class.' { '.$property.': '. $value.'; }'."\n";
+                   } 
+               }
+            
 
       }
     
@@ -1282,34 +1322,34 @@ $rocssti .= '
 
 /* margins */
 ';
+if ($rtl == true) { 
+$rocssti .= margin_generator ( $listmargins, $listmargins_values, '', '', 'ltr' ).'';
+}
+else {
 $rocssti .= margin_generator ( $listmargins, $listmargins_values ).'';
+}
 
 if ($rtl == true) {
 $rocssti .= '
 /* RTL = warning, use with caution */
-[dir="rtl"] .mr0 { margin-left: 0; }
-[dir="rtl"] .mr1 { margin-right: inherit; margin-left: 1em; }
-[dir="rtl"] .mr2 { margin-right: inherit; margin-left: 2em; }
-[dir="rtl"] .ml0 { margin-right: 0; }
-[dir="rtl"] .ml1 { margin-left: inherit; margin-right: 1em; }
-[dir="rtl"] .ml2 { margin-left: inherit; margin-right: 2em; }
 ';
+$rocssti .= margin_generator ( $listmargins, $listmargins_values, '', '', 'rtl', false ).'';
 }
 $rocssti .= '
 /* paddings */
 ';
+if ($rtl == true) { 
+$rocssti .= padding_generator ( $listpaddings, $listpaddings_values, '', '', 'ltr' ).'';
+}
+else {
 $rocssti .= padding_generator ( $listpaddings, $listpaddings_values ).'';
+}
 
 if ($rtl == true) {
 $rocssti .= '
 /* RTL = warning, use with caution */
-[dir="rtl"] .pr0 { padding-left: 0; }
-[dir="rtl"] .pr1 { padding-right: 0; padding-left: 1em; }
-[dir="rtl"] .pr2 { padding-right: 0; padding-left: 2em; }
-[dir="rtl"] .pl0 { padding-right: 0; }
-[dir="rtl"] .pl1 { padding-left: 0; padding-right: 1em; }
-[dir="rtl"] .pl2 { padding-left: 0; padding-right: 2em; }
 ';
+$rocssti .= padding_generator ( $listpaddings, $listpaddings_values, '', '', 'rtl', false ).'';
 }
 $rocssti .= '
 
@@ -1591,11 +1631,38 @@ select:focus:required:valid {
   
   /* margins */
 ';
-$rocssti .= margin_generator ( $listmargins_tablet, $listmargins_tablet_values, 'ontablet-', '  ' ).'';
+if ($rtl == true) { 
+$rocssti .= margin_generator ( $listmargins_tablet, $listmargins_tablet_values, 'ontablet-', '  ', 'ltr' ).'';
+}
+else {
+$rocssti .= margin_generator ( $listmargins_tablet, $listmargins_tablet_values, 'ontablet-', '  ', '' ).'';
+}
+
+if ($rtl == true) {
+$rocssti .= '
+  /* RTL = warning, use with caution */
+';
+$rocssti .= margin_generator ( $listmargins_tablet, $listmargins_tablet_values, 'ontablet-', '  ', 'rtl', false ).'';
+}
+
 $rocssti .= '
   /* paddings */
 ';
-$rocssti .= padding_generator ( $listpaddings_tablet, $listpaddings_tablet_values, 'ontablet-', '  ' ).'
+if ($rtl == true) { 
+$rocssti .= padding_generator ( $listpaddings_tablet, $listpaddings_tablet_values, 'ontablet-', '  ', 'ltr' ).'';
+}
+else {
+$rocssti .= padding_generator ( $listpaddings_tablet, $listpaddings_tablet_values, 'ontablet-', '  ', '' ).'';
+}
+
+if ($rtl == true) {
+$rocssti .= '
+  /* RTL = warning, use with caution */
+';
+$rocssti .= padding_generator ( $listpaddings_tablet, $listpaddings_tablet_values, 'ontablet-', '  ', 'rtl', false ).'';
+}
+$rocssti .='
+
 ';
 
 if ($helpers_text_tablet == true) {
@@ -1661,11 +1728,35 @@ $rocssti .= '
   
   /* margins */
 ';
+if ($rtl == true) { 
+$rocssti .= margin_generator ( $listmargins_mobile, $listmargins_mobile_values, 'onmobile-', '  ', 'ltr' ).'';
+}
+else {
 $rocssti .= margin_generator ( $listmargins_mobile, $listmargins_mobile_values, 'onmobile-', '  ' ).'';
+}
+if ($rtl == true) {
+$rocssti .= '
+  /* RTL = warning, use with caution */
+';
+$rocssti .= margin_generator ( $listmargins_mobile, $listmargins_mobile_values, 'onmobile-', '  ', 'rtl', false ).'';
+}
+
 $rocssti .= '
   /* paddings */
 ';
-$rocssti .= padding_generator ( $listpaddings_mobile, $listpaddings_mobile_values, 'onmobile-', '  ' ).'
+if ($rtl == true) { 
+$rocssti .= padding_generator ( $listpaddings_mobile, $listpaddings_mobile_values, 'onmobile-', '  ', 'ltr' );
+}
+else {
+$rocssti .= padding_generator ( $listpaddings_mobile, $listpaddings_mobile_values, 'onmobile-', '  ', '' );
+}
+if ($rtl == true) {
+$rocssti .= '
+  /* RTL = warning, use with caution */
+';
+$rocssti .= padding_generator ( $listpaddings_mobile, $listpaddings_mobile_values, 'onmobile-', '  ', 'rtl', false ).'';
+}
+$rocssti .= '
 ';
 
 if ($helpers_text_mobile == true) {
