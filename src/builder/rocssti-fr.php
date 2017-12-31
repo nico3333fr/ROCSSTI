@@ -1975,7 +1975,10 @@ $rocssti .= '
  *       
  */
 
-/* less than IE 9 */
+';
+if ($use_old_ie_fallbacks == true) {
+$rocssti .= '
+/* en-dessous d’IE 9 */
 .oldies .nooldies {
   display: none;
 }
@@ -2014,4 +2017,6 @@ $rocssti .= '
   float: right;
 }
 ';}
+
+}
 ?>

@@ -1,12 +1,14 @@
 /*  
- * basé sur les classes conditionnelles sur l'élément HTML
+ * basé sur les classes conditionnelles sur l’élément HTML
  *  
  * à utiliser seulement si peu de corrections et 
- * pas d'impact sur les perfs sur les autres navigateurs
+ * pas d’impact sur les perfs sur les autres navigateurs
  *       
  */
+ 
+& when (@use_old_ie_fallbacks) {
 
-/* less than IE 9 */
+/* en-dessous d’IE 9 */
 .oldies .nooldies {
   display: none;
 }
@@ -52,4 +54,6 @@
     /* RTL */
     float: right;
   }
+}
+
 }

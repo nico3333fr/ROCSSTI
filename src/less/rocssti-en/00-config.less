@@ -34,7 +34,7 @@
 @use_clearfix          : false;
 
 // vertical rythm
-// possible values! 'double_top_single_bottom',  'single_top', 'single_bottom'
+// possible values     : 'double_top_single_bottom',  'single_top', 'single_bottom'
 @vertical-rythm        : 'single_bottom'; 
 
 // units for typo
@@ -50,10 +50,11 @@
 
 // others
 @use_reset_button      : true;
-@input_reset: ~"input, select, textarea, optgroup, button";
+@input_reset           : ~"input, select, textarea, optgroup, button";
+@use_old_ie_fallbacks  : true;
 
 
-// LESS functions : don't touch ;)
+// LESS functions : don’t touch ;)
 
 .pxtoem (@fontsize) {font-size: (@fontsize / @basefont) + 0em;}
 

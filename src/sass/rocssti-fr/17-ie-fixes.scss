@@ -1,46 +1,50 @@
 /*
- * basé sur les classes conditionnelles sur l'élément HTML
+ * basé sur les classes conditionnelles sur l’élément HTML
  *
  * à utiliser seulement si peu de corrections et
- * pas d'impact sur les perfs sur les autres navigateurs
+ * pas d’impact sur les perfs sur les autres navigateurs
  *
  */
 
-/* en-dessous d'IE 9 */
-.oldies .nooldies {
-  display: none;
-}
+@if $use-old-ie-fallbacks == true {
 
-.ie6 .noie6 {
-  display: none;
-}
-.ie7 .noie7 {
-  display: none;
-}
-.ie8 .noie8 {
-  display: none;
-}
-.ie9 .noie9 {
-  display: none;
-}
-
-.ie7 .col,
-.ie7 .col-noalign,
-.ie6 .col,
-.ie6 .col-noalign {
-  float: left;
-}
-.ie7 .row,
-.ie6 .row {
-  overflow: auto;
-}
-
-@if $rtl-option == true {
-  /* RTL */
-  [dir="rtl"] .ie7 .col,
-  [dir="rtl"] .ie7 .col-noalign,
-  [dir="rtl"] .ie6 .col,
-  [dir="rtl"] .ie6 .col-noalign {
-    float: right;
+  /* en-dessous d’IE 9 */
+  .oldies .nooldies {
+    display: none;
   }
+  
+  .ie6 .noie6 {
+    display: none;
+  }
+  .ie7 .noie7 {
+    display: none;
+  }
+  .ie8 .noie8 {
+    display: none;
+  }
+  .ie9 .noie9 {
+    display: none;
+  }
+  
+  .ie7 .col,
+  .ie7 .col-noalign,
+  .ie6 .col,
+  .ie6 .col-noalign {
+    float: left;
+  }
+  .ie7 .row,
+  .ie6 .row {
+    overflow: auto;
+  }
+  
+  @if $rtl-option == true {
+    /* RTL */
+    [dir="rtl"] .ie7 .col,
+    [dir="rtl"] .ie7 .col-noalign,
+    [dir="rtl"] .ie6 .col,
+    [dir="rtl"] .ie6 .col-noalign {
+      float: right;
+    }
+  }
+
 }

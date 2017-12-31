@@ -51,7 +51,7 @@ $use-clearhidden       : false !default;
 $use-clearfix          : false !default;
 
 // rythme vertical 
-// valeurs possibles : 'double_top_single_bottom',  'single_top', 'single_bottom'
+// valeurs possibles   : 'double_top_single_bottom',  'single_top', 'single_bottom'
 $vertical-rythm        : 'single_bottom' !default;
 
 // unité pour la typo
@@ -67,6 +67,7 @@ $root-default-font-size: 16 !default;
 
 // autres
 $use-reset-button      : true !default;
+$use-old-ie-fallbacks  : true !default;
 
 
 // Sass functions : pas touche ;)
