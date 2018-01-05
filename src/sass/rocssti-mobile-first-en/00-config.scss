@@ -306,13 +306,13 @@ $use-old-ie-fallbacks  : true !default;
 
 @mixin respond-to ($breakpoint, $query-type : 'min') {
   @if $query-type == "max" {
-     @media (max-width: em($breakpoint)) {
+     @media (max-width: em($breakpoint, $root-default-font-size)) {
       @content;
     }
   }
 
   @else if $query-type == "min" {
-     @media (min-width: em($breakpoint)) {
+     @media (min-width: em($breakpoint, $root-default-font-size)) {
       @content;
     }
   }

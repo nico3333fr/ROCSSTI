@@ -299,6 +299,7 @@ function padding_generator ( $list_padding, $list_padding_values, $prefix = '', 
 }
 
 
+$root_default_font_size = 16;
 
 
 
@@ -1614,7 +1615,7 @@ select:focus:required:valid {
  *****************************************************************
  */ 
 
-@media (max-width: '. ($breakpoint_tablet/16) .'em) { /* equiv '.$breakpoint_tablet.'px */
+@media (max-width: '. ($breakpoint_tablet/$root_default_font_size) .'em) { /* equiv '.$breakpoint_tablet.'px */
    
   /**
    * layout/modules
@@ -1710,7 +1711,7 @@ $rocssti .= '
  *****************************************************************
  */
 
-@media (max-width: '. ($breakpoint_mobile/16) .'em) { /* equiv '.$breakpoint_mobile.'px */
+@media (max-width: '. ($breakpoint_mobile/$root_default_font_size) .'em) { /* equiv '.$breakpoint_mobile.'px */
 
   /**
    * layout/modules
@@ -1792,7 +1793,7 @@ $rocssti .= '
  *****************************************************************
  */
 
-@media (max-width: '. ($breakpoint_tinymobile/16) .'em) { /* equiv '.$breakpoint_tinymobile.'px */
+@media (max-width: '. ($breakpoint_tinymobile/$root_default_font_size) .'em) { /* equiv '.$breakpoint_tinymobile.'px */
 
   /**
    * layout/modules
