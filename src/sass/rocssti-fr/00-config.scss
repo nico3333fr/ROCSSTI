@@ -70,6 +70,7 @@ $root-default-font-size: 16 !default;
 $use-reset-button      : true !default;
 $use-old-ie-fallbacks  : true !default;
 
+$rocssti-prefix        : '' !default;
 
 
 // Sass functions : pas touche ;)
@@ -248,7 +249,7 @@ $use-old-ie-fallbacks  : true !default;
         // 1.5 = 1-5
         $property-class: str-replace($text-margin, '.', '-');
         
-        // . mr 1-5 { margin-right: 1.5em ;}
+        // .mr 1-5 { margin-right: 1.5em ;}
         .#{$prefix}#{$margin-type}#{$property-class} { #{$property}: #{$value}; }
   
   

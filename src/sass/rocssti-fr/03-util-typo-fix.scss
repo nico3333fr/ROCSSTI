@@ -1,4 +1,4 @@
-.noborder,
+.#{$rocssti-prefix}noborder,
 iframe,
 dialog { border: 0; }
 
@@ -48,12 +48,12 @@ sub {
 
 /* éviter problèmes de margin */
 @if $vertical-rythm == 'single_top' or $vertical-rythm == 'double_top_single_bottom' {
-  h1,.h1,
-  h2,.h2,
-  h3,.h3,
-  h4,.h4,
-  h5,.h5,
-  h6,.h6{
+  h1,.#{$rocssti-prefix}h1,
+  h2,.#{$rocssti-prefix}h2,
+  h3,.#{$rocssti-prefix}h3,
+  h4,.#{$rocssti-prefix}h4,
+  h5,.#{$rocssti-prefix}h5,
+  h6,.#{$rocssti-prefix}h6{
     &:first-child {
       margin-top: 0;
     }
@@ -108,11 +108,11 @@ li ul {
   }
 }
 @else {
-  .cut {
+  .#{$rocssti-prefix}cut {
     word-wrap: break-word;
   }
   @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
-    .cut {
+    .#{$rocssti-prefix}cut {
       word-wrap: normal;
       @include vendor-prefix(hyphens, auto, webkit ms);
     }
@@ -120,11 +120,11 @@ li ul {
 }
 
 /* pour supprimer la césure si besoin */
-.nocut {
+.#{$rocssti-prefix}nocut {
   word-wrap: normal;
 }
 @supports (-webkit-hyphens: auto) or (-ms-hyphens: auto) or (hyphens: auto) {
-  .nocut {
+  .#{$rocssti-prefix}nocut {
     @include vendor-prefix(hyphens, none, webkit ms);
   }
 }
@@ -157,12 +157,12 @@ abbr[title] {
 }
 
 /* alignements de textes */
-.alignright  { text-align: right; }
-.aligncenter { text-align: center; }
-.alignleft   { text-align: left; }
+.#{$rocssti-prefix}alignright  { text-align: right; }
+.#{$rocssti-prefix}aligncenter { text-align: center; }
+.#{$rocssti-prefix}alignleft   { text-align: left; }
 
 @if $rtl-option == true {
   /* RTL */
-  [dir="rtl"] .alignright  { text-align: left; }
-  [dir="rtl"] .alignleft   { text-align: right; }
+  [dir="rtl"] .#{$rocssti-prefix}alignright  { text-align: left; }
+  [dir="rtl"] .#{$rocssti-prefix}alignleft   { text-align: right; }
 }

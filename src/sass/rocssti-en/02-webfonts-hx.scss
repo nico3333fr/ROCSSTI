@@ -4,59 +4,59 @@
 }*/
 
 h1,
-.h1 {
+.#{$rocssti-prefix}h1 {
   display: block;
   @include flow-hr(26); // equiv 26px
   font-weight: normal;
 }
 h2,
-.h2 {
+.#{$rocssti-prefix}h2 {
   display: block;
   @include flow-hr(24); // equiv 24px
   font-weight: normal;
 }
 h3,
-.h3 {
+.#{$rocssti-prefix}h3 {
   display: block;
   @include flow-hr(22); // equiv 22px
   font-weight: normal;
 }
 h4,
-.h4 {
+.#{$rocssti-prefix}h4 {
   display: block;
   @include flow-hr(20); // equiv 20px
   font-weight: normal;
 }
 h5,
-.h5 {
+.#{$rocssti-prefix}h5 {
   display: block;
   @include flow-hr(18); // equiv 18px
   font-weight: normal;
 }
 h6,
-.h6 {
+.#{$rocssti-prefix}h6 {
   display: block;
   @include flow-hr(16); // equiv 16px
   font-weight: normal;
 }
 
-.uppercase {
+.#{$rocssti-prefix}uppercase {
   text-transform: uppercase;
 }
 
 /* other useful classes */
-.smaller {
+.#{$rocssti-prefix}smaller {
   @include flow-other(10); // equiv 10px
 }
-.small {
+.#{$rocssti-prefix}small {
   @include flow-other(12); // equiv 12px
 }
-.big {
+.#{$rocssti-prefix}big {
   @include flow-other(16); // equiv 16px
 }
-.bigger {
+.#{$rocssti-prefix}bigger {
   @include flow-other(18); // equiv 18px
 }
-.biggest {
+.#{$rocssti-prefix}biggest {
   @include flow-other(20); // equiv 20px
 }

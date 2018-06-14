@@ -1,18 +1,18 @@
 /* === page === */
 @include body-before ('mobile', true);
   
-.page {
+.#{$rocssti-prefix}page {
   margin: 0 auto;
   position: relative;
 }
 
 /* === skip links === */
-.skip {
+.#{$rocssti-prefix}skip {
 
 }
 /* .skip__link = 1 skip link */
 /* they should be visible not only on focus */
-.skip__link {
+.#{$rocssti-prefix}skip__link {
 
 
   /* anyway remember making them visible on focus */
@@ -28,24 +28,24 @@
 
 
 /* === header === */
-.header {
+.#{$rocssti-prefix}header {
 
 }
-.logo {
+.#{$rocssti-prefix}logo {
 
 }
-.navigation {
+.#{$rocssti-prefix}navigation {
 
 }
 
 
 /* === main content === */
-.main {
+.#{$rocssti-prefix}main {
 
 }
 
 
 /* === footer === */
-.footer {
+.#{$rocssti-prefix}footer {
 
 }

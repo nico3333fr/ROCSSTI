@@ -19,56 +19,56 @@ svg {
 
 /* useful to manage floats */
 /* containing floats */
-.mod {
+.#{$rocssti-prefix}mod {
   overflow: auto;
 }
-.mod--hidden,
-.no-scroll { 
+.#{$rocssti-prefix}mod--hidden,
+.#{$rocssti-prefix}no-scroll { 
   overflow: hidden;
 }
 
 /* some floattings */
-.left {
+.#{$rocssti-prefix}left {
   float: left;
 }
-.right {
+.#{$rocssti-prefix}right {
   float: right;
 }
 
 @if $rtl-option == true {
   /* RTL */
-  [dir="rtl"] .left {
+  [dir="rtl"] .#{$rocssti-prefix}left {
     float: right;
   }
-  [dir="rtl"] .right {
+  [dir="rtl"] .#{$rocssti-prefix}right {
     float: left;
   }
 }
 
 
 /* clear floats */
-.clear {
+.#{$rocssti-prefix}clear {
   clear: both;
 }
 @if $use-clearleft_right == true {
-  .clearleft {
+  .#{$rocssti-prefix}clearleft {
     clear: left;
   }
-  .clearright {
+  .#{$rocssti-prefix}clearright {
     clear: right;
   }
   @if $rtl-option == true {
     /* RTL */
-    [dir="rtl"] .clearleft {
+    [dir="rtl"] .#{$rocssti-prefix}clearleft {
       clear: right;
     }
-    [dir="rtl"] .clearright {
+    [dir="rtl"] .#{$rocssti-prefix}clearright {
       clear: left;
     }
   }
 }
 @if $use-clearhidden == true {
-  .clearhidden {
+  .#{$rocssti-prefix}clearhidden {
     clear: both;
     margin: 0;
     padding: 0;
@@ -76,7 +76,7 @@ svg {
   }
 }
 @if $use-clearfix == true {
-  .clearfix:after {
+  .#{$rocssti-prefix}clearfix:after {
     content: ".";
     display: block;
     height: 0;
@@ -86,113 +86,113 @@ svg {
 }
 
 /* gut: "spacing" empty div */
-.gut {
+.#{$rocssti-prefix}gut {
   height: 1px;
 }
 
 /* table-design in CSS */
-.row {
+.#{$rocssti-prefix}row {
   display: table;
   table-layout: fixed;
 }
-.inline-row {
+.#{$rocssti-prefix}inline-row {
   display: inline-table;
   table-layout: fixed;
 }
-.line {
+.#{$rocssti-prefix}line {
   display: table-row;
 }
-.col {
+.#{$rocssti-prefix}col {
   display: table-cell;
   vertical-align: top;
 }
-.col-noalign {
+.#{$rocssti-prefix}col-noalign {
   display: table-cell;
 }
 
 /* alignments */
-.aligntop    { vertical-align: top; }
-.alignbottom { vertical-align: bottom; }
-.alignmiddle { vertical-align: middle; }
+.#{$rocssti-prefix}aligntop    { vertical-align: top; }
+.#{$rocssti-prefix}alignbottom { vertical-align: bottom; }
+.#{$rocssti-prefix}alignmiddle { vertical-align: middle; }
 
 /* block */
-.bl {
+.#{$rocssti-prefix}bl {
   display: block;
 }
 
 /* inline-block, useful for grids, and not only */
-.inbl {
+.#{$rocssti-prefix}inbl {
   display: inline-block;
 }
 
 /* grid = element of inline-grid */
-.grid {
-  @extend .inbl;
-  @extend .aligntop;
+.#{$rocssti-prefix}grid {
+  @extend .#{$rocssti-prefix}inbl;
+  @extend .#{$rocssti-prefix}aligntop;
 }
 
 /* to relativize */
-.relative {
+.#{$rocssti-prefix}relative {
   position: relative;
 }
 
 /* centered block */
-.center {
+.#{$rocssti-prefix}center {
   margin-left: auto;
   margin-right: auto;
 }
 
 /* hardware-acceleration activation */
-.hardware-accelerated {
+.#{$rocssti-prefix}hardware-accelerated {
   @include vendor-prefix(transform, translateZ(0));
 }
 
 
 
 /* block widths */
-.w1   { width: 1%; }
-.w2   { width: 2%; }
-.w3   { width: 3%; }
-.w5   { width: 5%; }
-.w10  { width: 10%; }
-.w20  { width: 20%; }
-.w25  { width: 25%; }
-.w30  { width: 30%; }
-.w33  { width: 33.333%; }
-.w40  { width: 40%; }
-.w45  { width: 45%; }
-.w49  { width: 49%; }
-.w50  { width: 50%; }
-.w60  { width: 60%; }
-.w66  { width: 66.666%; }
-.w70  { width: 70%; }
-.w75  { width: 75%; }
-.w80  { width: 80%; }
-.w90  { width: 90%; }
-.w100 { width: 100%; }
+.#{$rocssti-prefix}w1   { width: 1%; }
+.#{$rocssti-prefix}w2   { width: 2%; }
+.#{$rocssti-prefix}w3   { width: 3%; }
+.#{$rocssti-prefix}w5   { width: 5%; }
+.#{$rocssti-prefix}w10  { width: 10%; }
+.#{$rocssti-prefix}w20  { width: 20%; }
+.#{$rocssti-prefix}w25  { width: 25%; }
+.#{$rocssti-prefix}w30  { width: 30%; }
+.#{$rocssti-prefix}w33  { width: 33.333%; }
+.#{$rocssti-prefix}w40  { width: 40%; }
+.#{$rocssti-prefix}w45  { width: 45%; }
+.#{$rocssti-prefix}w49  { width: 49%; }
+.#{$rocssti-prefix}w50  { width: 50%; }
+.#{$rocssti-prefix}w60  { width: 60%; }
+.#{$rocssti-prefix}w66  { width: 66.666%; }
+.#{$rocssti-prefix}w70  { width: 70%; }
+.#{$rocssti-prefix}w75  { width: 75%; }
+.#{$rocssti-prefix}w80  { width: 80%; }
+.#{$rocssti-prefix}w90  { width: 90%; }
+.#{$rocssti-prefix}w100 { width: 100%; }
 
 /* here you may add px widths */
 $list-width: 500;
-// ex .w500p { width: 500px; }
+// ex .#{$rocssti-prefix}w500p { width: 500px; }
 
 @each $width in $list-width {
-  .w#{$width}p { width: #{$width}px; }
+  .#{$rocssti-prefix}w#{$width}p { width: #{$width}px; }
   }
   
 /* here you may add em widths */
 $list-width-em: 500;
-// ex .w500e { width: 60em; }
+// ex .#{$rocssti-prefix}w500e { width: 60em; }
 
 @each $width in $list-width-em {
   $size_em : em($width);
-  .w#{$width}e { width: $size_em; }
+  .#{$rocssti-prefix}w#{$width}e { width: $size_em; }
   }
 
 /* here you may add pixel max-widths */
 $list-max-width: 960;
 
 @each $max-width in $list-max-width {
-  .mw#{$max-width}p { max-width: #{$max-width}px; }
+  .#{$rocssti-prefix}mw#{$max-width}p { max-width: #{$max-width}px; }
   }
 
 /* here you may add em max-widths */
@@ -200,7 +200,7 @@ $list-max-width-em: 960;
 
 @each $max-width in $list-max-width-em {
   $size_em : em($max-width);
-  .mw#{$max-width}e { max-width: $size_em; }
+  .#{$rocssti-prefix}mw#{$max-width}e { max-width: $size_em; }
   }
 
 
@@ -209,7 +209,7 @@ $list-max-width-em: 960;
 $list-margins: mt, mr, mb, ml, m;
 $list-margins-values: 0, 0.5, 1, 2, 3; // specify 2.5 if needed
 
-@include margin-generator($list-margins, $list-margins-values);
+@include margin-generator($list-margins, $list-margins-values, $rocssti-prefix);
 
 
 /* paddings */
@@ -217,7 +217,7 @@ $list-margins-values: 0, 0.5, 1, 2, 3; // specify 2.5 if needed
 $list-paddings: pt, pr, pb, pl, p;
 $list-paddings-values: 0, 1, 2; // specify 2.5 if needed
 
-@include padding-generator($list-paddings, $list-paddings-values);
+@include padding-generator($list-paddings, $list-paddings-values, $rocssti-prefix);
 
 
 
@@ -232,7 +232,7 @@ hr {
 }
 
 /* to hide text with accessibility… a11y */
-.invisible {
+.#{$rocssti-prefix}invisible {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -242,10 +242,10 @@ hr {
   position: absolute;
   width: 1px;
 }
-.nonvisible { visibility: hidden; }
+.#{$rocssti-prefix}nonvisible { visibility: hidden; }
 
-.hidden, [hidden]  { display: none; } /* hidden everywhere */
-.nodesktop { display: none; } /* hidden on desktop */
+.#{$rocssti-prefix}hidden, [hidden]  { display: none; } /* hidden everywhere */
+.#{$rocssti-prefix}nodesktop { display: none; } /* hidden on desktop */
 /*.noprint   {} /* hidden on print */
 /*.notablet  {} /* hidden on tablets */
 /*.nomobile  {} /* hidden on mobile */

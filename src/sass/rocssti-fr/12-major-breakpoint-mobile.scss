@@ -5,13 +5,13 @@
    */
 
   /* affichage des éléments */
-  .notablet { display: block; }
+  .#{$rocssti-prefix}notablet { display: block; }
 
   /* cachage des éléments inutiles ! */
-  .nomobile { display: none; }
+  .#{$rocssti-prefix}nomobile { display: none; }
 
   /* linéarisation contenus flottants/table-layout */
-  .automobile {
+  .#{$rocssti-prefix}automobile {
     float: none;
     display: block;
     width: auto;
@@ -21,16 +21,16 @@
   $list-margins-mobile: mt, mr, mb, ml, m;
   $list-margins-mobile-values: 0, 1, 2; // spécifier 2.5 si besoin
 
-  @include margin-generator($list-margins-mobile, $list-margins-mobile-values, "onmobile-");
+  @include margin-generator($list-margins-mobile, $list-margins-mobile-values, "#{$rocssti-prefix}onmobile-");
   
   /* paddings */
   $list-paddings-mobile: pt, pr, pb, pl, p;
   $list-paddings-mobile-values: 0, 1, 2; // spécifier 2.5 si besoin
 
-  @include padding-generator($list-paddings-mobile, $list-paddings-mobile-values, "onmobile-");
+  @include padding-generator($list-paddings-mobile, $list-paddings-mobile-values, "#{$rocssti-prefix}onmobile-");
   
   /* alignements de textes */
-  .onmobile- {
+  .#{$rocssti-prefix}onmobile- {
     &alignleft   { text-align: left; }
     &aligncenter { text-align: center; }
     &alignright  { text-align: right; }

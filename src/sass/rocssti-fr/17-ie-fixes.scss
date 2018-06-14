@@ -9,40 +9,40 @@
 @if $use-old-ie-fallbacks == true {
 
   /* en-dessous d’IE 9 */
-  .oldies .nooldies {
+  .oldies .#{$rocssti-prefix}nooldies {
     display: none;
   }
   
-  .ie6 .noie6 {
+  .ie6 .#{$rocssti-prefix}noie6 {
     display: none;
   }
-  .ie7 .noie7 {
+  .ie7 .#{$rocssti-prefix}noie7 {
     display: none;
   }
-  .ie8 .noie8 {
+  .ie8 .#{$rocssti-prefix}noie8 {
     display: none;
   }
-  .ie9 .noie9 {
+  .ie9 .#{$rocssti-prefix}noie9 {
     display: none;
   }
   
-  .ie7 .col,
-  .ie7 .col-noalign,
-  .ie6 .col,
-  .ie6 .col-noalign {
+  .ie7 .#{$rocssti-prefix}col,
+  .ie7 .#{$rocssti-prefix}col-noalign,
+  .ie6 .#{$rocssti-prefix}col,
+  .ie6 .#{$rocssti-prefix}col-noalign {
     float: left;
   }
-  .ie7 .row,
-  .ie6 .row {
+  .ie7 .#{$rocssti-prefix}row,
+  .ie6 .#{$rocssti-prefix}row {
     overflow: auto;
   }
   
   @if $rtl-option == true {
     /* RTL */
-    [dir="rtl"] .ie7 .col,
-    [dir="rtl"] .ie7 .col-noalign,
-    [dir="rtl"] .ie6 .col,
-    [dir="rtl"] .ie6 .col-noalign {
+    [dir="rtl"] .ie7 .#{$rocssti-prefix}col,
+    [dir="rtl"] .ie7 .#{$rocssti-prefix}col-noalign,
+    [dir="rtl"] .ie6 .#{$rocssti-prefix}col,
+    [dir="rtl"] .ie6 .#{$rocssti-prefix}col-noalign {
       float: right;
     }
   }

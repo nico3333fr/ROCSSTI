@@ -5,25 +5,25 @@
    */
 
   /* affichage des éléments */
-  .notablet { display: block; }
+  .#{$rocssti-prefix}notablet { display: block; }
 
   /* cachage des éléments inutiles ! */
-  .nodesktop { display: none; }
+  .#{$rocssti-prefix}nodesktop { display: none; }
   
   /* margins */
   $list-margins-desktop: mt, mr, mb, ml, m;
   $list-margins-desktop-values: 0, 1, 2; // spécifier 2.5 si besoin
 
-  @include margin-generator($list-margins-desktop, $list-margins-desktop-values, "ondesktop-");
+  @include margin-generator($list-margins-desktop, $list-margins-desktop-values, "#{$rocssti-prefix}ondesktop-");
   
   /* paddings */
   $list-paddings-desktop: pt, pr, pb, pl, p;
   $list-paddings-desktop-values: 0, 1, 2; // spécifier 2.5 si besoin
 
-  @include padding-generator($list-paddings-desktop, $list-paddings-desktop-values, "ondesktop-");
+  @include padding-generator($list-paddings-desktop, $list-paddings-desktop-values, "#{$rocssti-prefix}ondesktop-");
 
   /* alignements de textes */
-  .ondesktop- {
+  .#{$rocssti-prefix}ondesktop- {
     &alignleft   { text-align: left; }
     &aligncenter { text-align: center; }
     &alignright  { text-align: right; }

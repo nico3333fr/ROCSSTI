@@ -4,8 +4,8 @@
    */
   body,
   html,
-  .page,
-  .reset4print {
+  .#{$rocssti-prefix}page,
+  .#{$rocssti-prefix}reset4print {
     background-color: #fff;
     background-image: none;
     border: 0;
@@ -30,12 +30,12 @@
   }
 
   /* hide unnecessary elements */
-  .noprint {
+  .#{$rocssti-prefix}noprint {
     display: none;
   }
   
   /* display specific elements for print */
-  .onprint {
+  .#{$rocssti-prefix}onprint {
     display: block;
   }
   

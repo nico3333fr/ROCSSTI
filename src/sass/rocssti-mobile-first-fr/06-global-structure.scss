@@ -1,18 +1,18 @@
 /* === page === */
 @include body-before ('mobile', true);
 
-.page {
+.#{$rocssti-prefix}page {
   margin: 0 auto;
   position: relative;
 }
 
 /* === skip links = liens d'évitement === */
-.skip {
+.#{$rocssti-prefix}skip {
 
 }
 /* skip__link = un lien d'évitement */
 /* idéalement mettez-les visibles pas uniquement au focus */
-.skip__link {
+.#{$rocssti-prefix}skip__link {
 
   
   /* sinon pensez à les rendre visibles au focus */
@@ -28,25 +28,25 @@
 
 
 /* === header === */
-.header {
+.#{$rocssti-prefix}header {
 
 }
-.logo {
+.#{$rocssti-prefix}logo {
 
 }
-.navigation {
+.#{$rocssti-prefix}navigation {
 
 }
 
 
 /* === contenu principal === */
-.main {
+.#{$rocssti-prefix}main {
 
 }
 
 
 /* === footer === */
-.footer {
+.#{$rocssti-prefix}footer {
 
 }
 

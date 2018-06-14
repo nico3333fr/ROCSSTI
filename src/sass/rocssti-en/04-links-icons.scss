@@ -16,7 +16,7 @@ a:visited img,
 img {
   border-style: none;
 }
-.nodecoration {
+.#{$rocssti-prefix}nodecoration {
   text-decoration: none;
 }
 

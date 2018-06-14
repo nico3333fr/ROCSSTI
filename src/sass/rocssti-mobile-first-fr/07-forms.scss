@@ -47,12 +47,12 @@ textarea {
 }
 
 /* pour les textes des champs */
-.label {
+.#{$rocssti-prefix}label {
   display: inline-block;
 }
 
 /* à adapter selon le design voulu */
-.button {
+.#{$rocssti-prefix}button {
   background: $color-bg-button;
   color: $color-txt-button;
 }
@@ -71,26 +71,26 @@ input[type="image"] {
 }
 
 /* pour annuler la taille des inputs ou autres */
-.auto {
+.#{$rocssti-prefix}auto {
   width: auto;
 }
 
 /* messages d'erreur ou de confirmation */
-.alert,
-.alert input,
-.alert textarea,
-.alert select {
+.#{$rocssti-prefix}alert,
+.#{$rocssti-prefix}alert input,
+.#{$rocssti-prefix}alert textarea,
+.#{$rocssti-prefix}alert select {
   color: $color-alert;
   font-weight: bold;
 }
 /* .redborder sert à débugger uniquement */
-.alert input,
-.alert textarea,
-.alert select,
-.redborder {
+.#{$rocssti-prefix}alert input,
+.#{$rocssti-prefix}alert textarea,
+.#{$rocssti-prefix}alert select,
+.#{$rocssti-prefix}redborder {
   border: 1px solid $color-alert;
 }
-.alert img {
+.#{$rocssti-prefix}alert img {
   border: 0;
 }
 /*.ok {

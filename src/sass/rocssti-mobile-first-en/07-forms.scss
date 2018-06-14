@@ -47,12 +47,12 @@ textarea {
 }
 
 /* for field texts */
-.label {
+.#{$rocssti-prefix}label {
   display: inline-block;
 }
 
 /* to adapt to your design */
-.button {
+.#{$rocssti-prefix}button {
   background: $color-bg-button;
   color: $color-txt-button;
 }
@@ -71,29 +71,29 @@ input[type="image"] {
 }
 
 /* to cancel input sizing or other if needed */
-.auto {
+.#{$rocssti-prefix}auto {
   width: auto;
 }
 
 /* error or confirmation messages */
-.alert,
-.alert input,
-.alert textarea,
-.alert select {
+.#{$rocssti-prefix}alert,
+.#{$rocssti-prefix}alert input,
+.#{$rocssti-prefix}alert textarea,
+.#{$rocssti-prefix}alert select {
   color: $color-alert;
   font-weight: bold;
 }
 /* .redborder is only used to debug */
-.alert input,
-.alert textarea,
-.alert select,
-.redborder {
+.#{$rocssti-prefix}alert input,
+.#{$rocssti-prefix}alert textarea,
+.#{$rocssti-prefix}alert select,
+.#{$rocssti-prefix}redborder {
   border: 1px solid $color-alert;
 }
-.alert img {
+.#{$rocssti-prefix}alert img {
   border: 0;
 }
-/*.ok {
+/*.#{$rocssti-prefix}ok {
 
 }*/
 

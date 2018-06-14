@@ -5,8 +5,8 @@
    */
   body,
   html,
-  .page,
-  .reset4print {
+  .#{$rocssti-prefix}page,
+  .#{$rocssti-prefix}reset4print {
     background-color: #fff;
     background-image: none;
     border: 0;
@@ -31,7 +31,7 @@
   }
 
   /* cachage des éléments inutiles ! */
-  .noprint {
+  .#{$rocssti-prefix}noprint {
     display: none;
   }
   

@@ -5,13 +5,13 @@
    */
 
   /* display elements */
-  /*.nomobile { display: block; }*/
+  /*.#{$rocssti-prefix}nomobile { display: block; }*/
 
   /* hide unnecessary elements */
-  .notinymobile { display: none; }
+  .#{$rocssti-prefix}notinymobile { display: none; }
 
   /* linearization of floating content/table-layout */
-  .autotinymobile {
+  .#{$rocssti-prefix}autotinymobile {
     float: none;
     display: block;
     width: auto;
@@ -21,13 +21,13 @@
   //$list-margins-tinymobile: mt, mr, mb, ml, m;
   //$list-margins-tinymobile-values: 0, 1, 2; // specify 2.5 if needed
 
-  //@include margin-generator($list-margins-tinymobile, $list-margins-tinymobile-values, "ontinymobile-");
+  //@include margin-generator($list-margins-tinymobile, $list-margins-tinymobile-values, "#{$rocssti-prefix}ontinymobile-");
 
   /* paddings */
   //$list-paddings-tinymobile: pt, pr, pb, pl, p;
   //$list-paddings-tinymobile-values: 0, 1, 2; // specify 2.5 if needed
 
-  //@include padding-generator($list-paddings-tinymobile, $list-paddings-tinymobile-values, "ontinymobile-");  
+  //@include padding-generator($list-paddings-tinymobile, $list-paddings-tinymobile-values, "#{$rocssti-prefix}ontinymobile-");  
 
   /**
    * global structure adaptation (page / skip links / header / main content / footer)
