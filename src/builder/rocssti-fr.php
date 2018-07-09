@@ -858,6 +858,34 @@ $rocssti .= '  line-height: '.round_em(line_height($sizebiggest, $line_height, $
 
 
 
+
+/* couleurs du projet */
+';
+foreach ($color_name as $key=>$value) {
+if ( $value<>'' ){
+$rocssti .= '.'.$rocssti_prefix.'color-'.$value.' {
+  color: '.$color_project[$key].';
+}
+';
+}
+}
+
+$rocssti .= '
+';
+foreach ($color_name as $key=>$value) {
+if ( $value<>'' ){
+$rocssti .= '.'.$rocssti_prefix.'bg-'.$value.' {
+  background-color: '.$color_project[$key].';
+}
+';
+}
+}
+
+$rocssti .= '
+
+
+
+
 /*
  *****************************************************************
  * 03 -- classes utilitaires + fix typos + styles "balises fixes"
