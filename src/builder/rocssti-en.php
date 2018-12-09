@@ -1862,6 +1862,12 @@ $rocssti .= '
  */
 
 @media print {
+
+  /* Fix a crazy scrollbar display on Edge printing */
+  html {
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
   /**
    * add in this all elements which need to be hardly reseted for print
    */
@@ -1890,6 +1896,7 @@ $rocssti .= '
 
   body {
     padding: .5em;
+    overflow: auto;
   }
 
   /* hide unnecessary elements */

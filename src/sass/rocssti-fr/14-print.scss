@@ -1,6 +1,12 @@
 @media print {
-  /**
-   * ajouter là-dedans les éléments qui ont besoin d'être
+
+  /* Fixe un bug délirant de Edge au print */
+  html {
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  /** 
+   * ajouter là-dedans les éléments qui ont besoin d’être
    * resetés de manière très bourrine pour le print
    */
   body,
@@ -28,6 +34,7 @@
 
   body {
     padding: .5em;
+    overflow: auto;
   }
 
   /* cachage des éléments inutiles ! */

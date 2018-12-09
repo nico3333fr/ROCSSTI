@@ -1863,6 +1863,12 @@ $rocssti .= '
  */
 
 @media print {
+
+  /* Fixe un bug délirant de Edge au print */
+  html {
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
   /** 
    * ajouter là-dedans les éléments qui ont besoin d’être
    * resetés de manière très bourrine pour le print
@@ -1892,6 +1898,7 @@ $rocssti .= '
 
   body {
     padding: .5em;
+    overflow: auto;
   }
 
   /* cachage des éléments inutiles, chabitte ! */
