@@ -2,9 +2,19 @@
   "title": "Röcssti is a lightweight CSS microframework to start your responsive projects",
   "name": "rocssti",
   "description": "Röcssti is a lightweight, extensible and responsive CSS to start your projects. This CSS micro-framework is especially designed for starting responsive websites. LESS and Sass versions are also available, with a mobile-first version for Sass.",
-  "version": "4.4.0",
+  "version": "4.4.1",
   "keywords": [
-    "css", "rocssti", "micro-framework", "framework", "reset", "responsive", "rwd", "boilerplate", "workflow", "sass", "less"
+    "css",
+    "rocssti",
+    "micro-framework",
+    "framework",
+    "reset",
+    "responsive",
+    "rwd",
+    "boilerplate",
+    "workflow",
+    "sass",
+    "less"
   ],
   "main": "https://github.com/nico3333fr/ROCSSTI/tree/master/src/css",
   "scripts": {
@@ -30,12 +40,11 @@
   "license": "MIT",
   "homepage": "https://rocssti.net/en/",
   "devDependencies": {
-    "gulp": "latest",
-    "gulp-rename": "latest",
-    "gulp-less": "latest",
+    "gulp": "^3.9.0",
     "gulp-header": "latest",
-    "gulp-sass": "latest",
-    "gulp-minify-css": "latest"
+    "gulp-less": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest"
   }
-  
 }

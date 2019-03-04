@@ -616,6 +616,12 @@ svg {
 .m1  { margin: 1em; }
 .m2  { margin: 2em; }
 
+.mtauto { margin-top: auto; }
+.mrauto { margin-right: auto; }
+.mbauto { margin-bottom: auto; }
+.mlauto { margin-left: auto; }
+.mauto  { margin: auto; }
+
 /* RTL = warning, use with caution */
 [dir="rtl"] .mr0 { margin-left: 0; }
 [dir="rtl"] .mr1 { margin-right: inherit; margin-left: 1em; }

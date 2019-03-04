@@ -1363,7 +1363,14 @@ $rocssti .= '
 ';
 $rocssti .= margin_generator ( $listmargins, $listmargins_values, $rocssti_prefix, '', 'rtl', false ).'';
 }
+
 $rocssti .= '
+.'.$rocssti_prefix.'mtauto { margin-top: auto; }
+.'.$rocssti_prefix.'mrauto { margin-right: auto; }
+.'.$rocssti_prefix.'mbauto { margin-bottom: auto; }
+.'.$rocssti_prefix.'mlauto { margin-left: auto; }
+.'.$rocssti_prefix.'mauto  { margin: auto; }
+
 /* paddings */
 ';
 if ($rtl == true) { 

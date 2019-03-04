@@ -219,6 +219,11 @@ $list-margins-values: 0, 0.5, 1, 2, 3; // specify 2.5 if needed
 
 @include margin-generator($list-margins, $list-margins-values, $rocssti-prefix);
 
+.#{$rocssti-prefix}mtauto { margin-top: auto; }
+.#{$rocssti-prefix}mrauto { margin-right: auto; }
+.#{$rocssti-prefix}mbauto { margin-bottom: auto; }
+.#{$rocssti-prefix}mlauto { margin-left: auto; }
+.#{$rocssti-prefix}mauto  { margin: auto; }
 
 /* paddings */
 
