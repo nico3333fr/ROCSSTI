@@ -74,10 +74,7 @@ function remove_zero_inutile ( $value ) {
 
 function rocssti_quote () {
 
-	srand ((float)microtime()*100000);
-	// entre 1 et 300
-	$nb=rand(1,300);
-	$nb=$nb%42; //dernier case +1
+	$nb = mt_rand(0, 41);
 	switch ($nb)
 	                        { case 0 : return '“Röcssti, you are so sexy!” — Clara Morgane';
 	                          	   	   break;
