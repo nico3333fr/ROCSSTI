@@ -3,7 +3,19 @@
   "name": "rocssti",
   "description": "Röcssti is a lightweight, extensible and responsive CSS to start your projects. This CSS micro-framework is especially designed for starting responsive websites. LESS and Sass versions are also available, with a mobile-first version for Sass.",
   "version": "4.5.0",
-  "keywords": ["css", "rocssti", "micro-framework", "framework", "reset", "responsive", "rwd", "boilerplate", "workflow", "sass", "less"],
+  "keywords": [
+    "css",
+    "rocssti",
+    "micro-framework",
+    "framework",
+    "reset",
+    "responsive",
+    "rwd",
+    "boilerplate",
+    "workflow",
+    "sass",
+    "less"
+  ],
   "main": "https://github.com/nico3333fr/ROCSSTI/tree/master/src/css",
   "scripts": {
     "build": "node scripts/build.js css",
@@ -12,14 +24,27 @@
     "build:sass": "node scripts/build.js sass",
     "build:all": "node scripts/build.js all"
   },
-  "author": [{"name": "Nicolas Hoffmann", "email": "dante3333@gmail.com", "web": "https://www.nicolas-hoffmann.net/"}],
-  "bugs": {"url": "https://github.com/nico3333fr/ROCSSTI/issues"},
-  "repository": [{"type": "git", "url": "https://github.com/nico3333fr/ROCSSTI.git"}],
+  "author": [
+    {
+      "name": "Nicolas Hoffmann",
+      "email": "dante3333@gmail.com",
+      "web": "https://www.nicolas-hoffmann.net/"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/nico3333fr/ROCSSTI/issues"
+  },
+  "repository": [
+    {
+      "type": "git",
+      "url": "https://github.com/nico3333fr/ROCSSTI.git"
+    }
+  ],
   "license": "MIT",
   "homepage": "https://rocssti.net/en/",
   "devDependencies": {
     "clean-css": "^5.3.3",
-    "less": "^3.13.1",
+    "less": "^4.6.4",
     "sass": "^1.77.0"
   }
 }
